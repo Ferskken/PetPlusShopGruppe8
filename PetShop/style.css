@@ -2,3 +2,10 @@
     font-family: Happy Monkey, sans-serif;
   src: url("fonts/HappyMonkey-Regular.ttf") format("truetype");
 }
+
+
+
+
+ion-icon {
+  color: white;
+}
