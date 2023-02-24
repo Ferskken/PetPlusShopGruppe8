@@ -3,9 +3,16 @@
   src: url("fonts/HappyMonkey-Regular.ttf") format("truetype");
 }
 
+ion-icon {
 
+}
 
 
 ion-icon {
   color: white;
+  width:20px; height:20px
 }
+
+#Logo {
+      background-color: #A6ECCF;
+    }
