@@ -10,14 +10,22 @@ ion-icon {
 
 ion-icon {
   color: white;
-  width:20px; height:20px
+  width:2rem; height:2rem
 }
 
 #Logo {
       background-color: #A6ECCF;
     }
 
-    .topnav {
+#Product {
+   padding: 2rem 6rem;
+     }
+
+
+
+
+
+.topnav {
   overflow: hidden;
   background-color: #A6ECCF; <!-- Background color of top bar -->
 }
@@ -26,9 +34,9 @@ ion-icon {
   float: left;
   color: #f2f2f2;  <!-- Top bar text color when not interacted with -->
   text-align: center;
-  padding: 14px 16px;
+  padding: 3rem 1,6rem;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 1,7rem;
 }
 
 .topnav a:hover {
