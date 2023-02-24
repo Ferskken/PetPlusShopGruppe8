@@ -75,6 +75,38 @@ height:200px;
 }
 
 
+
+
+
+
+
+.logonav {
+  overflow: hidden;
+  background-color: #A6ECCF;
+}
+
+.logonav input[type=text] {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  border: none;
+  font-size: 17px;
+}
+
+
+  
+  .logonav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+
+
+
+
+
+
+
+
 .categoriesnav {
   overflow: hidden;
   background-color: #A6ECCF; <!-- Background color of top bar -->
