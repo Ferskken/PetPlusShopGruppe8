@@ -16,3 +16,27 @@ ion-icon {
 #Logo {
       background-color: #A6ECCF;
     }
+
+    .topnav {
+  overflow: hidden;
+  background-color: #A6ECCF; <!-- Background color of top bar -->
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;  <!-- Top bar text color when not interacted with -->
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #59D8A4 ; <!-- Color of top bar text while hovering -->
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #59D8A4; <!--Color of top bar text while pressed/active -->
+  color: white;
+}
