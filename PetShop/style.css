@@ -75,12 +75,12 @@ height:200px;
 }
 
 
-.productnav {
+.categoriesnav {
   overflow: hidden;
   background-color: #A6ECCF; <!-- Background color of top bar -->
 }
 
-.productnav a {
+.categoriesnav a {
   color: #f2f2f2;  <!-- Top bar text color when not interacted with -->
   text-align: center;
   padding: 1.3rem 1.8rem;
@@ -88,12 +88,11 @@ height:200px;
   font-size: 1.4rem;
 }
 
-.productnav a:hover {
+.categoriesnav a:hover {
   background-color: #59D8A4 ; <!-- Color of top bar text while hovering -->
-  color: black;
 }
 
-.productnav a.active {
+.categoriesnav a.active {
   background-color: #59D8A4; <!--Color of top bar text while pressed/active -->
   color: white;
 }
