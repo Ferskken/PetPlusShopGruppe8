@@ -3,29 +3,36 @@
   src: url("fonts/HappyMonkey-Regular.ttf") format("truetype");
 }
 
+body {
+  background-color: #A6ECCF;
+}
+
 ion-icon {
   color: white;
-  width:2rem; height:2rem
 }
 
 #Logo {
-      background-color: #A6ECCF;
        
     }
+
 #SearchBar{
    float: left; 
 }
 
+.productImage
+{
+width:200px;
+height:200px;
+}
+
 #ProductContainer {
-   float: left; 
    padding: 2rem 6rem;
     font-size: 1rem;
     overflow: hidden; /* contain floated elements */
     text-align: center;
-    margin-top:2rem; 
-    margin-bottom:2rem;
-    margin-left:2rem;
-    margin-right:2rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 10px;
      }
 
 #ProductLeft {
@@ -51,14 +58,15 @@ ion-icon {
   float: left;
   color: #f2f2f2;  <!-- Top bar text color when not interacted with -->
   text-align: center;
-  padding: 1.3rem 1.8rem;
+  padding: 1.3rem;
   text-decoration: none;
   font-size: 1.4rem;
 }
 
 .topnav a:hover {
   background-color: #59D8A4 ; <!-- Color of top bar text while hovering -->
-  color: black;
+
+
 }
 
 .topnav a.active {
