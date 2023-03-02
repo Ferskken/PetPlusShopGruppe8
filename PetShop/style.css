@@ -15,15 +15,20 @@ ion-icon {
        
     }
 
+
 #SearchBar{
    float: left; 
 }
+
+
 
 .productImage
 {
 width:200px;
 height:200px;
 }
+
+
 
 #ProductContainer {
    padding: 2rem 6rem;
@@ -34,7 +39,6 @@ height:200px;
     grid-auto-flow: column;
     grid-column-gap: 10px;
      }
-
 #ProductLeft {
   float: left; 
     width: 33%;
@@ -49,12 +53,16 @@ height:200px;
      }
 
 
+
+
+
+
 .topnav {
   overflow: hidden;
   background-color: #A6ECCF; <!-- Background color of top bar -->
 }
-
 .topnav a {
+  border-radius: 1rem;   
   float: left;
   color: #f2f2f2;  <!-- Top bar text color when not interacted with -->
   text-align: center;
@@ -62,13 +70,9 @@ height:200px;
   text-decoration: none;
   font-size: 1.4rem;
 }
-
 .topnav a:hover {
   background-color: #59D8A4 ; <!-- Color of top bar text while hovering -->
-
-
 }
-
 .topnav a.active {
   background-color: #59D8A4; <!--Color of top bar text while pressed/active -->
   color: white;
@@ -84,7 +88,6 @@ height:200px;
   overflow: hidden;
   background-color: #A6ECCF;
 }
-
 .logonav input[type=text] {
   float: right;
   padding: 6px;
@@ -93,11 +96,8 @@ height:200px;
   border: none;
   font-size: 17px;
 }
-
-
-  
   .logonav input[type=text] {
-    border: 1px solid #ccc;  
+    border: 0.1rem solid #ccc;  
   }
 
 
@@ -111,19 +111,17 @@ height:200px;
   overflow: hidden;
   background-color: #A6ECCF; <!-- Background color of top bar -->
 }
-
 .categoriesnav a {
   color: #f2f2f2;  <!-- Top bar text color when not interacted with -->
   text-align: center;
-  padding: 1.3rem 1.8rem;
+  padding: 1.3rem;
   text-decoration: none;
   font-size: 1.4rem;
+  border-radius: 10rem;  
 }
-
 .categoriesnav a:hover {
   background-color: #59D8A4 ; <!-- Color of top bar text while hovering -->
 }
-
 .categoriesnav a.active {
   background-color: #59D8A4; <!--Color of top bar text while pressed/active -->
   color: white;
@@ -137,12 +135,10 @@ height:200px;
   text-align: center;
   font-family: arial;
 }
-
 .price {
   color: grey;
   font-size: 22px;
 }
-
 .productcard input {
   border: none;
   outline: 0;
@@ -154,7 +150,6 @@ height:200px;
   width: 100%;
   font-size: 18px;
 }
-
 .productcard input:hover {
   opacity: 0.7;
 }
