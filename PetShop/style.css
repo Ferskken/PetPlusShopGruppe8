@@ -74,6 +74,25 @@ height:200px;
   color: white;
 }
 
+#about_bilde_section{
+  text-align: center;
+  width: 15rem;
+  height: 8rem;
+  margin: 2rem -2rem 0 17rem;
+  padding-top: 5rem;
+  float:left;
+
+}
+#about_skrift_section{
+  text-align: center;
+  width: 25rem;
+  height: 10rem;
+  margin: 0rem 17rem 0 0rem;
+  padding-top: 2rem;
+  float: right;
+}
+
+
 
 
 
@@ -158,5 +177,4 @@ height:200px;
 .productcard input:hover {
   opacity: 0.7;
 }
-
 
