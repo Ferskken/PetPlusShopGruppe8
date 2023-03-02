@@ -8,46 +8,65 @@
 </head>
 <body>
 
-body>
-  <section id="Logo">
-   <a href="index.html"><img src="images/petshoppluslogo.jpg" alt="Pet Shop Plus Logo"></a> 
+
+  <div class="logonav">
+
+ <a href="index.html"><img src="images/petshoppluslogo.jpg" alt="Pet Shop Plus Logo"></a> 
+
    <input type="text"  placeholder="Search..">
-  </section>
+
+  </div>
 </body>
 
 <div class="topnav">
-  <a href="index.html">Home</a>
-  <a href="contact.html">Contact</a>
-  <a href="about.html">About</a>
-<a href=profile.html><ion-icon name="person-outline"></ion-icon></a>
+
+  <a href="index.html"><ion-icon name="home-outline"></ion-icon> Home</a>
+
+  <a href="contact.html"><ion-icon name="mail-outline"></ion-icon> Contact</a>
+
+  <a href="about.html"><ion-icon name="paw-outline"></ion-icon> About</a>
+
+ <a href="categories.html"><ion-icon name="apps-outline"></ion-icon> Categories</a>
+
+  <a href=profile.html><ion-icon name="person-outline"></ion-icon></a>
+
   <a href=cart.html><ion-icon name="cart-outline"></ion-icon></a>
-</div>
+
+  </div>
 
 <div class="productnav">
-  <a href="index.html">Product type 1</a>
-  <a href="contact.html">Product type 1</a>
-  <a href="about.html">Product type 1</a>
+  <a href="productPage.html">Product type </a>
+  <a href="productPage.html">Product type </a>
+  <a href="productPage.html">Product type </a>
 </div>
 
-<p>Product Page</p>
+<div class="productcard">
+
+  <form action="serverpagename">
+  <img src="images/petshoppluslogo.jpg" alt="this is a picture yes" style="width:100%">
+  <h1>Doggo Thingy</h1>
+
+  <label for="size">Size:</label>
+  <select name="size" id="size">
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="XL">XL</option>
+  </select>
+
+  <p class="price">$19.99</p>
+  <p>Description</p>
+  <br>
+  <input type="submit" value="Add to Cart">
+  </form>
+</div>
 
 </body>
 
 
 
 
-<style type ="text/css" >
-   .footer{ 
-       position: fixed;     
-       text-align: center;    
-       bottom: 0px; 
-       width: 100%;
-   }  
-</style>
-</head>
-<body>
-    <div class="footer"> All rights reserved. (</div>
-</body>
+
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

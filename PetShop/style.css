@@ -3,21 +3,53 @@
   src: url("fonts/HappyMonkey-Regular.ttf") format("truetype");
 }
 
-ion-icon {
-
+body {
+  background-color: #A6ECCF;
 }
-
 
 ion-icon {
   color: white;
-  width:20px; height:20px
 }
 
 #Logo {
-      background-color: #A6ECCF;
+       
     }
 
-    .topnav {
+#SearchBar{
+   float: left; 
+}
+
+.productImage
+{
+width:200px;
+height:200px;
+}
+
+#ProductContainer {
+   padding: 2rem 6rem;
+    font-size: 1rem;
+    overflow: hidden; /* contain floated elements */
+    text-align: center;
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 10px;
+     }
+
+#ProductLeft {
+  float: left; 
+    width: 33%;
+     }
+#ProductMid {
+   float: left; 
+    width: 33%;
+     }
+#ProductRight {
+   float: left; 
+    width: 33%;
+     }
+
+
+.topnav {
   overflow: hidden;
   background-color: #A6ECCF; <!-- Background color of top bar -->
 }
@@ -26,14 +58,15 @@ ion-icon {
   float: left;
   color: #f2f2f2;  <!-- Top bar text color when not interacted with -->
   text-align: center;
-  padding: 14px 16px;
+  padding: 1.3rem;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 1.4rem;
 }
 
 .topnav a:hover {
   background-color: #59D8A4 ; <!-- Color of top bar text while hovering -->
-  color: black;
+
+
 }
 
 .topnav a.active {
@@ -57,5 +90,91 @@ ion-icon {
   margin: 0rem 17rem 0 0rem;
   padding-top: 2rem;
   float: right;
+}
+
+
+
+
+
+
+
+
+.logonav {
+  overflow: hidden;
+  background-color: #A6ECCF;
+}
+
+.logonav input[type=text] {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  border: none;
+  font-size: 17px;
+}
+
+
+  
+  .logonav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+
+
+
+
+
+
+
+
+.categoriesnav {
+  overflow: hidden;
+  background-color: #A6ECCF; <!-- Background color of top bar -->
+}
+
+.categoriesnav a {
+  color: #f2f2f2;  <!-- Top bar text color when not interacted with -->
+  text-align: center;
+  padding: 1.3rem 1.8rem;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+.categoriesnav a:hover {
+  background-color: #59D8A4 ; <!-- Color of top bar text while hovering -->
+}
+
+.categoriesnav a.active {
+  background-color: #59D8A4; <!--Color of top bar text while pressed/active -->
+  color: white;
+}
+
+
+.productcard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.productcard input {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #59D8A4;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.productcard input:hover {
+  opacity: 0.7;
 }
 
