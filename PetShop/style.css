@@ -28,38 +28,10 @@ width:200px;
 height:200px;
 }
 
-
-
-#ProductContainer {
-   padding: 2rem 6rem;
-    font-size: 1rem;
-    overflow: hidden; /* contain floated elements */
-    text-align: center;
-    display: grid;
-    grid-auto-flow: column;
-    grid-column-gap: 10px;
-     }
-#ProductLeft {
-  float: left; 
-    width: 33%;
-     }
-#ProductMid {
-   float: left; 
-    width: 33%;
-     }
-#ProductRight {
-   float: left; 
-    width: 33%;
-     }
-
-
-
-
-
-
 .topnav {
-  overflow: hidden;
+  overflow: visible;
   background-color: #A6ECCF; <!-- Background color of top bar -->
+
 }
 .topnav a {
   border-radius: 1rem;   
@@ -78,31 +50,6 @@ height:200px;
   color: white;
 }
 
-#about_bilde_section{
-  text-align: center;
-  width: 15rem;
-  height: 8rem;
-  margin: 2rem -2rem 0 17rem;
-  padding-top: 5rem;
-  float:left;
-
-}
-#about_skrift_section{
-  text-align: center;
-  width: 25rem;
-  height: 10rem;
-  margin: 0rem 17rem 0 0rem;
-  padding-top: 2rem;
-  float: right;
-}
-
-
-
-
-
-
-
-
 .logonav {
   overflow: hidden;
   background-color: #A6ECCF;
@@ -119,31 +66,32 @@ height:200px;
     border: 0.1rem solid #ccc;  
   }
 
-
-
-
-
-
-
-
-.categoriesnav {
-  overflow: hidden;
-  background-color: #A6ECCF; <!-- Background color of top bar -->
-}
-.categoriesnav a {
-  color: #f2f2f2;  <!-- Top bar text color when not interacted with -->
+#about_bilde_section{
   text-align: center;
-  padding: 1.3rem;
-  text-decoration: none;
-  font-size: 1.4rem;
-  border-radius: 10rem;  
+  width: 15rem;
+  height: 8rem;
+  margin: 2rem -2rem 0 17rem;
+  padding-top: 5rem;
+  float:left;
+
 }
-.categoriesnav a:hover {
-  background-color: #59D8A4 ; <!-- Color of top bar text while hovering -->
+
+#about_skrift_section{
+  text-align: center;
+  width: 25rem;
+  height: 10rem;
+  margin: 0rem 17rem 0 0rem;
+  padding-top: 2rem;
+  float: right;
 }
-.categoriesnav a.active {
-  background-color: #59D8A4; <!--Color of top bar text while pressed/active -->
-  color: white;
+
+
+#indexCenterBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
 }
 
 
@@ -187,12 +135,63 @@ height:200px;
   padding-top:2rem;
   text-align: center;
 }
-/*#product-container {
+#ProductGrid {
   display: grid;
   grid-template-columns: 20% 30% 30% 20%;
   grid-gap: 0.5rem;
   margin: auto;
   justify-items: center;
 }
-*/
 
+#ProductName {
+  text-decoration: none;
+  color: white;
+}
+
+
+
+.dropdownbutton {
+ border-radius: 1rem;   
+  color: #f2f2f2; 
+  text-align: center;
+  padding: 1.3rem;
+  text-decoration: none;
+  font-size: 1.4rem;
+  background-color: #A6ECCF;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdownbutton:hover, .dropdownbutton:focus {
+  background-color: #59D8A4;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  border-radius: 1rem;   
+  color: #f2f2f2;  <!-- Top bar text color when not interacted with -->
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+  font-size: 1.4rem;
+  background-color: #96E8C6;
+  display: none;
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #59D8A4;}
+
+.show {display: block;}
