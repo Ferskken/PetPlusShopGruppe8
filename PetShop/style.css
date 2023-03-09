@@ -4,7 +4,12 @@
 }
 
 body {
-  background-color: 
+  background-color: grey;
+
+}
+
+.indexBody {
+overflow: hidden;
 }
 
 ion-icon {
@@ -85,11 +90,6 @@ height:200px;
   float: right;
 }
 
-
-#indexCenterBox {
-  display: flex;
-  
-}
 
 
 .productcard {
