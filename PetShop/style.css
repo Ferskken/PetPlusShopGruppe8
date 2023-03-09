@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: #A6ECCF;
+  background-color: 
 }
 
 ion-icon {
@@ -88,10 +88,7 @@ height:200px;
 
 #indexCenterBox {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 100vh;
+  
 }
 
 
