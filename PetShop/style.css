@@ -46,7 +46,7 @@ nav ul li a{
 }
 .topnav{
   background-color:#A6ECCF;
-  overflow: hidden;
+  
 }
 nav{
   display: grid;
@@ -54,6 +54,7 @@ nav{
   align-items: center;
   width: auto;
   margin:auto;
+
 }
 nav img{
   width: 150px;
@@ -87,6 +88,7 @@ nav img{
    float: left; 
     width: 33%;
      }
+
 
 
 .topnav a:hover {
@@ -217,7 +219,7 @@ nav img{
   padding: 1rem;
   text-decoration: none;
   font-size: 1.4rem;
-  background-color: #96E8C6;
+  background-color: blueviolet;
   display: none;
   position: absolute;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
