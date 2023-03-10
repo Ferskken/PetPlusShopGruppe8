@@ -89,21 +89,6 @@ nav img{
      }
 
 
-
-
-
-
-
-.topnav a {
-  border-radius: 1rem;   
-  float: left;
-  color: #f2f2f2;  <!-- Top bar text color when not interacted with -->
-  text-align: center;
-  padding: 1.3rem;
-  text-decoration: none;
-  font-size: 1.4rem;
-}
-*/
 .topnav a:hover {
   background-color: #59D8A4 ; <!-- Color of top bar text while hovering -->
 }
