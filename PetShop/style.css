@@ -30,6 +30,57 @@ height:200px;
   background-color: #A6ECCF; <!-- Background color of top bar -->
 }
 
+.topnav a:hover {
+  background-color: #59D8A4 ; <!-- Color of top bar text while hovering -->
+}
+.topnav a.active {
+  background-color: #59D8A4; <!--Color of top bar text while pressed/active -->
+  color: white;
+}
+
+.dropdownbutton {  
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-family: Happy Monkey, sans-serif;
+  transition: all .5s ease;
+
+  background-color: #A6ECCF;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdownbutton:hover, .dropdownbutton:focus {
+  background-color: #59D8A4;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {   
+  color: #f2f2f2;  <!-- Top bar text color when not interacted with -->
+  text-align: center;
+  text-decoration: none;
+  
+  background-color: #A6ECCF;
+  display: none;
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #59D8A4;}
+
+.show {display: block;}
+
 nav ul{
   list-style: none;
   display: grid;
@@ -44,10 +95,7 @@ nav ul li a{
   font-family: Happy Monkey, sans-serif;
   transition: all .5s ease;
 }
-.topnav{
-  background-color:#A6ECCF;
-  
-}
+
 nav{
   display: grid;
   grid-template-columns: 1fr 6fr;
@@ -88,53 +136,6 @@ nav img{
    float: left; 
     width: 33%;
      }
-
-
-
-.topnav a:hover {
-  background-color: #59D8A4 ; <!-- Color of top bar text while hovering -->
-}
-.topnav a.active {
-  background-color: #59D8A4; <!--Color of top bar text while pressed/active -->
-  color: white;
-}
-
-.logonav {
-  overflow: hidden;
-  background-color: #A6ECCF;
-}
-.logonav input[type=text] {
-  float: right;
-  padding: 6px;
-  margin-top: 8px;
-  margin-right: 16px;
-  border: none;
-  font-size: 17px;
-}
-  .logonav input[type=text] {
-    border: 0.1rem solid #ccc;  
-  }
-
-#about_bilde_section{
-  text-align: center;
-  width: 15rem;
-  height: 8rem;
-  margin: 2rem -2rem 0 17rem;
-  padding-top: 5rem;
-  float:left;
-
-}
-
-#about_skrift_section{
-  text-align: center;
-  width: 25rem;
-  height: 10rem;
-  margin: 0rem 17rem 0 0rem;
-  padding-top: 2rem;
-  float: right;
-}
-
-
 
 .productcard {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -188,57 +189,6 @@ nav img{
   text-decoration: none;
   color: white;
 }
-
-
-
-.dropdownbutton {
- border-radius: 1rem;   
-  color: #f2f2f2; 
-  text-align: center;
-  padding: 1.3rem;
-  text-decoration: none;
-  font-size: 1.4rem;
-  background-color: #A6ECCF;
-  border: none;
-  cursor: pointer;
-}
-
-.dropdownbutton:hover, .dropdownbutton:focus {
-  background-color: #59D8A4;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  border-radius: 1rem;   
-  color: #f2f2f2;  <!-- Top bar text color when not interacted with -->
-  text-align: center;
-  padding: 1rem;
-  text-decoration: none;
-  font-size: 1.4rem;
-  background-color: blueviolet;
-  display: none;
-  position: absolute;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 999;
-}
-
-.dropdown-content a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {background-color: #59D8A4;}
-
-.show {display: block;}
-
-
-
 
 .indexGrid {  display: grid;
   grid-template-columns: 1fr 40%;
