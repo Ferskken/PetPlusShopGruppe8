@@ -27,8 +27,46 @@ ion-icon {
 width:200px;
 height:200px;
 }
+.topnav {
+  /*overflow: hidden;*/
+  background-color: #A6ECCF; <!-- Background color of top bar -->
+}
 
+nav ul{
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.5fr 0.5fr;
+}
 
+nav ul li a{
+  text-decoration: none;
+  color: white;
+  padding: 1.5rem;
+  font-weight: bold;
+  font-family: Happy Monkey, sans-serif;
+  transition: all .5s ease;
+}
+.topnav{
+  background-color:#A6ECCF;
+  overflow: hidden;
+}
+nav{
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  align-items: center;
+  width: auto;
+  margin:auto;
+}
+nav img{
+  width: 150px;
+  height: auto;
+}
+.logoPic{
+  width: 150px;
+}
+.element-5,.element-6{
+  justify-content: flex-end;
+}
 
 #ProductContainer {
    padding: 2rem 6rem;
@@ -57,10 +95,8 @@ height:200px;
 
 
 
-.topnav {
-  overflow: hidden;
-  background-color: #A6ECCF; <!-- Background color of top bar -->
-}
+
+/*
 .topnav a {
   border-radius: 1rem;   
   float: left;
@@ -70,6 +106,7 @@ height:200px;
   text-decoration: none;
   font-size: 1.4rem;
 }
+*/
 .topnav a:hover {
   background-color: #59D8A4 ; <!-- Color of top bar text while hovering -->
 }
@@ -77,7 +114,7 @@ height:200px;
   background-color: #59D8A4; <!--Color of top bar text while pressed/active -->
   color: white;
 }
-
+/*
 #about_bilde_section{
   text-align: center;
   width: 15rem;
@@ -95,13 +132,7 @@ height:200px;
   padding-top: 2rem;
   float: right;
 }
-
-
-
-
-
-
-
+*/
 
 .logonav {
   overflow: hidden;
