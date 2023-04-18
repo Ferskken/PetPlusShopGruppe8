@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Login</h2>
+<mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field class="w-100">
+      <input matInput placeholder="Email" formControlName="email" type="email" required>
+      <mat-error *ngIf="form.controls['email'].invalid">Email is required</mat-error>
+      <mat-error *ngIf="form.controls['email'].errors!['email']!">Please enter a valid email</mat-error>  
+    </mat-form-field>
+    <mat-form-field class="w-100">
+      <input matInput placeholder="Password" formControlName="password" name="password" type="password" required>
+      <mat-error *ngIf="form.controls['password'].invalid">Password is required</mat-error>
+      <mat-error *ngIf="form.controls['password'].errors!['minlength']">Password must be at least 6 characters long</mat-error>  
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="onSubmit()">Login</button>
+</mat-dialog-actions>

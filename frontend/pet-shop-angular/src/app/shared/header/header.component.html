@@ -1,0 +1,31 @@
+<header>
+  <div>
+  <div class="row">
+    <div class="col col-3 logo">
+      <img  src="assets/petshoppluslogo.jpg" alt="Logo"> <!-- Pet shop logo -->
+    </div>
+    <div class="col col-6"> 
+      <mat-form-field class="w-100">
+        <input type="text" matInput placeholder="Search"> <!-- Search bar for items -->
+     </mat-form-field>
+    </div>
+    <div class="col">
+      <button mat-button [matMenuTriggerFor]="menu">My page</button> <!-- Button to trigger the user menu -->
+      <mat-menu #menu="matMenu"> <!-- User menu with options -->
+        <button mat-menu-item (click)="onOpenLoginDialog()">Login</button>
+        <button mat-menu-item routerLink="/becomeMember" >Become member</button>
+        <button mat-menu-item>My orders</button>
+      </mat-menu>
+    </div>
+  </div>
+  </div>
+    <nav>
+      <ul>
+        <li><a routerLink="/dogs">Dogs</a></li> <!-- Link to dog items page -->
+        <li><a routerLink="/cats">Cats</a></li> <!-- Link to cat items page -->
+        <li><a routerLink="/birds">birds</a></li> <!-- Link to bird items page -->
+        <li><a routerLink="/administrator">Administrer</a></li> <!-- Link to administrator page -->
+      </ul>
+    </nav>
+  </header>
+
