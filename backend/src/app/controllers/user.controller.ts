@@ -26,7 +26,6 @@ router.get("/users", async (ctx: Context) => {
     const result = await UserModel.update(user, {
       where: { id },
     });
-    // ctx.body = result[1][0];
     ctx.body = result;
   });
   
