@@ -25,6 +25,7 @@ import { AddItemDialogComponent } from './views/administrator/items/add-item-dia
 import { ItemsListComponent } from './shared/items-list/items-list.component';
 import { SubCategoriesComponent } from './shared/sub-categories/sub-categories.component';
 import { MatMenuModule} from '@angular/material/menu';
+import {MatStepperModule} from '@angular/material/stepper';
 import { BecomeMemberComponent } from './views/my-page/become-member/become-member.component';
 import { LoginDialogComponent } from './views/my-page/login/login-dialog.component'
 
@@ -59,7 +60,8 @@ import { LoginDialogComponent } from './views/my-page/login/login-dialog.compone
     MatFormFieldModule,
     MatCheckboxModule,
     MatMenuModule,
-    FormsModule
+    FormsModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
