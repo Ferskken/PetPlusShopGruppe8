@@ -29,6 +29,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import { BecomeMemberComponent } from './views/my-page/become-member/become-member.component';
 import { LoginDialogComponent } from './views/my-page/login/login-dialog.component'
 
+
 @NgModule({
   declarations: [ 
     AppComponent,

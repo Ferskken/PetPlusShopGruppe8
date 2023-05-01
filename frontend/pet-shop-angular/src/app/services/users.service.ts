@@ -39,6 +39,11 @@ export class UsersService {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.put(`/petapi/user/${user.id}`,user, { headers });
   }
+  autorization(email:string, password:string){
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.post('/petapi/authenticate', { email:email, password:password}, { headers });
+
+  }
 
 }
 
