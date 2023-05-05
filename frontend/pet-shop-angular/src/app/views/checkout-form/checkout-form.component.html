@@ -1,0 +1,22 @@
+<form [formGroup]="checkoutForm">
+  <h2>Shipping Information</h2>
+  <div formGroupName="shipping">
+    <label>First Name:</label>
+    <input type="text" formControlName="firstName">
+    <div *ngIf="shippingForm.controls['firstName'].errors && (shippingForm.controls['firstName'].dirty || shippingForm.controls['firstName'].touched)">
+      <div *ngIf="shippingForm.controls['firstName'].invalid">First name is required</div>
+    </div>
+
+    <label>Last Name:</label>
+    <input type="text" formControlName="lastName">
+    <div *ngIf="shippingForm.controls['lastName'].errors && (shippingForm.controls['lastName'].dirty || shippingForm.controls['lastName'].touched)">
+      <div *ngIf="shippingForm.controls['lastName'].invalid">Last name is required</div>
+    </div>
+
+    <label>Address:</label>
+    <input type="text" formControlName="address">
+    <div *ngIf="shippingForm.controls['address'].errors && (shippingForm.controls['address'].dirty || shippingForm.controls['address'].touched)">
+      <div *ngIf="shippingForm.controls['address'].invalid">Address is required</div>
+    </div>
+    <button mat-button (click)="onSubmit()">Order now!</button>
+    <label>

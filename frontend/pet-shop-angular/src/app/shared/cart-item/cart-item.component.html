@@ -1,0 +1,11 @@
+<div class="cart-item">
+  <img [src]="item.image" alt="{{item.name}}">
+
+  <div class="cart-item-info">
+    <h3>{{item.name}}</h3>
+    <p>{{item.price | currency}}</p>
+    <label>Quantity:</label>
+    <input type="number" [value]="item.quantity" (input)="onQuantityChange($event)">
+    <button (click)="removeItem()">Remove</button>
+  </div>
+</div>

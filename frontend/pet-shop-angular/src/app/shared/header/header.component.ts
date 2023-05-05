@@ -19,7 +19,7 @@ export class HeaderComponent {
 onOpenLoginDialog(): void {
   const dialogRef = this.dialog.open(LoginDialogComponent, {
       width: '450px',
-      data: { name: 'Trond' } 
+      data: { name: '' } 
     });
 
 }

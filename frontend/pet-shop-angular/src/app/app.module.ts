@@ -28,7 +28,10 @@ import { MatMenuModule} from '@angular/material/menu';
 import {MatStepperModule} from '@angular/material/stepper';
 import { BecomeMemberComponent } from './views/my-page/become-member/become-member.component';
 import { LoginDialogComponent } from './views/my-page/login/login-dialog.component'
-
+import { MatIconModule } from '@angular/material/icon';
+import { ShoppingCartComponent } from './views/shopping-cart/shopping-cart.component';
+import { CartItemComponent } from './shared/cart-item/cart-item.component';
+import { CheckoutFormComponent } from './views/checkout-form/checkout-form.component';
 
 @NgModule({
   declarations: [ 
@@ -45,7 +48,10 @@ import { LoginDialogComponent } from './views/my-page/login/login-dialog.compone
     ItemsListComponent,
     SubCategoriesComponent,
     BecomeMemberComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    ShoppingCartComponent,
+    CartItemComponent,
+    CheckoutFormComponent
   ],
   imports: [ 
     BrowserModule,
@@ -62,7 +68,8 @@ import { LoginDialogComponent } from './views/my-page/login/login-dialog.compone
     MatCheckboxModule,
     MatMenuModule,
     FormsModule,
-    MatStepperModule
+    MatStepperModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

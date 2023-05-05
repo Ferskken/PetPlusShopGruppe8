@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 // Define an interface for the attributes of an item
 export interface ItemAttributes {
-  id?: number; // The item ID (optional)
+  id: number; // The item ID (optional)
   name: string; // The item name
   description: string; // The item description
   categories: string; // The item categories

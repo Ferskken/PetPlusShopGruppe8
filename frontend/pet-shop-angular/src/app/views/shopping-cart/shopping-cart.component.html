@@ -1,0 +1,13 @@
+<h2>Shopping Cart</h2>
+
+<div *ngIf="cartItems.length === 0">
+  Your cart is empty.
+</div>
+
+<div *ngFor="let item of cartItems">
+  <app-cart-item [item]="item" (remove)="removeItem(item.id)" (updateQuantity)="updateQuantity(item.id, $event)"></app-cart-item>
+</div>
+
+<!-- <app-cart-summary [cartTotal]="cartTotal"></app-cart-summary> -->
+
+<button routerLink="/checkout" *ngIf="cartItems.length > 0">Proceed to Checkout</button>

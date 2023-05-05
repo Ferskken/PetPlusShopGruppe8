@@ -7,7 +7,8 @@ import { CatsComponent } from "./views/cats/cats.component";
 import { DogsComponent } from "./views/dogs/dogs.component";
 import { BirdsComponent } from "./views/birds/birds.component";
 import { BecomeMemberComponent } from "./views/my-page/become-member/become-member.component";
-
+import { ShoppingCartComponent } from "./views/shopping-cart/shopping-cart.component";
+import { CheckoutFormComponent } from "./views/checkout-form/checkout-form.component";
 const routes: Routes = [
   // Defining the routes and mapping them to their corresponding components
   { path: 'administrator', component: AdministratorComponent },
@@ -15,6 +16,8 @@ const routes: Routes = [
   { path: 'dogs', component: DogsComponent },
   { path: 'birds', component: BirdsComponent },
   { path: 'becomeMember', component: BecomeMemberComponent },
+  { path: 'shoppingCart', component: ShoppingCartComponent },
+  { path: 'checkout', component: CheckoutFormComponent },
 ];
 
 @NgModule({

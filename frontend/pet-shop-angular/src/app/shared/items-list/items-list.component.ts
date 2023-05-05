@@ -1,5 +1,7 @@
 import { Component, OnInit, OnChanges, Input, SimpleChanges } from '@angular/core';
 import { ItemsService, ItemAttributes } from 'src/app/services/items.service';
+import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
+
 
 @Component({
   selector: 'app-items-list',
@@ -7,10 +9,11 @@ import { ItemsService, ItemAttributes } from 'src/app/services/items.service';
   styleUrls: ['./items-list.component.scss']
 })
 export class ItemsListComponent implements OnChanges {
+
   @Input() categories: string = "";
   items: ItemAttributes[] = [];
 
-  constructor(private itemsService: ItemsService) { }
+  constructor(private itemsService: ItemsService, private shoppingCartService: ShoppingCartService) { }
 
   ngOnChanges(changes: SimpleChanges) {
     // log the changes to the console
@@ -25,5 +28,16 @@ export class ItemsListComponent implements OnChanges {
       });
     }
   }
+  addToShoppingCart(item: ItemAttributes) {
+    console.log(item)
+    let cartItem = {
+      id: item.id,
+      name: item.name,
+      description: item.description,
+      price: item.price,
+      quantity:1,
+      image: item.image,
+    }
+    this.shoppingCartService.addItemToCart(cartItem)
 }
-
+}
