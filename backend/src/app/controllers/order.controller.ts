@@ -44,6 +44,7 @@ router.put("/orders/:id", async (ctx: Context) => {
 
 // Delete an order
 router.delete("/orders/:id", async (ctx: Context) => {
+  console.log("Deleting order...");
   const { id } = ctx.params;
   const result: number = await OrderModel.destroy({
     where: { id },
@@ -53,13 +54,16 @@ router.delete("/orders/:id", async (ctx: Context) => {
 
 // Get orders by zip code
 router.get("/orders/by-zipcode/:zipCode", async (ctx: Context) => {
-    console.log("Deleting order...");
+  console.log("Fetching orders...");
   const { zipCode } = ctx.params;
   const orders: OrderAttributes[] = await OrderModel.findAll({
     where: { zipCode },
   });
+  console.log("Orders fetched:", orders);
   ctx.body = orders;
   ctx.status = 200;
 });
 
 export default router;
+
+
