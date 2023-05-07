@@ -12,28 +12,35 @@ OrderModel.sync();
 
 // Get all orders
 router.get("/orders", async (ctx: Context) => {
-  const orders: OrderAttributes[] = await OrderModel.findAll();
-  ctx.body = orders;
-  ctx.status = 200;
-});
+    console.log("Fetching orders...");
+    const orders: OrderAttributes[] = await OrderModel.findAll();
+    console.log("Orders fetched:", orders);
+    ctx.body = orders;
+    ctx.status = 200;
+  });
 
 // Create an order
 router.post("/orders", async (ctx: Context) => {
+    console.log("Creating order...");
+    const order: OrderAttributes = ctx.request.body as OrderAttributes;
+    const result: OrderAttributes = await OrderModel.create(order);
+    console.log("Order created:", result);
+    ctx.body = result;
+  });
+
+// Routing to change an already created order
+router.put("/orders/:id", async (ctx: Context) => {
+   console.log("Updating order...");
+  const id = ctx.params.id;
   const order: OrderAttributes = ctx.request.body as OrderAttributes;
-  const result: OrderAttributes = await OrderModel.create(order);
-  ctx.body = result;
+  const affectedCount: number[] = await OrderModel.update(order, {
+    where: { id },
+  });
+  const updatedOrder: OrderAttributes | null = await OrderModel.findByPk(id);
+  console.log("Order updated:", updatedOrder);
+  ctx.body = updatedOrder;
 });
 
-// routing to change an already created order
-router.put("/orders/:id", async (ctx: Context) => {
-    const id = ctx.params.id;
-    const order: OrderAttributes = ctx.request.body as OrderAttributes;
-    const [affectedCount, affectedRows] = await OrderModel.update(order, {
-      where: { id },
-      returning: true,
-    });
-    ctx.body = affectedRows;
-  });
 
 // Delete an order
 router.delete("/orders/:id", async (ctx: Context) => {
@@ -46,6 +53,7 @@ router.delete("/orders/:id", async (ctx: Context) => {
 
 // Get orders by zip code
 router.get("/orders/by-zipcode/:zipCode", async (ctx: Context) => {
+    console.log("Deleting order...");
   const { zipCode } = ctx.params;
   const orders: OrderAttributes[] = await OrderModel.findAll({
     where: { zipCode },
