@@ -51,17 +51,36 @@ router.delete("/orders/:id", async (ctx: Context) => {
   ctx.body = result;
 });
 
-// Get orders by zip code
-router.get("/orders/by-zipcode/:zipCode", async (ctx: Context) => {
-  console.log("Fetching orders...");
-  const { zipCode } = ctx.params;
-  const orders: OrderAttributes[] = await OrderModel.findAll({
-    where: { zipCode },
+// Get orders by last name, phone number, zip code, or ID
+router.get("/orders", async (ctx: Context) => {
+    console.log("Fetching orders...");
+    const { lastName, phone, zipCode, id } = ctx.query;
+  
+    let whereClause = {};
+    if (lastName) {
+      whereClause = { ...whereClause, lastName };
+      console.log("Listing orders for Last name:", lastName);
+    }
+    if (phone) {
+      whereClause = { ...whereClause, phone };
+      console.log("Listing orders for phone number:", phone);
+    }
+    if (zipCode) {
+      whereClause = { ...whereClause, zipCode };
+      console.log("Listing orders for zip:", zipCode);
+    }
+    if (id) {
+      whereClause = { ...whereClause, id };
+      console.log("Listing orders for id:", id);
+    }
+  
+    const orders: OrderAttributes[] = await OrderModel.findAll({
+      where: whereClause,
+    });
+    console.log("Orders fetched:", orders);
+    ctx.body = orders;
+    ctx.status = 200;
   });
-  console.log("Orders fetched:", orders);
-  ctx.body = orders;
-  ctx.status = 200;
-});
 
 export default router;
 
