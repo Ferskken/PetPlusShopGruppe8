@@ -1,0 +1,39 @@
+header { //styling the header
+
+    padding: 20px;
+    .logo { 
+      img {//the logo inn the header
+        height: 50px;
+      }
+    }
+  
+    nav { //styling for the nav-topbar using flexbox
+      ul {  
+        display: flex;  
+        justify-content: space-between;
+        list-style: none;
+        
+  
+        li {
+          margin-left: 20px;
+  
+          a { //styling for the navbar underpart of the navbar
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+  
+            img {//if there was a picture here it styled ass this
+              height: 20px;
+              margin-right: 5px;
+            }
+          }
+  
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+  

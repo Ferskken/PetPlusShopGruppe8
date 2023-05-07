@@ -1,0 +1,277 @@
+@font-face {
+    font-family: Happy Monkey, sans-serif;
+  src: url("fonts/HappyMonkey-Regular.ttf") format("truetype");
+}
+
+body {
+  background-color: white; 
+  margin: 0;
+}
+
+.indexBody {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+ion-icon {
+  color: white;
+}
+
+
+.productImage
+{
+width:200px;
+height:200px;
+}
+.topnav {
+  /*overflow: hidden;*/
+  background-color: #A6ECCF; <!-- Background color of top bar -->
+}
+
+.topnav a:hover {
+  background-color: #59D8A4 ; <!-- Color of top bar text while hovering -->
+}
+.topnav a.active {
+  background-color: #59D8A4; <!--Color of top bar text while pressed/active -->
+  color: white;
+}
+
+.dropdownbutton {  
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-family: Happy Monkey, sans-serif;
+  transition: all .5s ease;
+
+  background-color: #A6ECCF;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdownbutton:hover, .dropdownbutton:focus {
+  background-color: #59D8A4;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {   
+  color: #f2f2f2;  <!-- Top bar text color when not interacted with -->
+  text-align: center;
+  text-decoration: none;
+  
+  background-color: #A6ECCF;
+  display: none;
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #59D8A4;}
+
+.show {display: block;}
+
+nav ul{
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.5fr 0.5fr;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: white;
+  padding: 1.5rem;
+  font-weight: bold;
+  font-family: Happy Monkey, sans-serif;
+  transition: all .5s ease;
+}
+
+nav{
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  align-items: center;
+  width: auto;
+  margin:auto;
+
+}
+nav img{
+  width: 150px;
+  height: auto;
+}
+.logoPic{
+  width: 150px;
+}
+.element-5,.element-6{
+  justify-content: flex-end;
+}
+
+#ProductContainer {
+   padding: 2rem 6rem;
+    font-size: 1rem;
+    overflow: hidden; /* contain floated elements */
+    text-align: center;
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 10px;
+     }
+#ProductLeft {
+  float: left; 
+    width: 33%;
+     }
+#ProductMid {
+   float: left; 
+    width: 33%;
+     }
+#ProductRight {
+   float: left; 
+    width: 33%;
+     }
+
+.productcard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+.price {
+  color: grey;
+  font-size: 22px;
+}
+.productcard input {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #59D8A4;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+.productcard input:hover {
+  opacity: 0.7;
+}
+
+#product-container {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+.LogoAbout{
+  padding-top:5rem;
+  padding-right: 5rem;
+  align-items:center;
+}
+.About-us-description{
+  padding-top:2rem;
+  text-align: center;
+}
+#ProductGrid {
+  display: grid;
+  grid-template-columns: 20% 30% 30% 20%;
+  grid-gap: 0.5rem;
+  margin: auto;
+  justify-items: center;
+}
+
+#ProductName {
+  text-decoration: none;
+  color: white;
+}
+
+.indexGrid {  display: grid;
+  grid-template-columns: 1fr 40%;
+  grid-template-rows: 90vh;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "IndexMainPicture IndexColoredBackground";
+}
+
+.IndexColoredBackground {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". indexGridButton ."
+    ". . .";
+  grid-area: IndexColoredBackground;
+  background-color: black;
+  
+}
+
+.indexGridButton { grid-area: indexGridButton; 
+  
+}
+
+.indexGridButtonPicture {
+   width: 100%;
+    height: auto;
+}
+
+.IndexMainPicture { grid-area: IndexMainPicture;
+   
+ }
+
+
+.indexPictureFit {
+  background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+}
+
+.contact_container {
+  display: grid; 
+  grid-auto-flow: column; 
+  grid-template-columns: 50% 50%; 
+  grid-template-rows: 50% 50%; 
+  gap: 10px 4rem; 
+  grid-template-areas: 
+    "contact_header contact_header"
+    "contact_picture content_container"; 
+  justify-items: stretch; 
+
+
+}
+.contact_header {
+  grid-area: contact_header;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact_header h1{
+  order: 0;
+}
+.contact_header p{
+  color: pink;
+  flex-direction: column;
+  order: 1;
+}
+
+.content_container { grid-area: content_container;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: flex-start;
+}
+.contact_picture { 
+  grid-area: contact_picture;
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+ }

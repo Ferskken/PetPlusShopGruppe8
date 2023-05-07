@@ -1,0 +1,49 @@
+<form [formGroup]="form">
+<h2 mat-dialog-title>My Dialog</h2>
+    <div mat-dialog-content>
+       <div class ="w-100" [formGroup]="catForm">
+        <span class="w-50 d-inline-block" >
+            <h4>Select your categories:</h4>
+            <p><mat-checkbox formControlName="cat">Cat</mat-checkbox></p>
+            <p><mat-checkbox formControlName="dog">Dog</mat-checkbox></p>
+            <p><mat-checkbox formControlName="bird">Birds</mat-checkbox></p>
+        </span>
+        <span class="w-50 d-inline-block" >
+            <p><mat-checkbox formControlName="winter">winter</mat-checkbox></p>
+            <p><mat-checkbox formControlName="clothes">Clothes</mat-checkbox></p>
+            <p><mat-checkbox formControlName="accessories">Accessories</mat-checkbox></p>
+            <p><mat-checkbox formControlName="indoors">Indoors</mat-checkbox></p>
+        </span>
+    </div>
+        <mat-form-field class="w-100">
+       <label>Name:</label>
+            <input matInput formControlName="name" placeholder="Name"/>
+            <mat-error *ngIf="form.controls['name'].invalid">Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="w-100">
+            <label>Description:</label>
+            <input matInput formControlName="description" placeholder="Description" />
+            <mat-error *ngIf="form.controls['description'].invalid">Description is required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="w-100">
+            <label>Price:</label>
+            <input matInput formControlName="price" type="number"/>
+            <mat-error *ngIf="form.controls['price'].invalid">price is required</mat-error>
+        </mat-form-field>
+       <mat-form-field class="w-100">
+            <label>Number in Stock</label>
+            <input matInput type="number"/> 
+        </mat-form-field>  
+        <input class="d-none" type="file" #fileupload accept="image/*" (change)="loadImage($event)" />
+        <div class="w-100">
+            <label for="image-input">Image:</label>
+            <img class="w-100" id="image-preview">
+        </div>   
+        <button mat-button color="primary" (click)="openButtonClick($event)" >Open Image</button> 
+    </div>
+    <div mat-dialog-actions>
+      <button mat-raised-button (click)="onCancel()">Cancel</button>
+      <button mat-raised-button color="primary" (click)="onSave()">Save</button>
+    </div>
+</form>
+
