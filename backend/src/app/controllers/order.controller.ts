@@ -1,6 +1,5 @@
 import { Context } from "koa";
 import Router from "koa-router";
-import { Op } from "sequelize";
 
 import { OrderModel, OrderAttributes } from "../models/order.model";
 
