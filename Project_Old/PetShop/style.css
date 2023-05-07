@@ -210,25 +210,28 @@ nav img{
     ". . .";
   grid-area: IndexColoredBackground;
   background-color: black;
+  
 }
 
 .indexGridButton { grid-area: indexGridButton; 
+  
+}
+
+.indexGridButtonPicture {
+   width: 100%;
+    height: auto;
 }
 
 .IndexMainPicture { grid-area: IndexMainPicture;
    
  }
 
-.shopNowindexGridButton
-{
-
-}
 
 .indexPictureFit {
   background-size: cover;
     background-position: center;
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 .contact_container {
