@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { MatDialog} from '@angular/material/dialog';
+import { Role } from 'src/app/models/role';
+import { User } from 'src/app/models/user';
 import { LoginDialogComponent } from 'src/app/views/my-page/login/login-dialog.component';
-
+import { AuthenticationService } from 'src/app/services/autentication.service';
+import { first } from 'rxjs';
 
 
 @Component({
@@ -10,10 +13,18 @@ import { LoginDialogComponent } from 'src/app/views/my-page/login/login-dialog.c
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+
+  user: User={} as User;
+
   constructor(
     public dialog: MatDialog,
+    private authenticationService:AuthenticationService
+    
     ) {
-    // Do nothing
+      this.authenticationService.user.subscribe(user => this.user = user);
+       if (Object.keys(this.authenticationService.userValue).length == 0) {
+          this.authenticationService.login("guest@petshop.com","").pipe(first()).subscribe();
+      }
 }
 // Method to open login dialog
 onOpenLoginDialog(): void {
@@ -22,5 +33,9 @@ onOpenLoginDialog(): void {
       data: { name: '' } 
     });
 
+}
+
+isAdmin(): boolean{
+  return this.user && this.user.role == Role.Admin;
 }
 }

@@ -3,9 +3,29 @@ import Router from "koa-router";
 import jwt from "jsonwebtoken";
 import bcrypt from 'bcrypt';
 
-import { UserModel, UserAttributes} from "../models/user.model";
+import { UserModel, UserAttributes, Role} from "../models/user.model";
 
-UserModel.sync();
+UserModel.sync().then(async(res)=>{
+ /* console.log("Creating Admin user");
+  await UserModel.create(
+    {
+    id: 0,
+    name: "Administrator",
+    email: "admin@petshop.com",
+    password:  await bcrypt.hash("admin123", 10),
+    role: Role.Admin
+  }); 
+  console.log("Creating Guest user");
+  await UserModel.create(
+    {
+    id: 1,
+    name: "Guest",
+    email: "guest@petshop.com",
+    password: await bcrypt.hash("", 10),
+    role: Role.Guest
+  });
+*/
+});
 
 const router: Router = new Router({ prefix: '/petapi' });
 
@@ -30,6 +50,7 @@ router.get("/user/:id", async (ctx: Context) => {
     const user: UserAttributes = ctx.request.body as UserAttributes;
     
     user.password = await bcrypt.hash(user.password, 10);
+    user.role = Role.User;
     const result: UserAttributes = await UserModel.create(user);
     ctx.body = result;
     console.log("added user");
@@ -55,18 +76,18 @@ router.get("/user/:id", async (ctx: Context) => {
     ctx.body = result;
   });
   
-  router.post("/authenticate", async (ctx: Context) => {
-    const { email, password } = ctx.request.body as { email:string, password:string };
-    const result = await UserModel.findOne({
+  router.post("/user/authenticate", async (ctx: Context) => {
+    const { username, password } = ctx.request.body as { username:string, password:string };
+    const user = await UserModel.findOne({
       raw: true,
-      where: { email:email }, 
+      where: { email:username }, 
     });
-    console.log(result.password);
+    console.log(user.password);
     console.log(password);
-    const res = await bcrypt.compare(password, result.password);
+    const res = await bcrypt.compare(password, user.password);
     if(res){
       ctx.body = {
-        token:jwt.sign({ email:result.email, role:'user' }, 'your_secret_key'),
+        token:jwt.sign({ name:user.name, role:user.role }, 'your_secret_key'),
         status:'authorized'
       }
       ctx.code = 200;

@@ -4,7 +4,8 @@ import { Component,} from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserAttributes, UsersService} from 'src/app/services/users.service';
+import {AuthenticationService} from 'src/app/services/autentication.service';
+import { first } from 'rxjs/operators';
 
 interface LoginResponse {
   token: string;
@@ -21,7 +22,7 @@ export class LoginDialogComponent {
   password = '';
 
   constructor(
-    private userservice: UsersService,
+    private authenticationService: AuthenticationService,
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<LoginDialogComponent>,
     private http: HttpClient
@@ -33,14 +34,15 @@ export class LoginDialogComponent {
 
    }
 
-  onSubmit() {
-    this.userservice.autorization(this.form.value.email, this.form.value.password).subscribe((result:any)=> {
-      if(result.status === 'authorized'){
-        localStorage.setItem('auth_token', result.token);
-      }
-    },(error:any) => {
-      console.log(error);
-    })
+   onSubmit() {
+    this.authenticationService.login(this.form.value.email, this.form.value.password).pipe(first()).subscribe({ 
+        next:  (result:any)=> {
+          this.dialogRef.close();
+         },
+        error : (err) =>{
+          this.authenticationService.logout();
+        } 
+    });
       
    /*
     this.http.post<LoginResponse>('/petapi/login', { email: this.email, password: this.password }).subscribe(
