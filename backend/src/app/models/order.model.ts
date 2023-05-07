@@ -18,7 +18,6 @@ export interface OrderAttributes {
   export interface OrderInstance extends Model<OrderAttributes>, OrderAttributes {}
 
   export  const OrderModel = sequelize.define<OrderInstance, OrderAttributes>("Order", 
-  
    {
     cartItems: {
         type: DataTypes.STRING,
@@ -61,7 +60,6 @@ export interface OrderAttributes {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-  } 
-  );
+  });
 
 
