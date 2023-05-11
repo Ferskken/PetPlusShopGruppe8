@@ -32,6 +32,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ShoppingCartComponent } from './views/shopping-cart/shopping-cart.component';
 import { CartItemComponent } from './shared/cart-item/cart-item.component';
 import { CheckoutFormComponent } from './views/checkout-form/checkout-form.component';
+import { JwtInterceptor } from './helpers/jwt.interceptor';
 
 @NgModule({
   declarations: [ 
@@ -51,7 +52,7 @@ import { CheckoutFormComponent } from './views/checkout-form/checkout-form.compo
     LoginDialogComponent,
     ShoppingCartComponent,
     CartItemComponent,
-    CheckoutFormComponent
+    CheckoutFormComponent,
   ],
   imports: [ 
     BrowserModule,
@@ -71,7 +72,7 @@ import { CheckoutFormComponent } from './views/checkout-form/checkout-form.compo
     MatStepperModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [JwtInterceptor],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
