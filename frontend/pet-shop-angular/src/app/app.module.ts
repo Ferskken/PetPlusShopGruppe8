@@ -13,7 +13,7 @@ import { BirdsComponent } from './views/birds/birds.component';
 import { ItemsComponent } from './views/administrator/items/items.component';
 import { UsersComponent } from './views/administrator/users/users.component';
 import { OrdersComponent } from './views/administrator/orders/orders.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MatCardModule} from '@angular/material/card';
 import { MatButtonModule} from '@angular/material/button'; 
 import { MatDialogModule} from '@angular/material/dialog';
@@ -72,7 +72,11 @@ import { JwtInterceptor } from './helpers/jwt.interceptor';
     MatStepperModule,
     MatIconModule,
   ],
-  providers: [JwtInterceptor],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: JwtInterceptor,
+    multi: true
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

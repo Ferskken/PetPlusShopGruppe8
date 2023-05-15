@@ -22,12 +22,7 @@ export class ItemsService {
   // Method to retrieve items from the backend API
   // with an HTTP GET request to the /petapi/items endpoint with the categories query parameter
   getItems(categories: string) {
-    const token = localStorage.getItem("auth_token");
-    const headers = new HttpHeaders({
-      "Content-Type": "application/json",
-     // Authorization: "Bearer " + token
-  });
-    return this.http.get(`/petapi/items?categories=${categories}`, { headers });
+    return this.http.get(`/petapi/items?categories=${categories}`);
   }
 
   // Method to save an item to the backend API

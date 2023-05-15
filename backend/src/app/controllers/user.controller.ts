@@ -4,6 +4,8 @@ import jwt from "jsonwebtoken";
 import bcrypt from 'bcrypt';
 
 import { UserModel, UserAttributes, Role} from "../models/user.model";
+import { validate } from "../middleware/joi-wrapper";
+import Joi from "joi";
 
 UserModel.sync().then(async(res)=>{
  /* console.log("Creating Admin user");
@@ -31,8 +33,13 @@ const router: Router = new Router({ prefix: '/petapi' });
 
 // API routes for users
 
-router.get("/user/all", async (ctx: Context) => {
-    const users: UserAttributes[] = await UserModel.findAll();
+router.get("/user/all", validate({
+  user:{
+    role: Joi.string().valid('Admin').required()
+  }
+}) , async (ctx: Context) => {
+  console.log(ctx.state)  
+  const users: UserAttributes[] = await UserModel.findAll();
     ctx.body = users;
   });
 
