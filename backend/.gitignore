@@ -8,8 +8,7 @@
 *.ctxt
 
 # Node
-backend/node_modules
-frontend/pet-shop-angular/node_modules
+node_modules
 npm-debug.log
 yarn-error.log
 
