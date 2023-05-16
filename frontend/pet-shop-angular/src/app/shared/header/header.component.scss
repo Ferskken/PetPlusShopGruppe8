@@ -1,28 +1,68 @@
-header { //styling the header
+@import url('https://fonts.cdnfonts.com/css/happy-monkey');
+//https://www.colorhexa.com/3f51b5
 
+header { //styling the header
+  height: 155px;
+  color: white;
+  background-color: #3F51B5;
     padding: 20px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-weight: 650;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     .logo { 
       img {//the logo inn the header
         height: 50px;
       }
     }
-  
+    .col{
+      display: flex;
+      align-items: space-between;
+      text-decoration: none;
+      justify-content: space-around;
+    }
+
+    button{
+    color: white;
+    transition: background-color 0.2s ease;
+  }
+  button:hover {
+    background-color: #32408f; /* Color to change to on hover */
+  }
+  mat-icon{
+    transition: background-color 0.2s ease;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 32px;
+    height: 45px;
+    padding-right:38px;
+  }
+  mat-icon:hover{
+    background-color: #32408f;
+  }
     nav { //styling for the nav-topbar using flexbox
       ul {  
         display: flex;  
         justify-content: space-between;
         list-style: none;
-        
+      
+
   
         li {
           margin-left: 20px;
-  
+          padding: 10px 20px;
+          border: none;
+          cursor: pointer;
+          transition: background-color 0.3s ease; /* Transition effect */
+          border-radius: 5px;
+          margin-right: 38px;
+
           a { //styling for the navbar underpart of the navbar
             display: flex;
             align-items: center;
             text-decoration: none;
-            color: #333;
-  
+            color: white;
+          
             img {//if there was a picture here it styled ass this
               height: 20px;
               margin-right: 5px;
@@ -32,6 +72,9 @@ header { //styling the header
           &:first-child {
             margin-left: 0;
           }
+        }
+        li:hover{
+          background-color: #32408f; /* Color to change to on hover */
         }
       }
     }
