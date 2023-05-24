@@ -9,9 +9,19 @@ import { BirdsComponent } from "./views/birds/birds.component";
 import { BecomeMemberComponent } from "./views/my-page/become-member/become-member.component";
 import { ShoppingCartComponent } from "./views/shopping-cart/shopping-cart.component";
 import { CheckoutFormComponent } from "./views/checkout-form/checkout-form.component";
+import { HomeComponent } from "./views/home/home.component";
+import { RoleGuard } from '../app/helpers/role-guard.can-activale';
+
 const routes: Routes = [
   // Defining the routes and mapping them to their corresponding components
-  { path: 'administrator', component: AdministratorComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { 
+    path: 'administrator', 
+    component: AdministratorComponent, 
+    canActivate: [RoleGuard],
+    data: { roles: ['Admin'] }
+  },
   { path: 'cats', component: CatsComponent },
   { path: 'dogs', component: DogsComponent },
   { path: 'birds', component: BirdsComponent },

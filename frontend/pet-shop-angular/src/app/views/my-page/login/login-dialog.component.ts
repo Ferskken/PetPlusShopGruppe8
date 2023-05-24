@@ -6,6 +6,9 @@ import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {AuthenticationService} from 'src/app/services/autentication.service';
 import { first } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { WrongPasswordDialogComponent } from '../wrong-password-dialog/wrong-password-dialog.component';
+
 
 interface LoginResponse {
   token: string;
@@ -25,7 +28,8 @@ export class LoginDialogComponent {
     private authenticationService: AuthenticationService,
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<LoginDialogComponent>,
-    private http: HttpClient
+    private http: HttpClient,
+    public dialog: MatDialog
   ) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -40,22 +44,13 @@ export class LoginDialogComponent {
           this.dialogRef.close();
          },
         error : (err) =>{
+          this.dialog.open(WrongPasswordDialogComponent);
           this.authenticationService.logout();
         } 
     });
-      
-   /*
-    this.http.post<LoginResponse>('/petapi/login', { email: this.email, password: this.password }).subscribe(
-      (response) => {
-        // Login successful, store the token in local storage and close the dialog
-        localStorage.setItem('token', response.token);
-        this.dialogRef.close();
-      },
-      (error) => {
-        // Login failed, display an error message
-        console.error(error);
-        alert('Invalid email or password');
-      }
-    ); */
-  } 
+   } 
+
+  onCancel() {
+    this.authenticationService.logout();
+  }
   }

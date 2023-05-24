@@ -1,4 +1,4 @@
-import { Context} from "koa";
+import {Context} from "koa";
 import Router from "koa-router";
 import jwt from "jsonwebtoken";
 import bcrypt from 'bcrypt';
@@ -35,7 +35,8 @@ const router: Router = new Router({ prefix: '/petapi' });
 
 router.get("/user/all", validate({
   user:{
-    role: Joi.string().valid('Admin').required()
+    role: Joi.string().valid('Admin').required(),
+    name:Joi.string()
   }
 }) , async (ctx: Context) => {
   console.log(ctx.state)  
@@ -85,10 +86,14 @@ router.get("/user/:id", async (ctx: Context) => {
   
   router.post("/user/authenticate", async (ctx: Context) => {
     const { username, password } = ctx.request.body as { username:string, password:string };
+    console.log(username);
+    console.log(password);
+    
     const user = await UserModel.findOne({
       raw: true,
       where: { email:username }, 
     });
+    console.log(user);
     console.log(user.password);
     console.log(password);
     const res = await bcrypt.compare(password, user.password);

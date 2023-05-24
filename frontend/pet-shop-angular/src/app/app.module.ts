@@ -33,6 +33,8 @@ import { ShoppingCartComponent } from './views/shopping-cart/shopping-cart.compo
 import { CartItemComponent } from './shared/cart-item/cart-item.component';
 import { CheckoutFormComponent } from './views/checkout-form/checkout-form.component';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { HomeComponent } from './views/home/home.component';
+import { WrongPasswordDialogComponent } from './views/my-page/wrong-password-dialog/wrong-password-dialog.component';
 
 @NgModule({
   declarations: [ 
@@ -53,6 +55,8 @@ import { JwtInterceptor } from './helpers/jwt.interceptor';
     ShoppingCartComponent,
     CartItemComponent,
     CheckoutFormComponent,
+    HomeComponent,
+    WrongPasswordDialogComponent,
   ],
   imports: [ 
     BrowserModule,

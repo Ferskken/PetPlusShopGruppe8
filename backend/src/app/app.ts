@@ -22,7 +22,7 @@ app.use(bodyParser());
  * @param {string[]} excludedPaths - An array or regex patterns of paths that should be excluded from JWT authentication.
  * @returns {void}
  */
-app.use(jwt({ secret: 'your_secret_key' }).unless({ path: [/^\/petapi\/authenticate/] }));
+app.use(jwt({ secret: 'your_secret_key' }).unless({ path: [/^\/petapi\/user\/authenticate/]}));
 
 // Register the user and item controllers with the application, making their routes available
 app.use(userController.routes());

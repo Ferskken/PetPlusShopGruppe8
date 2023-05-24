@@ -22,7 +22,7 @@ export class HeaderComponent {
     
     ) {
       this.authenticationService.user.subscribe(user => this.user = user);
-       if (Object.keys(this.authenticationService.userValue).length == 0) {
+      if (Object.keys(this.authenticationService.userValue).length == 0) {
           this.authenticationService.login("guest@petshop.com","").pipe(first()).subscribe();
       }
 }
@@ -36,6 +36,10 @@ onOpenLoginDialog(): void {
 }
 
 isAdmin(): boolean{
+  console.log(this.user);
   return this.user && this.user.role == Role.Admin;
+}
+logout() {
+  this.authenticationService.logout();
 }
 }
