@@ -1,1 +1,16 @@
-<p>home works!</p>
+<h1>   Welcome to petshop + !!  </h1>
+
+<p> vi har et stort utval av alt du noen gang kunna ha ønsket at kæledyret ditt skal ha </p>
+<p> we have a wast collection of alll the items your pet could possibally want, don't even worry abou us having it </p>
+
+
+<h2> about us  ( denne skal calle shared about us ) </h2>
+
+
+<div class="slideshow">
+    <img *ngFor="let image of images" [src]="image.src" [alt]="image.alt" [class.active]="image.active">
+  </div>
+
+
+
+
