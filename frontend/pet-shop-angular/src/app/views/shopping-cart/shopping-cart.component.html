@@ -1,5 +1,8 @@
-<h2>Shopping Cart</h2>
 
+<h1>Shopping Cart</h1>
+<h2>Did you find what you were looking for ?</h2>
+<section>
+<body>
 <div *ngIf="cartItems.length === 0">
   Your cart is empty.
 </div>
@@ -9,5 +12,8 @@
 </div>
 
 <!-- <app-cart-summary [cartTotal]="cartTotal"></app-cart-summary> -->
-
-<button routerLink="/checkout" *ngIf="cartItems.length > 0">Proceed to Checkout</button>
+</body>
+<div>
+<button mat-raised-button color="primary" routerLink="/checkout" *ngIf="cartItems.length > 0">Proceed to Checkout</button>
+</div>
+</section>
