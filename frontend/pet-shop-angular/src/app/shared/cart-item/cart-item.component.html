@@ -1,11 +1,19 @@
-<div class="cart-item">
-  <img [src]="item.image" alt="{{item.name}}">
-
-  <div class="cart-item-info">
-    <h3>{{item.name}}</h3>
-    <p>{{item.price | currency}}</p>
-    <label>Quantity:</label>
-    <input type="number" [value]="item.quantity" (input)="onQuantityChange($event)">
-    <button (click)="removeItem()">Remove</button>
-  </div>
+<div class="cart-item" class="m-2 w-100">
+<mat-card>  <!-- Angular material mat-card -->
+  <mat-card-header >
+    <mat-card-title-group>
+      <mat-card-title>{{item.name}}</mat-card-title>
+      <mat-card-subtitle>{{item.price | currency}}</mat-card-subtitle>
+     
+     <mat-form-field class="m-2 w-25">
+      <mat-label>Length</mat-label>
+      <input matInput placeholder="Length" type="number" [value]="item.quantity" (input)="onQuantityChange($event)">
+    </mat-form-field>
+    </mat-card-title-group>
+    <img mat-card-sm-image src="{{item.image}}" alt="fant ikke bilde" class="m-2 w-50">
+  </mat-card-header>
+  <mat-card-content>
+    <button mat-raised-button color="primary" (click)="removeItem()">Remove</button>
+  </mat-card-content>
+</mat-card>
 </div>
