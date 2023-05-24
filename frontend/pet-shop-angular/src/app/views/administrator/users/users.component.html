@@ -1,3 +1,5 @@
-<div *ngFor="let user of users">
-<div>{{user.name}}</div>
-</div>
+<div *ngFor="let user of users" class="user-container">
+    <div class="user-name">{{ user.name }}</div>
+    <div class="user-id">id {{ user.id }}</div>
+
+

@@ -38,9 +38,6 @@ export class AddItemDialogComponent {
         accessories: false,
         indoors: false,
       });
-
-
-
     }
   
    
