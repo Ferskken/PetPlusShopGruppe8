@@ -26,7 +26,7 @@ onOpenAddItemDialog(): void {
   
   const dialogRef = this.dialog.open(AddItemDialogComponent, {
       width: '450px',
-      data: { name: 'frode' } 
+      data: { name: 'name' } 
     });
 
     dialogRef.afterClosed().subscribe(result => {
