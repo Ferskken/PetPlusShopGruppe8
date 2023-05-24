@@ -26,10 +26,10 @@ header { //styling the header
     button{
     color: white;
     transition: background-color 0.2s ease;
-  }
-  button:hover {
-    background-color: #32408f; /* Color to change to on hover */
-  }
+    }
+     button:hover {
+        background-color: #32408f; /* Color to change to on hover */
+     }
   mat-icon{
     transition: background-color 0.2s ease;
     border-radius: 5px;
@@ -46,23 +46,20 @@ header { //styling the header
         display: flex;  
         justify-content: space-between;
         list-style: none;
-      
-
-  
         li {
           margin-left: 20px;
-          padding: 10px 20px;
           border: none;
           cursor: pointer;
           transition: background-color 0.3s ease; /* Transition effect */
           border-radius: 5px;
           margin-right: 38px;
 
-          a { //styling for the navbar underpart of the navbar
+          a { //styling for the navbar underpart of the navbar S
             display: flex;
             align-items: center;
             text-decoration: none;
             color: white;
+            padding: 10px 20px;
           
             img {//if there was a picture here it styled ass this
               height: 20px;

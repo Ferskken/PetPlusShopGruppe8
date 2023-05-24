@@ -99,7 +99,7 @@ router.get("/user/:id", async (ctx: Context) => {
     const res = await bcrypt.compare(password, user.password);
     if(res){
       ctx.body = {
-        token:jwt.sign({ name:user.name, role:user.role }, 'your_secret_key'),
+        token:jwt.sign({ name:user.name, role:user.role }, process.env.SECRET),
         status:'authorized'
       }
       ctx.code = 200;
