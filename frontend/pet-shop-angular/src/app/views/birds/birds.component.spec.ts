@@ -1,18 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-import { SmallAnimalsComponent } from './birds.component';
+import { BirdsComponent } from './birds.component';
 
-describe('SmallAnimalsComponent', () => {
-  let component: SmallAnimalsComponent;
-  let fixture: ComponentFixture<SmallAnimalsComponent>;
+describe('BirdsComponent', () => {
+  let component: BirdsComponent;
+  let fixture: ComponentFixture<BirdsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SmallAnimalsComponent ]
+      declarations: [ BirdsComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SmallAnimalsComponent);
+    fixture = TestBed.createComponent(BirdsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

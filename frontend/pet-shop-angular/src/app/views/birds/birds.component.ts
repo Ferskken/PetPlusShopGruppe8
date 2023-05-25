@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 // Declare and set metadata for a new component named 'BirdsComponent'
 @Component({
