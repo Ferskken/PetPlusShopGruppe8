@@ -9,6 +9,9 @@
 
 .env
 
+#Sqlite database
+.Sqlite
+
 # Node
 node_modules
 npm-debug.log

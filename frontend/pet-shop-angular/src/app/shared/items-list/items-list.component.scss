@@ -3,7 +3,9 @@ mat-card {
     flex-direction: column;
     align-items: flex-end;
     position: relative;
-    max-width: 20rem;
+    max-width: 25rem;
+    max-height: 40rem;
+    overflow: hidden;
   }
   
   //item name and price
