@@ -1,6 +1,6 @@
 <div class="cart-item" class="m-2 w-100">
 <mat-card>  <!-- Angular material mat-card -->
-  <mat-card-header >
+  <mat-card-header>
     <mat-card-title-group>
       <mat-card-title>{{item.name}}</mat-card-title>
       <mat-card-subtitle>{{item.price | currency}}</mat-card-subtitle>
@@ -10,7 +10,7 @@
       <input matInput placeholder="Length" type="number" [value]="item.quantity" (input)="onQuantityChange($event)">
     </mat-form-field>
     </mat-card-title-group>
-    <img mat-card-sm-image src="{{item.image}}" alt="fant ikke bilde" class="m-2 w-50">
+    <img mat-card-sm-image src="{{item.image}}" alt="fant ikke bilde" class="m-2 w-25">
   </mat-card-header>
   <mat-card-content>
     <button mat-raised-button color="primary" (click)="removeItem()">Remove</button>

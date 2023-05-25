@@ -36,6 +36,7 @@ import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { HomeComponent } from './views/home/home.component';
 import { WrongPasswordDialogComponent } from './views/my-page/wrong-password-dialog/wrong-password-dialog.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { AdminItemsListComponent } from './shared/admin-items-list/admin-items-list.component';
 
 @NgModule({
   declarations: [ 
@@ -58,6 +59,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     CheckoutFormComponent,
     HomeComponent,
     WrongPasswordDialogComponent,
+    AdminItemsListComponent,
   ],
   imports: [ 
     BrowserModule,

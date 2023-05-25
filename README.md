@@ -6,7 +6,7 @@
 cd backend 
 npm install
 
-## Install Frontend  (Andular)
+## Install Frontend  (Angular)
 
 cd frontend/pet-shop
 npm install

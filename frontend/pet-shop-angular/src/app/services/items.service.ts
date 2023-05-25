@@ -30,8 +30,14 @@ export class ItemsService {
     // Make an HTTP POST request to the /petapi/items endpoint with the item data
     return this.http.post('/petapi/items', item);
   }
+  // Method to delete an item from the backend API
+deleteItem(id: number) {
+  // Make an HTTP DELETE request to the /petapi/items/:id endpoint with the item ID
+  return this.http.delete(`/petapi/items/${id}`);
 }
 
+}
+  
 
   /*
     return [{

@@ -8,12 +8,12 @@
 </div>
 
 <div *ngFor="let item of cartItems">
-  <app-cart-item [item]="item" (remove)="removeItem(item.id)" (updateQuantity)="updateQuantity(item.id, $event)"></app-cart-item>
+  <app-cart-item class="cart-item" [item]="item" (remove)="removeItem(item.id)" (updateQuantity)="updateQuantity(item.id, $event)"></app-cart-item>
 </div>
 
 <!-- <app-cart-summary [cartTotal]="cartTotal"></app-cart-summary> -->
 </body>
 <div>
-<button mat-raised-button color="primary" routerLink="/checkout" *ngIf="cartItems.length > 0">Proceed to Checkout</button>
+<button class="Checkout" mat-raised-button color="primary" routerLink="/checkout" *ngIf="cartItems.length > 0">Proceed to Checkout</button>
 </div>
 </section>
