@@ -1,8 +1,22 @@
 .sidebar {
-    background-color: blue;
+    //background-color: blue;
     padding-left: 1rem;
+    border-color: blue;
+    
   }
 
   .sidebar h2 {
     margin-top: 0;
+    background-color: blue;
   }
+
+  /* Add a class to the mat-button-toggle-group */
+mat-button-toggle-group.column {
+  /* Change the flex direction to column */
+  flex-direction: column;
+}
+
+/* Add some margin to the mat-button-toggle components */
+mat-button-toggle {
+  margin: 8px 0;
+}

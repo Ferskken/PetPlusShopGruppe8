@@ -37,6 +37,8 @@ import { HomeComponent } from './views/home/home.component';
 import { WrongPasswordDialogComponent } from './views/my-page/wrong-password-dialog/wrong-password-dialog.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { AdminItemsListComponent } from './shared/admin-items-list/admin-items-list.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { AboutUsComponent } from './views/about-us/about-us.component';
 
 @NgModule({
   declarations: [ 
@@ -60,6 +62,7 @@ import { AdminItemsListComponent } from './shared/admin-items-list/admin-items-l
     HomeComponent,
     WrongPasswordDialogComponent,
     AdminItemsListComponent,
+    AboutUsComponent,
   ],
   imports: [ 
     BrowserModule,
@@ -79,6 +82,7 @@ import { AdminItemsListComponent } from './shared/admin-items-list/admin-items-l
     MatStepperModule,
     MatIconModule,
     MatPaginatorModule,
+    MatButtonToggleModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

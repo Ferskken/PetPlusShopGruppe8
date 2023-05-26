@@ -10,6 +10,7 @@ import { BecomeMemberComponent } from "./views/my-page/become-member/become-memb
 import { ShoppingCartComponent } from "./views/shopping-cart/shopping-cart.component";
 import { CheckoutFormComponent } from "./views/checkout-form/checkout-form.component";
 import { HomeComponent } from "./views/home/home.component";
+import {AboutUsComponent } from "./views/about-us/about-us.component";
 import { RoleGuard } from '../app/helpers/role-guard.can-activale';
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'becomeMember', component: BecomeMemberComponent },
   { path: 'shoppingCart', component: ShoppingCartComponent },
   { path: 'checkout', component: CheckoutFormComponent },
+  { path: 'aboutUs', component: AboutUsComponent },
 ];
 
 @NgModule({
