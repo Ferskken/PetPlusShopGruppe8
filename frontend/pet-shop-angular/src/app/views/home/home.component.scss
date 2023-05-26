@@ -54,7 +54,10 @@ p {
   background-color: rgba(0, 0, 0, 0.7);
   padding: 5px;
   border-radius: 5px;
+  width: calc(20% - 40px); /* Adjust the width based on the card size */
+  transition: width 0.3s ease-in-out;
 }
+
 
 
 .grid-container {
@@ -86,6 +89,20 @@ slideshow {
 .slideshow-card.active {
   opacity: 1;
 }
+
+  .slideshow-card:hover .card-details {
+    width: calc(40% - 40px); /* Adjust the width on hover or based on your preference */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .card-details {
+      width: calc(30% - 40px); /* Adjust the width for smaller screens */
+    }
+  
+    .slideshow-card:hover .card-details {
+      width: calc(60% - 40px); /* Adjust the width on hover or based on your preference for smaller screens */
+    }
+  }
 
 .card {
   width: 100%;
