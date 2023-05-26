@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
 import { AuthenticationService } from 'src/app/services/autentication.service';
 import { AboutUsComponent } from '../about-us/about-us.component';
+import { ItemAttributes, ItemsService } from 'src/app/services/items.service';
 
 @Component({
   selector: 'app-home',
@@ -10,13 +11,15 @@ import { AboutUsComponent } from '../about-us/about-us.component';
 })
 
 
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  
   images = [
     { src: 'assets/somePictures/dog-collar.png', alt: 'epic collar', active: true, price: 10.99 },
     { src: 'assets/somePictures/kanis-hus.png', alt: 'Image 2', active: true, price: 15.99 },
     { src: 'assets/somePictures/dog-collar.png', alt: 'Image 3', active: false, price: 12.99 },
     { src: 'assets/somePictures/skildpadde-med-hatt.png', alt: 'nice hat', active: false, price: 8.99 },
-    { src: 'assets/somePictures/kanis-hus.png', alt: 'Image 5', active: false, price: 9.99 }
+    { src: 'assets/somePictures/kanis-hus.png', alt: 'Image 5', active: false, price: 9.99 },
+    { src: 'assets/somePictures/kanis-hus.png', alt: 'Image 5', active: false, price: 10.99 }
   ];
   
 
@@ -30,5 +33,42 @@ export class HomeComponent {
     setInterval(() => {
       this.showNextImage();
     }, 5000);
+    this.fetchItems();
   }
+
+
+
+
+
+
+
+
+  images2: { src: string; alt: string; active: boolean; price: number }[] = [];
+
+  constructor(private itemsService: ItemsService) {}
+
+ 
+
+  fetchItems() {
+    this.itemsService.getItems2().subscribe(
+      (items: ItemAttributes[]) => {
+        this.images = items.map((item: ItemAttributes) => ({
+          src: item.image || 'default-image-url', // Replace 'default-image-url' with a default image URL if necessary
+          alt: item.name,
+          active: false, // Set the 'active' property as per your requirement
+          price: item.price
+        }));
+      },
+      (error) => {
+        console.error('Error fetching items:', error);
+      }
+    );
+  }
+
+
+
+
+
 }
+
+

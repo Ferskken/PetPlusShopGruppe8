@@ -44,3 +44,16 @@
     </div>
     </div>
   </div>
+
+
+  <div class="slideshow">
+    <div class="slideshow-card" *ngFor="let image of images2; let i = index;" [class.active]="image.active">
+      <div class="card">
+        <img [src]="image.src" [alt]="image.alt">
+        <div class="card-details">
+          <div class="card-name">{{ image.alt }}</div>
+          <div class="card-price">{{ image.price }}</div>
+        </div>
+      </div>
+    </div>
+  </div>

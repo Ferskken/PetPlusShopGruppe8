@@ -1,6 +1,7 @@
 import { TranslationWidth } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 // Define an interface for the attributes of an item
 export interface ItemAttributes {
@@ -22,9 +23,11 @@ export class ItemsService {
   // Method to retrieve items from the backend API
   // with an HTTP GET request to the /petapi/items endpoint with the categories query parameter
   getItems(categories: string) {
-    return this.http.get(`/petapi/items?categories=${categories}`);
+    return this.http.get(`/petapi/items?categories=${categories}`); 
   }
-
+  getItems2(): Observable<ItemAttributes[]> {
+    return this.http.get<ItemAttributes[]>('/petapi/items');
+  }
   // Method to save an item to the backend API
   saveItem(item: ItemAttributes) {
     // Make an HTTP POST request to the /petapi/items endpoint with the item data
