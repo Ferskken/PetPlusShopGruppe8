@@ -1,1 +1,76 @@
-<p>about-us works!</p>
+<h1>About the company</h1>
+
+<h2>Company name: Pet Plus</h2>
+
+<div class="about-us-content">
+  <p>About us: We are Pet Plus, the premier online store for pet fashion and accessories. Our mission is to 
+    provide pet owners with the highest quality pet clothing and accessories to keep their furry friends 
+    looking and feeling their best. We believe that pets should be stylish and comfortable, and our products 
+    reflect that. Our selection includes a wide range of pet clothing and accessories, such as coats, sweaters, 
+    bandanas, and more.</p>
+
+  <p *ngIf="!showMore">
+    We are committed to delivering the best shopping experience to our customers. We take pride in our 
+    customer service and always strive to provide the highest level of satisfaction. We also offer free 
+    shipping on orders over 750 NOK, allowing you to stock up on pet fashion and accessories without 
+    breaking the bank.
+  </p>
+
+  <p *ngIf="showMore">
+    We want to help make your pet look and feel their absolute best. Shop with us today for the best 
+    selection of pet clothing and accessories. Our values: At Pet Plus, we strive to bring our customers quality pet fashion and accessories that 
+    embody our three core values: style, comfort, and affordability. Our selection of pet clothing and 
+    accessories is designed to help your pet look and feel their best. We believe that style and comfort 
+    should go hand in hand, so we offer a range of stylish pieces that are also comfortable for your pet. And, 
+    we make sure our prices are affordable so that pet owners can shop for their furry friends without 
+    breaking the bank. Shop with us today for the best selection of pet clothing and accessories that offer 
+    style, comfort, and affordability.
+  </p>
+
+  <button class="read-more-btn" (click)="toggleShowMore()">
+    {{ showMore ? 'Read Less' : 'Read More' }}
+  </button>
+</div>
+
+<h2>Testimonials</h2>
+
+<div class="grid-container">
+  <div class="testimonial">
+    <img class="testimonial-image" src="assets/somePictures/skildpadde-med-hatt.png" alt="John's picture">
+    <div class="testimonial-content">
+      <p>
+        1. John, 30: "I was looking for a winter coat for my pup and found the perfect fit at Pet Clothes Plus. The 
+        quality of the material is top-notch, and the coat is so warm and cozy. Thanks for making my doggo look 
+        so stylish! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias minima quos maiores 
+        reiciendis, nemo aut nobis animi non nam, debitis repudiandae eligendi doloribus perspiciatis earum dolores 
+        id quisquam corporis labore?"
+      </p>
+      <button class="read-more-btn">Read More</button>
+    </div>
+  </div>
+  
+  <div class="testimonial">
+    <img class="testimonial-image" src="assets/somePictures/skildpadde-med-hatt.png" alt="Anna's picture">
+    <div class="testimonial-content">
+      <p>
+        2. Anna, 24: "I got a custom gown made for my cat and it fits like a glove! Pet Clothes Plus has such a 
+        great selection and the customer service was super helpful. Highly recommend!"
+      </p>
+    </div>
+  </div>
+  
+  <div class="testimonial">
+    <img class="testimonial-image" src="assets/somePictures/dog-collar.png" alt="Sam's picture">
+    <div class="testimonial-content">
+      <p>
+        3. Sam, 50: "My pup's birthday is coming up and I found the perfect costume at Pet Clothes Plus. Their 
+        prices are reasonable, and the items are made with great care. Thanks for making my pup's birthday 
+        extra special!"
+      </p>
+    </div>
+  </div>
+</div>
+
+<button class="read-more-btn" (click)="toggleShowMore()">
+  {{ showMore ? 'Read Less' : 'Read More' }}
+</button>
