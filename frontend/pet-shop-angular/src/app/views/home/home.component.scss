@@ -1,20 +1,93 @@
 .slideshow {
-    position: relative;
-    width: 100%;
-    height: 400px; /* Adjust the height as needed */
-    overflow: hidden;
-  }
-  
-  .slideshow img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-  
-  .slideshow img.active {
-    opacity: 1;
-  }
+  position: relative;
+  width: 100%;
+  height: 500px; /* Adjust the height as needed */
+  overflow: hidden;
+}
+
+.slideshow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slideshow-card {
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+
+.card {
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.card-details {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px; /* Add a gap between grid items if desired */
+}
+
+slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slideshow-card {
+  width: 1fr;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.slideshow-card.active {
+  opacity: 1;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.card-details {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.card-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card-price {
+  font-size: 14px;
+}   
