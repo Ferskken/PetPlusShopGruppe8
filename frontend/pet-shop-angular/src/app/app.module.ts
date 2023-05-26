@@ -39,6 +39,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { AdminItemsListComponent } from './shared/admin-items-list/admin-items-list.component';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { AboutUsComponent } from './views/about-us/about-us.component';
+import { SearchBarComponent } from './shared/header/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [ 
@@ -63,6 +64,7 @@ import { AboutUsComponent } from './views/about-us/about-us.component';
     WrongPasswordDialogComponent,
     AdminItemsListComponent,
     AboutUsComponent,
+    SearchBarComponent,
   ],
   imports: [ 
     BrowserModule,

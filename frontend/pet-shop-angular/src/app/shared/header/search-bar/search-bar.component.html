@@ -1,0 +1,13 @@
+<div>
+<mat-form-field
+ [formGroup]="searchForm"
+  class="searchBar"
+   (ngSubmit)="onSearchSubmit()"
+   >
+  <input type="text"
+   matInput placeholder="Search..."
+    formControlName="name"
+     class="searchBarInput"
+     /> 
+</mat-form-field>
+</div>
