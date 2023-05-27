@@ -1,22 +1,40 @@
-<form [formGroup]="checkoutForm">
-  <h2>Shipping Information</h2>
-  <div formGroupName="shipping">
-    <label>First Name:</label>
-    <input type="text" formControlName="firstName">
-    <div *ngIf="shippingForm.controls['firstName'].errors && (shippingForm.controls['firstName'].dirty || shippingForm.controls['firstName'].touched)">
-      <div *ngIf="shippingForm.controls['firstName'].invalid">First name is required</div>
-    </div>
+<form class="checkout-form">
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>First name</mat-label>
+      <input matInput>
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Last name</mat-label>
+      <input matInput>
+    </mat-form-field></td>
+  </tr></table>
 
-    <label>Last Name:</label>
-    <input type="text" formControlName="lastName">
-    <div *ngIf="shippingForm.controls['lastName'].errors && (shippingForm.controls['lastName'].dirty || shippingForm.controls['lastName'].touched)">
-      <div *ngIf="shippingForm.controls['lastName'].invalid">Last name is required</div>
-    </div>
+  <p>
+    <mat-form-field class="example-full-width">
+      <mat-label>Address</mat-label>
+      <textarea matInput placeholder="Nedre storgate 5"></textarea>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <textarea matInput placeholder="name.lastname@gmail.com"></textarea>
+    </mat-form-field>
+  </p>
 
-    <label>Address:</label>
-    <input type="text" formControlName="address">
-    <div *ngIf="shippingForm.controls['address'].errors && (shippingForm.controls['address'].dirty || shippingForm.controls['address'].touched)">
-      <div *ngIf="shippingForm.controls['address'].invalid">Address is required</div>
-    </div>
-    <button mat-button (click)="onSubmit()">Order now!</button>
-    <label>
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>City</mat-label>
+      <input matInput placeholder="Ex. Ålesund">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Country</mat-label>
+      <input matInput placeholder="Ex. Norway">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Postal Code</mat-label>
+      <input matInput #postalCode maxlength="4" placeholder="Ex. 1234">
+      <mat-hint align="end">{{postalCode.value.length}} / 4</mat-hint>
+    </mat-form-field></td>
+  </tr></table>
+  <button mat-raised-button color="primary">Submit</button>
+</form>

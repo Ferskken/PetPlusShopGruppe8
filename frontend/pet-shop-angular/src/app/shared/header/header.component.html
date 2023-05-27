@@ -18,17 +18,17 @@
         <button mat-menu-item (click)="logout()">Logout</button>
         
       </mat-menu>
-      <mat-icon routerLink="/aboutUs">help</mat-icon>
-      <mat-icon routerLink="/shoppingCart">shopping_cart</mat-icon>
+      <mat-icon matRipple routerLink="/aboutUs">help</mat-icon>
+      <mat-icon matRipple routerLink="/shoppingCart">shopping_cart</mat-icon>
     </div>
   </div>
   </div>
     <nav>
-      <ul>
-        <li><a routerLink="/dogs">Dogs</a></li> <!-- Link to dog items page -->
-        <li><a routerLink="/cats">Cats</a></li> <!-- Link to cat items page -->
-        <li><a routerLink="/birds">Birds</a></li> <!-- Link to bird items page -->
-        <li *ngIf="isAdmin()"><a routerLink="/administrator">Administrer</a></li> <!-- Link to administrator page -->
+      <ul >
+        <li><a matRipple routerLink="/dogs">Dogs</a></li>
+        <li><a matRipple routerLink="/cats">Cats</a></li> <!-- Link to cat items page -->
+        <li><a matRipple routerLink="/birds">Birds</a></li> <!-- Link to bird items page -->
+        <li *ngIf="isAdmin()"><a matRipple routerLink="/administrator">Administrer</a></li> <!-- Link to administrator page -->
       </ul>
     </nav>
   </header>

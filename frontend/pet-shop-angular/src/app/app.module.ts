@@ -44,6 +44,9 @@ import { SearchPageComponent } from './views/search-page/search-page.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
 
+import {MatRippleModule} from '@angular/material/core';
+import { TestimonialsComponent } from './shared/testimonials/testimonials.component';
+import { AboutUsSharedComponent } from './shared/about-us-shared/about-us-shared.component'; 
 
 @NgModule({
   declarations: [ 
@@ -70,6 +73,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     AboutUsComponent,
     SearchBarComponent,
     SearchPageComponent,
+    TestimonialsComponent,
+    AboutUsSharedComponent,
   ],
   imports: [ 
     BrowserModule,
@@ -91,6 +96,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatPaginatorModule,
     MatButtonToggleModule,
     MatSidenavModule,
+    MatRippleModule,
+    
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
