@@ -40,6 +40,7 @@ import { AdminItemsListComponent } from './shared/admin-items-list/admin-items-l
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { AboutUsComponent } from './views/about-us/about-us.component';
 import { SearchBarComponent } from './shared/header/search-bar/search-bar.component';
+import { SearchPageComponent } from './views/search-page/search-page.component';
 
 @NgModule({
   declarations: [ 
@@ -65,6 +66,7 @@ import { SearchBarComponent } from './shared/header/search-bar/search-bar.compon
     AdminItemsListComponent,
     AboutUsComponent,
     SearchBarComponent,
+    SearchPageComponent,
   ],
   imports: [ 
     BrowserModule,

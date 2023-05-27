@@ -1,48 +1,55 @@
-import { TranslationWidth } from '@angular/common';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 // Define an interface for the attributes of an item
 export interface ItemAttributes {
-  id: number; // The item ID (optional)
-  name: string; // The item name
-  description: string; // The item description
-  categories: string; // The item categories
-  price: number; // The item price
-  image?: string; // The item image URL (optional)
+ id: number; // The item ID (optional)
+ name: string; // The item name
+ description: string; // The item description
+ categories: string; // The item categories
+ price: number; // The item price
+ image?: string; // The item image URL (optional)
 }
 
 @Injectable({
-  providedIn: 'root' // This service is provided at the root level
+ providedIn: 'root' // This service is provided at the root level
 })
 export class ItemsService {
 
-  constructor(private http: HttpClient) { }
+ private itemsSource = new BehaviorSubject<ItemAttributes[]>([]);
+ items$ = this.itemsSource.asObservable();
 
-  // Method to retrieve items from the backend API
-  // with an HTTP GET request to the /petapi/items endpoint with the categories query parameter
-  getItems(categories: string) {
-    return this.http.get(`/petapi/items?categories=${categories}`);
-  }
+ constructor(private http: HttpClient) { }
 
-  searchItems(name: string): Observable<ItemAttributes[]> {
-    return this.http.get<ItemAttributes[]>(`/petapi/items?name=${name}`);
-  }
-  
+ // Method to retrieve items from the backend API
+ // with an HTTP GET request to the /petapi/items endpoint with the categories query parameter
+ getItems(categories: string) {
+ return this.http.get(`/petapi/items?categories=${categories}`);
+ }
 
-  // Method to save an item to the backend API
-  saveItem(item: ItemAttributes) {
-    // Make an HTTP POST request to the /petapi/items endpoint with the item data
-    return this.http.post('/petapi/items', item);
-  }
-  // Method to delete an item from the backend API
+ searchItems(name: string): Observable<ItemAttributes[]> {
+ return this.http.get<ItemAttributes[]>(`/petapi/items?name=${name}`);
+ }
+ 
+
+ // Method to save an item to the backend API
+ saveItem(item: ItemAttributes) {
+ // Make an HTTP POST request to the /petapi/items endpoint with the item data
+ return this.http.post('/petapi/items', item);
+ }
+ // Method to delete an item from the backend API
 deleteItem(id: number) {
-  // Make an HTTP DELETE request to the /petapi/items/:id endpoint with the item ID
-  return this.http.delete(`/petapi/items/${id}`);
+ // Make an HTTP DELETE request to the /petapi/items/:id endpoint with the item ID
+ return this.http.delete(`/petapi/items/${id}`);
 }
 
+ setItems(items: ItemAttributes[]) {
+ this.itemsSource.next(items);
+ }
+
 }
+
   
 
   /*
