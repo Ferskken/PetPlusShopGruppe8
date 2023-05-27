@@ -5,12 +5,12 @@ import { User } from 'src/app/models/user';
 import { LoginDialogComponent } from 'src/app/views/my-page/login/login-dialog.component';
 import { AuthenticationService } from 'src/app/services/autentication.service';
 import { first } from 'rxjs';
-
+import {MatRippleModule} from '@angular/material/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
 
