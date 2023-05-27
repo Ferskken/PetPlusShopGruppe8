@@ -12,11 +12,16 @@
     </div>
     <div class="grid-item">
       <div class="slideshow">
-        <div class="slideshow-card" *ngFor="let image of images; let i = index;" [class.active]="i === activeIndex">
-          <div class="card" [style.background-image]="'url(' + image.src + ')'">
+        <div class="slideshow-card" *ngFor="let image of images2; let i = index;" [class.active]="image.active">
+          <div class="card">
+            
+            <img class="card" [src]="image.image" [alt]="image.alt">
             <div class="card-details">
-              <div class="card-name">{{ image.alt }}</div>
-              <div class="card-price">{{ image.price }}</div>
+              
+              <div class="card-name">{{image.name}}</div>
+    
+              <div class="card-price">{{image.price}}</div>
+              <div class="card-price">{{image.id}}</div>
             </div>
           </div>
         </div>
@@ -49,10 +54,14 @@
   <div class="slideshow">
     <div class="slideshow-card" *ngFor="let image of images2; let i = index;" [class.active]="image.active">
       <div class="card">
-        <img [src]="image.src" [alt]="image.alt">
+        
+        <img class="card" [src]="image.image" [alt]="image.alt">
         <div class="card-details">
-          <div class="card-name">{{ image.alt }}</div>
-          <div class="card-price">{{ image.price }}</div>
+          
+          <div class="card-name">{{image.name}}</div>
+
+          <div class="card-price">{{image.price}}</div>
+          <div class="card-price">{{image.id}}</div>
         </div>
       </div>
     </div>

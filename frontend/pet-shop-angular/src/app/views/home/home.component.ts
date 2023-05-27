@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   activeIndex2:number = 0;
   intervalId: any;
   intervalId2:any;
-
+  items: ItemAttributes[]=[]
   images = [
     { src: 'assets/somePictures/dog-collar.png', alt: 'epic collar', active: false, price: 10.99 },
     { src: 'assets/somePictures/kanis-hus.png', alt: 'Image 2', active: false, price: 15.99 },
@@ -25,26 +25,27 @@ export class HomeComponent implements OnInit {
     { src: 'assets/somePictures/kanis-hus.png', alt: 'dream house', active: true, price: 10.99 }
   ];
 
-  images2: { src: string; alt: string; active: boolean; price: number }[] = [
+  images2: any[] = [
     {
-      src: 'assets/somePictures/skildpadde-med-hatt.png',
-      alt: 'Image 1',
+      image: 'assets/somePictures/skildpadde-med-hatt.png',
+      name: 'Image 1',
       active: false,
       price: 10
     },
     {
-      src: 'assets/somePictures/kanis-hus.png',
-      alt: 'Image 2',
+      image: 'assets/somePictures/kanis-hus.png',
+      name: 'Image 2',
       active: true,
       price: 15
     },
     {
-      src: 'assets/somePictures/dog-collar.png',
-      alt: 'Image gay',
+      image: 'assets/somePictures/dog-collar.png',
+      name: 'Image gay',
       active: false,
       price: 15
     }
   ];
+  
 
   constructor(private itemsService: ItemsService) {}
 
@@ -60,20 +61,16 @@ export class HomeComponent implements OnInit {
   }
 
   fetchItems() {
-    this.itemsService.getItems2().subscribe(
-      (items: ItemAttributes[]) => {
-        this.images2 = items.map((item: ItemAttributes) => ({
-          src: item.image || 'default-image-url', // Replace 'default-image-url' with a default image URL if necessary
-          alt: item.name,
-          active: false, // Set the 'active' property as per your requirement
-          price: item.price
-        }));
+    this.itemsService.getItems("all").subscribe(
+      (items: any) => {
+        this.images2 = this.images2.concat(items);
       },
       (error) => {
         console.error('Error fetching items:', error);
       }
     );
   }
+  
 
   startImageSwitching() {
     this.activeIndex = 0; // Set the initial active index to 0
