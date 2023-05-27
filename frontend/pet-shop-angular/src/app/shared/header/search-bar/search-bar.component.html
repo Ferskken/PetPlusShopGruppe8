@@ -1,5 +1,5 @@
-<form [formGroup]="searchForm" (ngSubmit)="onSearchSubmit()">
-  <mat-form-field class="searchBar">
+<form [formGroup]="searchForm" (ngSubmit)="onSearchSubmit()" class="search w-100">
+  <mat-form-field class="searchBar w-100">
   <input type="text"
   matInput placeholder="Search..."
   formControlName="name"
