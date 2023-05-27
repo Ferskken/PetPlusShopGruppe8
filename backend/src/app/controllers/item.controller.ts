@@ -1,8 +1,5 @@
 import { Context} from "koa";
 import Router from "koa-router";
-
-
-
 import {ItemModel, ItemAttributes} from "../models/item.model";
 import { Op } from "sequelize";
 
@@ -16,34 +13,46 @@ ItemModel.sync();
 //the items with the given category names.
 router.get("/items", async (ctx: Context) => {
   let items: ItemAttributes[] = [];
-  console.log("we are here");  
+  console.log("we are here"); 
   console.log(ctx.query.categories);
-  if (ctx.query.categories === "all") {
-    items = await ItemModel.findAll();
+  if (ctx.query.name) {
+  // Handle requests with the name query parameter
+  let name = ctx.query.name as string;
+  console.log(name); 
+  items = await ItemModel.findAll({
+  where: {
+  name: {
+  [Op.like]: `%${name}%`
+  }
+  }
+  });
+  } else if (ctx.query.categories === "all") {
+  items = await ItemModel.findAll();
   }
   else {
   let categories = (ctx.query.categories as string).split(',');
   let orOperator = [];
   for (let index=1 ;index< categories.length;index++) {
-    orOperator.push({ [Op.like] : `%${categories[index]}%`})
+  orOperator.push({ [Op.like] : `%${categories[index]}%`})
   }
   console.log(orOperator);
   items = await ItemModel.findAll({
-    where: {
-    categories: {
-      [Op.and]: [
-        { [Op.like]: `%${categories[0]}%` },
-        {
-          [Op.or]: orOperator
-        }
-      ]
-    }
-  }  
+  where: {
+  categories: {
+  [Op.and]: [
+  { [Op.like]: `%${categories[0]}%` },
+  {
+  [Op.or]: orOperator
+  }
+  ]
+  }
+  } 
   });
   }
   ctx.body = items;
   ctx.status = 200;
-});
+ });
+ 
 //routing to post an item into items (create items)
 router.post("/items", async (ctx: Context) => {
   const item: ItemAttributes = ctx.request.body as ItemAttributes;

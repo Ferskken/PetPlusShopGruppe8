@@ -12,6 +12,8 @@ import { CheckoutFormComponent } from "./views/checkout-form/checkout-form.compo
 import { HomeComponent } from "./views/home/home.component";
 import {AboutUsComponent } from "./views/about-us/about-us.component";
 import { RoleGuard } from '../app/helpers/role-guard.can-activale';
+import { SearchPageComponent } from "./views/search-page/search-page.component";
+
 
 const routes: Routes = [
   // Defining the routes and mapping them to their corresponding components
@@ -30,6 +32,7 @@ const routes: Routes = [
   { path: 'shoppingCart', component: ShoppingCartComponent },
   { path: 'checkout', component: CheckoutFormComponent },
   { path: 'aboutUs', component: AboutUsComponent },
+  { path: 'searchPage', component: SearchPageComponent },
 ];
 
 @NgModule({

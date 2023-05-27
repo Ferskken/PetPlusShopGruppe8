@@ -1,20 +1,83 @@
 h1 {
-  font-size: 36px; /* Adjust the font size */
+  font-size: 5rem; /* Adjust the font size */
   font-weight: bold; /* Apply bold font weight */
   color: #333; /* Set the text color */
   text-align: center; /* Center-align the heading */
   text-transform: uppercase; /* Apply uppercase text transformation */
   letter-spacing: 2px; /* Add letter spacing */
-  margin-bottom: 20px; /* Add some bottom margin for spacing */
+  margin-bottom: 3rem; /* Add some bottom margin for spacing */
+  padding-bottom: 3rem;
   /* Apply any other styles or decorations as per your preference */
+}
+h2{
+  font-size: 1.5rem;
 }
 p {
   font-family: 'Comic Sans MS', cursive;
 }
+.about-us{
+  margin-bottom: 4rem;
+}
 
 
 
 
+.box {
+  margin: 0rem;
+  
+  padding-right: 8rem;
+  padding-left: 8rem;
+  padding-top: 4rem;
+
+  width: 100%; /* Adjust the width of the box to make it wider */
+  height: 100%; /* Adjust the height of the box to make it taller */
+  border-radius: 10px; /* Adjust the border-radius to make the box inside the card rounder */
+  background-color: lightgray;
+  /* Add any other styles for the box */
+}
+
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 500px;
+  grid-gap: 10px;
+  margin: 0rem;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10rem;
+}
+
+
+.card-details {
+  position: absolute;
+  bottom: 15%;
+  right: 10%;
+  color: hsl(0, 0%, 100%);
+
+  background-color: rgba(#3F51B5, 0.85);
+  padding: 30px;
+  border-radius: 20%;
+
+  border-radius: 4rem;
+  width: calc(25% - 2rem); /* Adjust the width based on the card size */
+  transition: width 0.3s ease-in-out;
+}
+.card-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card-price {
+  font-size: 14px;
+}   
 
 
 
@@ -24,50 +87,11 @@ p {
   width: 100%;
   height: 500px; /* Adjust the height as needed */
   overflow: hidden;
-}
 
-.slideshow {
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.slideshow-card {
-  width: 100%;
-  height: 600px;
-  position: relative;
-}
-
-.card {
-  width: 100%;
-  height: 600px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-}
-
-.card-details {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 5px;
-  border-radius: 5px;
-  width: calc(20% - 40px); /* Adjust the width based on the card size */
-  transition: width 0.3s ease-in-out;
-}
-
-
-
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr;
-  grid-gap: 10px; /* Add a gap between grid items if desired */
-}
-
-slideshow {
   position: relative;
   width: 100%;
   height: 100%;
@@ -78,6 +102,7 @@ slideshow {
 }
 
 .slideshow-card {
+  width: 100%;
   width: 1fr;
   height: 100%;
   position: absolute;
@@ -94,6 +119,11 @@ slideshow {
     width: calc(40% - 40px); /* Adjust the width on hover or based on your preference */
   }
   
+
+
+
+
+  
   @media screen and (max-width: 768px) {
     .card-details {
       width: calc(30% - 40px); /* Adjust the width for smaller screens */
@@ -104,39 +134,17 @@ slideshow {
     }
   }
 
-.card {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  border-radius: 100px;
-}
+  @media screen and (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+  
+    .card {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
 
-.card-details {
-  position: absolute;
-  bottom: 50px;
-  right: 100px;
-  color: hsl(0, 0%, 0%);
 
-  background-color: rgba(70, 15, 234, 0.9);
-  padding: 30px;
-  border-radius: 20%;
-}
-
-.card-name {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.card-price {
-  font-size: 14px;
-}   
-.box {
-  margin: 30px;
-  padding: 20px;
-  width: 100%; /* Adjust the width of the box to make it wider */
-  height: 100%; /* Adjust the height of the box to make it taller */
-  border-radius: 10px; /* Adjust the border-radius to make the box inside the card rounder */
-  background-color: lightgray;
-  /* Add any other styles for the box */
-}
