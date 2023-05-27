@@ -1,20 +1,142 @@
+h1 {
+  font-size: 36px; /* Adjust the font size */
+  font-weight: bold; /* Apply bold font weight */
+  color: #333; /* Set the text color */
+  text-align: center; /* Center-align the heading */
+  text-transform: uppercase; /* Apply uppercase text transformation */
+  letter-spacing: 2px; /* Add letter spacing */
+  margin-bottom: 20px; /* Add some bottom margin for spacing */
+  /* Apply any other styles or decorations as per your preference */
+}
+p {
+  font-family: 'Comic Sans MS', cursive;
+}
+
+
+
+
+
+
+
+
 .slideshow {
-    position: relative;
-    width: 100%;
-    height: 400px; /* Adjust the height as needed */
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 500px; /* Adjust the height as needed */
+  overflow: hidden;
+}
+
+.slideshow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slideshow-card {
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+
+.card {
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.card-details {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border-radius: 5px;
+  width: calc(20% - 40px); /* Adjust the width based on the card size */
+  transition: width 0.3s ease-in-out;
+}
+
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  grid-gap: 10px; /* Add a gap between grid items if desired */
+}
+
+slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slideshow-card {
+  width: 1fr;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 25%;
+}
+
+.slideshow-card.active {
+  opacity: 1;
+}
+
+  .slideshow-card:hover .card-details {
+    width: calc(40% - 40px); /* Adjust the width on hover or based on your preference */
   }
   
-  .slideshow img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
+  @media screen and (max-width: 768px) {
+    .card-details {
+      width: calc(30% - 40px); /* Adjust the width for smaller screens */
+    }
   
-  .slideshow img.active {
-    opacity: 1;
+    .slideshow-card:hover .card-details {
+      width: calc(60% - 40px); /* Adjust the width on hover or based on your preference for smaller screens */
+    }
   }
+
+.card {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 100px;
+}
+
+.card-details {
+  position: absolute;
+  bottom: 50px;
+  right: 100px;
+  color: hsl(0, 0%, 0%);
+
+  background-color: rgba(70, 15, 234, 0.9);
+  padding: 30px;
+  border-radius: 20%;
+}
+
+.card-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card-price {
+  font-size: 14px;
+}   
+.box {
+  margin: 30px;
+  padding: 20px;
+  width: 100%; /* Adjust the width of the box to make it wider */
+  height: 100%; /* Adjust the height of the box to make it taller */
+  border-radius: 10px; /* Adjust the border-radius to make the box inside the card rounder */
+  background-color: lightgray;
+  /* Add any other styles for the box */
+}

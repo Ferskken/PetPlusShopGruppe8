@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
+
 
 // Define an interface for the attributes of an item
 export interface ItemAttributes {
@@ -19,7 +20,7 @@ export class ItemsService {
 
  private itemsSource = new BehaviorSubject<ItemAttributes[]>([]);
  items$ = this.itemsSource.asObservable();
-
+ 
  constructor(private http: HttpClient) { }
 
  // Method to retrieve items from the backend API

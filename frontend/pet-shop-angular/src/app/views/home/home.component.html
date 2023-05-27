@@ -1,16 +1,69 @@
-<h1>   Welcome to petshop + !!  </h1>
-
-<p> vi har et stort utval av alt du noen gang kunna ha ønsket at kæledyret ditt skal ha </p>
-<p> we have a wast collection of alll the items your pet could possibally want, don't even worry abou us having it </p>
-
-
-<h2> about us  ( denne skal calle shared about us ) </h2>
+<div class = "box">
+ <h1>Welcome to petshop + !!</h1>
+<br><br>
+  <p>Vi har et stort utvalg av alt du noen gang kunne ha ønsket deg at kjæledyret ditt skal ha.</p>
+  <p>We have a vast collection of all the items your pet could possibly want, so you don't need to worry about us having it.</p>
 
 
-<div class="slideshow">
-    <img *ngFor="let image of images" [src]="image.src" [alt]="image.alt" [class.active]="image.active">
+
+  <div class="grid-container">
+    <div class="grid-item">
+      <p><br><br><h2>About us (this should call shared about us)</h2> <br> <br>we have a wast collection of all sorts of items you could possably want for your beloved pets, your only limit is your imagination, so what are you waiting for? spend some money to make your pets have a better life or be a terrible human being, the choice is yours, so don't make the a bad decision and try to save money you can make to give your pets the life they deserve</p>
+    </div>
+    <div class="grid-item">
+      <div class="slideshow">
+        <div class="slideshow-card" *ngFor="let image of images2; let i = index;" [class.active]="image.active">
+          <div class="card">
+            
+            <img class="card" [src]="image.image" [alt]="image.alt">
+            <div class="card-details">
+              
+              <div class="card-name">{{image.name}}</div>
+    
+              <div class="card-price">{{image.price}}</div>
+              <div class="card-price">{{image.id}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
+  <div style="margin-top: 20px;">
+    <h2>this is what we stand for<app-about-us></app-about-us></h2>
+  </div>
 
+  <h1>Welcome to petshop + !!</h1>
 
+  <p>Vi har et stort utvalg av alt du noen gang kunne ha ønsket at kjæledyret ditt skal ha.</p>
+  <p>We have a vast collection of all the items your pet could possibly want, so you don't have to worry about us having it.</p>
 
+  <h2>About us (this should call shared about us)</h2>
+
+  <div class="slideshow">
+    <div class="slideshow-card" *ngFor="let image of images; let i = index;" [class.active]="i === activeIndex">
+      <div class="card" [style.background-image]="'url(' + image.src +  ')'" >
+        <div class="card-details">
+          <div class="card-name">{{ image.alt }}</div>
+          <div class="card-price">$ {{ image.price }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slideshow">
+    <div class="slideshow-card" *ngFor="let image of images2; let i = index;" [class.active]="image.active">
+      <div class="card">
+        
+        <img class="card" [src]="image.image" [alt]="image.alt">
+        <div class="card-details">
+          
+          <div class="card-name">{{image.name}}</div>
+
+          <div class="card-price">{{image.price}}</div>
+          <div class="card-price">{{image.id}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
