@@ -41,6 +41,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { AboutUsComponent } from './views/about-us/about-us.component';
 import { SearchBarComponent } from './shared/header/search-bar/search-bar.component';
 import { SearchPageComponent } from './views/search-page/search-page.component';
+import {MatRippleModule} from '@angular/material/core'; 
 
 @NgModule({
   declarations: [ 
@@ -87,6 +88,8 @@ import { SearchPageComponent } from './views/search-page/search-page.component';
     MatIconModule,
     MatPaginatorModule,
     MatButtonToggleModule,
+    MatRippleModule,
+    
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

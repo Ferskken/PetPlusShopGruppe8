@@ -2,7 +2,7 @@
 //https://www.colorhexa.com/3f51b5
 
 header { //styling the header
-  height: 155px;
+  height:10.5rem;
   color: white;
   background-color: #3F51B5;
     padding: 20px;
@@ -22,7 +22,14 @@ header { //styling the header
       text-decoration: none;
       justify-content: space-around;
     }
-
+    .col-6 {
+      width: 50%;
+    }
+    app-search-bar {
+      width: 100%;
+      font-size: 20px;
+      padding: 10px;
+    }
     button{
     color: white;
     transition: background-color 0.2s ease;
