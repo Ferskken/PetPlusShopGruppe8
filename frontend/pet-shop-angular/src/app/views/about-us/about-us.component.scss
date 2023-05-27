@@ -33,7 +33,7 @@ body {
   
   .testimonial {
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    
     padding: 20px;
     border-radius: 5px;
     display: flex;
@@ -51,10 +51,16 @@ body {
   
   .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Adjust the number of columns as needed */
     grid-gap: 20px; /* Adjust the gap between grid items as needed */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    border-radius: 4rem ;
+    border-radius: 4rem;
+ 
+    grid-template-columns: 1fr 1fr; /* Default two columns */
+  
+    /* Media query for single column layout */
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr; /* Switch to single column */
+    }
   }
   
   .testimonial-image {
