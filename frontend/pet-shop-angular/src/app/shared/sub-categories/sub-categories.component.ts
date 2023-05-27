@@ -33,4 +33,5 @@ export class SubCategoriesComponent {
       this.subCategories.emit(tmp);
     });
   }
+  
 }
