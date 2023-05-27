@@ -42,7 +42,8 @@ import { AboutUsComponent } from './views/about-us/about-us.component';
 import { SearchBarComponent } from './shared/header/search-bar/search-bar.component';
 import { SearchPageComponent } from './views/search-page/search-page.component';
 import {MatRippleModule} from '@angular/material/core';
-import { TestimonialsComponent } from './shared/testimonials/testimonials.component'; 
+import { TestimonialsComponent } from './shared/testimonials/testimonials.component';
+import { AboutUsSharedComponent } from './shared/about-us-shared/about-us-shared.component'; 
 
 @NgModule({
   declarations: [ 
@@ -70,6 +71,7 @@ import { TestimonialsComponent } from './shared/testimonials/testimonials.compon
     SearchBarComponent,
     SearchPageComponent,
     TestimonialsComponent,
+    AboutUsSharedComponent,
   ],
   imports: [ 
     BrowserModule,
