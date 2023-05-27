@@ -6,10 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./about-us.component.scss']
 })
 export class AboutUsComponent {
-  showMore: boolean = false;
 
-  toggleShowMore() {
-    this.showMore = !this.showMore;
-  }
 }
 
