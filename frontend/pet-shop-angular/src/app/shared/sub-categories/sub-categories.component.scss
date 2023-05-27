@@ -1,14 +1,10 @@
 .sidebar {
-    //background-color: blue;
-    padding-left: 1rem;
-    border-color: blue;
-    
+    //padding-left: 1rem;
   }
 
   .sidebar h2 {
     margin-top: 0;
-    background-color: blue;
-    text-align: center;
+   // text-align: center;
   }
 
   /* Add a class to the mat-button-toggle-group */
@@ -20,4 +16,7 @@ mat-button-toggle-group.column {
 /* Add some margin to the mat-button-toggle components */
 mat-button-toggle {
   margin: 8px 0;
+}
+mat-sidenav{
+  margin-top: 10rem;
 }
