@@ -11,6 +11,7 @@
     </section>
     <section class="grid-item grid-item-slideshow">
       <div class="slideshow">
+        
         <div class="slideshow-card" *ngFor="let image of images2; let i = index;" [class.active]="image.active">
           <div class="card">
             <img class="card" [src]="image.image" [alt]="image.alt">
