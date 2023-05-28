@@ -91,23 +91,31 @@ router.get("/user/by-name/:name", async (ctx: Context) => {
   
 router.post("/user", async (ctx: Context) => {
   const user: UserAttributes = ctx.request.body as UserAttributes;
-  
-  const existingUser = await UserModel.findOne({ where: { id: user.id } });
-  if (existingUser) {
-    ctx.status = 400; // Bad Request
-    ctx.body = { message: "This ID is already in use" };
-    return;
+
+  if(!user.id) {
+    // Find the max id in the database and add 1 to it
+    const maxIdUser = await UserModel.findOne({
+      order: [['id', 'DESC']]
+    });
+    user.id = (maxIdUser?.id || 0) + 1;
+  } else {
+    const existingUser = await UserModel.findOne({ where: { id: user.id } });
+    if (existingUser) {
+      ctx.status = 400; // Bad Request
+      ctx.body = { message: "This ID is already in use" };
+      return;
+    }
   }
 
   user.password = await bcrypt.hash(user.password, 10);
   user.role = Role.User;
   
   const result: UserAttributes = await UserModel.create(user);
-  ctx.body = result;
+  ctx.body = { message: "User created" };
   
   console.log("added user");
 });
-  
+
   router.put("/user/:id", async (ctx: Context) => {
     const { id } = ctx.params;
     const user: UserAttributes = ctx.request.body as UserAttributes;
