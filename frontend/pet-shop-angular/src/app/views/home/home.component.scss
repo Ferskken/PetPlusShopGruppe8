@@ -1,3 +1,4 @@
+
 h1 {
   font-size: 5rem; /* Adjust the font size */
   font-weight: bold; /* Apply bold font weight */
@@ -15,12 +16,6 @@ h2{
 p {
   font-family: 'Comic Sans MS', cursive;
 }
-.about-us{
-  margin-bottom: 4rem;
-}
-
-
-
 
 .box {
   margin: 0rem;
@@ -32,6 +27,7 @@ p {
   width: 100%; /* Adjust the width of the box to make it wider */
   height: 100%; /* Adjust the height of the box to make it taller */
   border-radius: 10px; /* Adjust the border-radius to make the box inside the card rounder */
+  background-color: lightgray;
   background-color: white;
   /* Add any other styles for the box */
 }
@@ -82,6 +78,9 @@ p {
 
 
 
+
+
+
 .slideshow {
   position: relative;
   width: 100%;
@@ -115,269 +114,218 @@ p {
   opacity: 1;
 }
 
+.slideshow-card:hover .card-details {
+  width: calc(40% - 40px); /* Adjust the width on hover or based on your preference */
+}
+
+
+
+
+
+/*stling for small screens*/
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem; /* Adjust the font size for mobile devices */
+    padding: 0;
+    margin: 0;
+  }
+}
+
+
+
+/*styling for the slideshow on small screens*/
+/* styling for the card in the slideshow and stockimage */
+
+
+@media screen and (max-width: 768px) {
+
+  .slideshow {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .slideshow-card {
+    display: block;
+    text-align: center;
+  }
+
   .slideshow-card:hover .card-details {
-    width: calc(40% - 40px); /* Adjust the width on hover or based on your preference */
+    width: calc(60% - 40px); /* Adjust the width on hover or based on your preference for smaller screens */
   }
-  
+}
 
 
 
 
-  
-  @media screen and (max-width: 768px) {
-    .card-details {
-      width: calc(30% - 40px); /* Adjust the width for smaller screens */
-    }
-  
-    .slideshow-card:hover .card-details {
-      width: calc(60% - 40px); /* Adjust the width on hover or based on your preference for smaller screens */
-    }
+
+
+/* styling for the grid container*/
+
+@media (min-width: 767px) {
+  .grid-item2 {
+    display: none; /* Hide the grid item containing the stock image when the screen is big */
   }
+}
 
-  @media screen and (max-width: 768px) {
-    .grid-container {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto;
-    }
-  
-    .card {
-      width: 100%;
-      height: auto;
-    }
+
+@media screen and (max-width: 767px) {
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    
+    grid-template-rows: auto;
+    display: block;
   }
 
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2rem; /* Adjust the font size for mobile devices */
-      padding: 0;
-      margin: 0;
-    }
+  .grid-item {
+    margin-bottom: 5rem;
+    height: 400px;
+  }
+
+  .grid-item.grid-item2 {
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;   
+  }
+  .grid-item.grid-item-slideshow {
+    display: block;
+    text-align: center;
+  }
+
+}
+
+  
+
+/*styling for the card on small screens*/
+@media (max-width: 767px) {
+
+
+
+  .card-image.card {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    max-width: 300px; /* Adjust the max-width as needed */
+    border-radius: 5rem;
+    overflow: hidden;
+  }
+
+  .card-image.card img {
+    width: 100%;
+    height: auto;
+  }
+    
+  .card {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-details {
+    width: calc(30% - 40px); /* Adjust the width for smaller screens */
+  }
+  .card-details {
+    
+    background-color: rgba(63, 81, 181, 0.85);
+    padding: 0px;
+    border-radius: 3rem;
+    color: #fff;
+    margin-top: -40px; /* Adjust the margin as needed to position it properly */
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+    width: calc(50% - 2rem);
+    height: calc( 25%);
+  }
+  .card-image {
+    display: block; /* Show the card image */
+    max-width: 100%; /* Adjust the image width as needed */
+    height: auto; /* Adjust the image height as needed */
+    margin: 0 auto; /* Center the image horizontally */
+  }
+
+  .card-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .card-price {
+    font-size: 15px;
+  }
+  .card-details {
+    background-color: rgba(63, 81, 181, 0.85);
+    padding: 0px;
+    border-radius: 3rem;
+    color: #fff;
+    margin-top: -40px; /* Adjust the margin as needed to position it properly */
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+    width: calc(50% - 2rem);
+    height: calc( 25%);
+  }
+    
+  .card {
+    display: inline-block;
+    margin: 0 auto;
+
+  .card-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .card-price {
+    font-size: 15px;
+  }
+  .card-image {
+    display: block; /* Show the card image */
+    max-width: 100%; /* Adjust the image width as needed */
+    height: auto; /* Adjust the image height as needed */
+    margin: 0 auto; /* Center the image horizontally */
+  }
+  .card-image.card img {
+    width: 100%;
+    height: auto;
+  }
+  .card-image.card {
+    display: inline-block;
+    width: 100%;
+    max-width: 300px; /* Adjust the max-width as needed */
+    border-radius: 5rem;
+    overflow: hidden;
+  }
+}
+}
+
+
+
+@media screen and (max-width: 767px) {
+  .grid-item.grid-item-slideshow {
+    display: block;
+    text-align: center;
   }
 
 
-  @media screen and (max-width: 767px) {
-    .grid-container {
-      display: block;
-    }
+
+
+}
+
+
+/*for very small screens*/
+
+@media (max-width: 480px) {
+  .box {
+    margin: 0;
+    padding: 4rem;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    margin: 0;
+    padding: 1rem;
   
-    .grid-item {
-      margin-bottom: 1rem;
-    }
-  
-    .slideshow {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-    }
-  
-    .slideshow-card {
-      display: block;
-      text-align: center;
-    }
-  
-    .card {
-      display: inline-block;
-      margin: 0 auto;
-    }
   }
-     /* Existing CSS styles */
 
-    /* Media query for switching out the slideshow */
-    @media (min-width: 767px) {
-      .grid-item2 {
-        display: none; /* Hide the grid item containing the slideshow */
-      }
-
-      .card-image {
-        display: block; /* Show the card image */
-        max-width: 100%; /* Adjust the image width as needed */
-        height: auto; /* Adjust the image height as needed */
-        margin: 0 auto; /* Center the image horizontally */
-      }
-
-
-    }
-
-    @media (max-width: 767px) {
-      .grid-item.grid-item2 {
-        display: block;
-        text-align: center;
-        margin-bottom: 1rem;
-      }
-    
-      .card-image.card {
-        display: inline-block;
-        width: 100%;
-        max-width: 300px; /* Adjust the max-width as needed */
-        border-radius: 5rem;
-        overflow: hidden;
-      }
-    
-      .card-image.card img {
-        width: 100%;
-        height: auto;
-      }
-    
-      .card-details {
-       
-        background-color: rgba(63, 81, 181, 0.85);
-        padding: 0px;
-        border-radius: 3rem;
-        color: #fff;
-        margin-top: -40px; /* Adjust the margin as needed to position it properly */
-        position: absolute;
-        bottom: 15%;
-        right: 10%;
-        width: calc(50% - 2rem);
-        height: calc( 25%);
-      }
-    
-      .card-name {
-        font-size: 18px;
-        font-weight: bold;
-      }
-    
-      .card-price {
-        font-size: 15px;
-      }
-    }
-
-
-
-    @media screen and (max-width: 767px) {
-      .grid-item.grid-item-slideshow {
-        display: block;
-        text-align: center;
-      }
-
-      .slideshow {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-      }
-
-      .slideshow-card {
-        display: block;
-        text-align: center;
-      }
-
-      .card {
-        display: inline-block;
-        margin: 0 auto;
-      }
-    }
-
-
-        /* Existing CSS styles */
-
-    /* Media query for switching out the slideshow */
-    @media (min-width: 767px) {
-      .grid-item2 {
-        display: none; /* Hide the grid item containing the slideshow */
-      }
-
-      .card-image {
-        display: block; /* Show the card image */
-        max-width: 100%; /* Adjust the image width as needed */
-        height: auto; /* Adjust the image height as needed */
-        margin: 0 auto; /* Center the image horizontally */
-      }
-    }
-
-    @media screen and (max-width: 767px) {
-      .grid-item.grid-item2 {
-        display: block;
-        text-align: center;
-        margin-bottom: 1rem;
-      }
-
-      .card-image.card {
-        display: inline-block;
-        width: 100%;
-        max-width: 300px; /* Adjust the max-width as needed */
-        border-radius: 5rem;
-        overflow: hidden;
-      }
-
-      .card-image.card img {
-        width: 100%;
-        height: auto;
-      }
-
-      .card-details {
-        background-color: rgba(63, 81, 181, 0.85);
-        padding: 0px;
-        border-radius: 3rem;
-        color: #fff;
-        margin-top: -40px; /* Adjust the margin as needed to position it properly */
-        position: absolute;
-        bottom: 15%;
-        right: 10%;
-        width: calc(50% - 2rem);
-        height: calc( 25%);
-      }
-
-      .card-name {
-        font-size: 18px;
-        font-weight: bold;
-      }
-
-      .card-price {
-        font-size: 15px;
-      }
-    }
-
-    @media screen and (max-width: 767px) {
-      .grid-item.grid-item-slideshow {
-        display: block;
-        text-align: center;
-      }
-
-
-
-      .card {
-        display: inline-block;
-        margin: 0 auto;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .box {
-        margin: 0;
-        padding: 4rem;
-        width: 100%;
-        height: auto;
-        border-radius: 0;
-        margin: 0;
-        padding: 1rem;
-      
-      }
-
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem; /* Adjust the font size for mobile devices */
-        padding: 0;
-        margin: 0;
-      }
-
-      .grid-container {
-        display: block;
-      }
-
-      .grid-item {
-        margin-bottom: 1rem;
-      }
-
-
-
-      .card {
-        display: inline-block;
-        margin: 0 auto;
-      }
-    }
+}
   
-
-
-
