@@ -86,16 +86,11 @@ router.get("/user/:id", async (ctx: Context) => {
   
   router.post("/user/authenticate", async (ctx: Context) => {
     const { username, password } = ctx.request.body as { username:string, password:string };
-    console.log(username);
-    console.log(password);
     
     const user = await UserModel.findOne({
       raw: true,
       where: { email:username }, 
     });
-    console.log(user);
-    console.log(user.password);
-    console.log(password);
     const res = await bcrypt.compare(password, user.password);
     if(res){
       ctx.body = {

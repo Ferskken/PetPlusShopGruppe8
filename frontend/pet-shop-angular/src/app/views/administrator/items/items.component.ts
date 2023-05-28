@@ -22,8 +22,6 @@ export class ItemsComponent {
 }
 
 ngOnChanges(changes: SimpleChanges) {
-  // log the changes to the console
-  console.log(changes);
 
   // if the 'categories' input property has changed
   if ('categories' in changes) {
@@ -46,9 +44,8 @@ onOpenAddItemDialog(): void {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.itemsService.saveItem(result).subscribe((res)=>{
-          console.log(res);
         },(err)=>{
-          console.log(err)
+          console.error(err)
         })
       }
     });
@@ -58,11 +55,10 @@ onOpenAddItemDialog(): void {
     this.itemsService.deleteItem(id).subscribe(
       (res) => {
         // Handle successful deletion
-        console.log(res);
       },
       (err) => {
         // Handle error
-        console.log(err);
+        console.error(err);
       }
     );
   }

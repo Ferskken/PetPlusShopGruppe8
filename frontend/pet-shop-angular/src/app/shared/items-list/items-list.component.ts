@@ -16,8 +16,6 @@ export class ItemsListComponent implements OnChanges {
   constructor(private itemsService: ItemsService, private shoppingCartService: ShoppingCartService) { }
 
   ngOnChanges(changes: SimpleChanges) {
-    // log the changes to the console
-    console.log(changes);
 
     // if the 'categories' input property has changed
     if ('categories' in changes) {
@@ -29,7 +27,6 @@ export class ItemsListComponent implements OnChanges {
     }
   }
   addToShoppingCart(item: ItemAttributes) {
-    console.log(item)
     let cartItem = {
       id: item.id,
       name: item.name,

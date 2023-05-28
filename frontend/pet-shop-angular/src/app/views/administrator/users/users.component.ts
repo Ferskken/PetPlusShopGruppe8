@@ -15,7 +15,7 @@ export class UsersComponent {
     this.userService.getAllUsers().subscribe((data)=>{
       this.users=data as UserAttributes[];
     },(err)=>{
-      console.log(err)
+      console.error(err)
     })
   }
 

@@ -16,7 +16,6 @@ export class AdminItemsListComponent implements OnChanges{
   
   ngOnChanges(changes: SimpleChanges) {
     // log the changes to the console
-    console.log(changes);
 
     // if the 'categories' input property has changed
     if ('categories' in changes) {
@@ -35,14 +34,12 @@ export class AdminItemsListComponent implements OnChanges{
       this.itemsService.deleteItem(id).subscribe(
         (res) => {
           // Handle successful deletion
-          console.log(res);
-  
           // Remove the deleted item from the items array
           this.items = this.items.filter(item => item.id !== id);
         },
         (err) => {
           // Handle error
-          console.log(err);
+          console.error(err);
         }
       );
     }

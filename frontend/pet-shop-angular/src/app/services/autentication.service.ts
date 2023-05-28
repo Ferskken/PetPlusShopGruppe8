@@ -20,7 +20,6 @@ export class AuthenticationService {
         private http: HttpClient
     ) {
       let user =   localStorage.getItem('user');
-      console.log(user);
       if (user) {
         this.userSubject = new BehaviorSubject<User>(JSON.parse(user));
         this.user = this.userSubject.asObservable();
@@ -36,7 +35,6 @@ export class AuthenticationService {
       return this.http.post<any>("/petapi/user/authenticate", { username, password })
           .pipe(map((res:{token:string,status:string}) => {
               // store user details and jwt token in local storage to keep user logged in between page refreshes
-              console.log(res.token);
               let decodedUser :  { name: string, role: string } = jwt_decode(res.token);
               let user : User = {
                   name : decodedUser.name,

@@ -22,7 +22,6 @@ export class SearchPageComponent implements OnInit {
  }
 
  addToShoppingCart(item: ItemAttributes) {
-  console.log(item)
   let cartItem = {
     id: item.id,
     name: item.name,

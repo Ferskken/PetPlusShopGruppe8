@@ -53,7 +53,6 @@ export class BecomeMemberComponent {
 
     
      this.usersService.createUser(userData).subscribe((res) =>{
-      console.log(res)
      })
     
     }
