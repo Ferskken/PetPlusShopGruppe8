@@ -1,17 +1,17 @@
-   <div class="row">
-    <div class="col-sm-3 mb-5" *ngFor="let item of items">
-      <mat-card class="w-100 h-100">
-        <div class="image-container">
-          <img mat-card-lg-image src="{{item.image}}" alt="fant ikke bilde">
-        </div>
-        <mat-card-header>
-          <mat-card-title-group>
-            <mat-card-title><!--{{item.id}} -->{{item.name}}</mat-card-title>
-            <mat-card-subtitle>{{item.price}},-
-            </mat-card-subtitle><button mat-button (click)="addToShoppingCart(item)">Add to Cart</button>
-          </mat-card-title-group>
-        </mat-card-header>
-        
-      </mat-card>
-    </div>
+<div class="row">
+  <div class="col-sm-3 mb-5" *ngFor="let item of items">
+    <mat-card class="w-100 h-100">
+      <div class="image-container">
+        <img mat-card-lg-image src="{{item.image}}" alt="fant ikke bilde">
+      </div>
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title><!--{{item.id}} -->{{item.name}}</mat-card-title>
+          <mat-card-subtitle>{{item.price}},-
+          </mat-card-subtitle><button mat-button (click)="addToShoppingCart(item)">Add to Cart</button>
+        </mat-card-title-group>
+      </mat-card-header>
+      
+    </mat-card>
   </div>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
+import { first } from 'rxjs/operators';
 import { ItemAttributes, ItemsService } from 'src/app/services/items.service';
 
 @Component({
@@ -28,7 +29,7 @@ export class SearchBarComponent implements OnInit{
 
  fetchData(): void {
 
- this.itemsService.searchItems(this.name).subscribe((items) => {
+ this.itemsService.searchItems(this.name).pipe(first()).subscribe((items) => {
  this.items = items;
  this.itemsService.setItems(this.items);
  let navigationExtras: NavigationExtras = {

@@ -37,3 +37,6 @@ replay_pid*
 #public
 public
 keys
+
+#database.sql
+database.sqlite

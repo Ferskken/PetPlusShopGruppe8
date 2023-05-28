@@ -2,6 +2,7 @@ import { Component ,OnInit, OnChanges, Input, SimpleChanges} from '@angular/core
 import { MatDialog, MatDialogConfig,MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {AddItemDialogComponent} from './add-item-dialog/add-item-dialog.component';
 import { ItemsService,ItemAttributes} from 'src/app/services/items.service';
+import { first } from 'rxjs/operators';
 
 
 
@@ -26,7 +27,7 @@ ngOnChanges(changes: SimpleChanges) {
   // if the 'categories' input property has changed
   if ('categories' in changes) {
     // call the service to get the items for the new category
-    this.itemsService.getItems(changes['categories'].currentValue).subscribe((data) => {
+    this.itemsService.getItems(changes['categories'].currentValue).pipe(first()).subscribe((data) => {
       // update the items array with the new items
       this.items = data as ItemAttributes[];
     });
@@ -43,7 +44,7 @@ onOpenAddItemDialog(): void {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.itemsService.saveItem(result).subscribe((res)=>{
+        this.itemsService.saveItem(result).pipe(first()).subscribe((res)=>{
         },(err)=>{
           console.error(err)
         })
@@ -52,7 +53,7 @@ onOpenAddItemDialog(): void {
   }
   onDeleteItem(id: number): void {
     // Call the deleteItem method of the ItemsService to delete the item from the backend API
-    this.itemsService.deleteItem(id).subscribe(
+    this.itemsService.deleteItem(id).pipe(first()).subscribe(
       (res) => {
         // Handle successful deletion
       },

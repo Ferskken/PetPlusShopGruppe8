@@ -1,3 +1,7 @@
+h2{
+    font-size: larger;
+    font-style: italic;
+}
 .testimonial {
     margin-bottom: 15px;
     
@@ -19,8 +23,9 @@
   .grid-container {
     display: grid;
     grid-gap: 20px; /* Adjust the gap between grid items as needed */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
     border-radius: 4rem;
+    
  
     grid-template-columns: 1fr 1fr; /* Default two columns */
   
@@ -46,4 +51,5 @@
     line-height: 1.5;
     max-height: 100px; /* Adjust the maximum height as needed */
     overflow: hidden;
+    font-size: medium;
   }

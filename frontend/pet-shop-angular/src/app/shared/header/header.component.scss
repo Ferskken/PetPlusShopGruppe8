@@ -60,6 +60,12 @@ header { //styling the header
           transition: background-color 0.3s ease; /* Transition effect */
           border-radius: 5px;
           margin-right: 38px;
+          @media screen and (max-width: 767px) {
+            header nav ul li a {
+              color: #32408f; /* Color for smaller screens */
+            }
+          }
+          
 
           a { //styling for the navbar underpart of the navbar S
             display: flex;
@@ -85,4 +91,28 @@ header { //styling the header
     }
   }
   
+
+
+  header .col-3.logo {
+    @media screen and (max-width: 767px) {
+      width: 50%;
+      margin-bottom: 10px;
+    }
+  }
+
+  header nav ul {
+    /* Existing styles for the navigation menu */
+  
+    /* Media query for screens smaller than 767px */
+    @media screen and (max-width: 767px) {
+      
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding-left: 0;
+      margin-top: 20px;
+      color: #32408f;
+    }
+  }
+
   

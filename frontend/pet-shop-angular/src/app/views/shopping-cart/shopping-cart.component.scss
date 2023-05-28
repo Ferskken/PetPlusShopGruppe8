@@ -18,11 +18,7 @@ h2{
   font-size: 1.2em;
 } */
 
-.shopping-cart {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
+
 
 .header-container {
   text-align: center;
@@ -30,200 +26,198 @@ h2{
 }
 
 .header-1 {
-  position: absolute;
-  margin-left: 45%;
-  margin-top: -2.5rem;
+  font-size: 2rem;
+  text-align: center;
   margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
 }
 
 .header-2 {
-  position: absolute;
-  margin-left: 41%;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.left-column,
-.right-column {
-  flex-basis: calc(50% - 20px);
-  margin-top: 100px;
-  /* add more or less margin as needed */
-}
-
-.total-price {
-  font-weight: bold;
-  text-align: right;
-}
-
-.checkout-button {
-  background-color: 3f51b5;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
   text-align: center;
+  margin-bottom: 10rem;
+}
+
+
+
+.content-container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  margin:3rem;
+  margin-top: 10rem;
+}
+.content-container-item{
+  border: #2196F3;
+  padding: 20px;
+  border: 4px solid lightgrey; /* Adjust the border width as needed */
+  border-radius: 3px;
 
 }
 
-.shopping-cart {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+
+
+
+/*components for the checkout thingy.  right column
+this dos't work for some reason, the styling is not aplied so it has to be removed before its finished*/
+@media ( max-width:10000){
+  
+  .total-box {
+    // position: static;
+     padding: 10px;
+     width: 250px;
+   
+   }
+   
+   .delivery-fee-label {
+     margin-left: 10px;
+   }
+   
+   .delivery-fee-amount {
+     font-weight: bold;
+   }
+   
+   .total-with-fee-label {
+     font-weight: bold;
+     margin-top: 10px;
+   }
+   
+   .total-with-fee {
+     font-weight: bold;
+   }
+   .total-price {
+    font-weight: bold;
+    text-align: right;
+  }
+  
+  .checkout-button {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  
+  }
+  .total-price {
+    font-weight: bold;
+    text-align: right;
+  }
+  
 }
 
-.header-container {
-  text-align: center;
-  padding-top: 50px;
+
+/*cart items left collumn */
+@media (max-width:10000){
+  .cart-items {
+    width: 70%;
+    position: relative;
+  }
+  .cart-item-list {
+    margin-bottom: 0rem;
+  }
 }
 
-.total-box {
- // position: static;
-  padding: 10px;
-  width: 250px;
 
-}
+/*legit ingen anelse, mye som ikke en gang eksisterer i html filen */
+@media (max-width:10000){
+  
 
-.delivery-fee-label {
-  margin-left: 10px;
-}
+  body {
+    font-family: Arial;
+    font-size: 17px;
+    padding: 8px;
+  }
 
-.delivery-fee-amount {
-  font-weight: bold;
-}
+  * {
+    box-sizing: border-box;
+  }
 
-.total-with-fee-label {
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.total-with-fee {
-  font-weight: bold;
-}
-
-.cart-items {
-  width: 70%;
-  position: relative;
-}
-.cart-item-list {
-  margin-bottom: 0rem;
-}
-
-@media (max-width: 768px) {
-  .shopping-cart {
+  .row {
+    display: -ms-flexbox; /* IE10 */
     display: flex;
-    flex-direction: column;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -16px;
   }
 
-  .left-column {
-    order: 2;
+  .col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
   }
 
-  .right-column {
-    order: 3;
-    margin-left: 4rem;
+  .col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
   }
-  .checkout-button{
-    margin-left: 3.5rem;
+
+  .col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+  }
+
+  .col-25,
+  .col-50,
+  .col-75 {
+    padding: 0 16px;
+  }
+
+  .container {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+  }
+
+  input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  label {
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+  }
+
+  .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+  }
+
+  .btn:hover {
+    background-color: #45a049;
+  }
+
+  a {
+    color: #2196F3;
+  }
+
+  hr {
+    border: 1px solid lightgrey;
+  }
+
+  span.price {
+    float: right;
+    color: grey;
   }
 }
 
-
-
-
-
-
-body {
-  font-family: Arial;
-  font-size: 17px;
-  padding: 8px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.row {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  margin: 0 -16px;
-}
-
-.col-25 {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-}
-
-.col-50 {
-  -ms-flex: 50%; /* IE10 */
-  flex: 50%;
-}
-
-.col-75 {
-  -ms-flex: 75%; /* IE10 */
-  flex: 75%;
-}
-
-.col-25,
-.col-50,
-.col-75 {
-  padding: 0 16px;
-}
-
-.container {
-  background-color: #f2f2f2;
-  padding: 5px 20px 15px 20px;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
-}
-
-input[type=text] {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-label {
-  margin-bottom: 10px;
-  display: block;
-}
-
-.icon-container {
-  margin-bottom: 20px;
-  padding: 7px 0;
-  font-size: 24px;
-}
-
-.btn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  width: 100%;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 17px;
-}
-
-.btn:hover {
-  background-color: #45a049;
-}
-
-a {
-  color: #2196F3;
-}
-
-hr {
-  border: 1px solid lightgrey;
-}
-
-span.price {
-  float: right;
-  color: grey;
-}
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
 @media (max-width: 800px) {
@@ -234,3 +228,26 @@ span.price {
     margin-bottom: 20px;
   }
 }
+
+@media (max-width: 768px) {
+
+  .checkout-button{
+    margin-left: 3.5rem;
+  }
+  .content-container{
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin:1.5rem;
+    margin-top: 5rem;
+    
+  }
+  .content-container-item{
+    border: #2196F3;
+    padding: 2px;
+
+    border: 1px solid lightgrey; /* Adjust the border width as needed */
+    border-radius: 3px;
+  
+  }
+}
+

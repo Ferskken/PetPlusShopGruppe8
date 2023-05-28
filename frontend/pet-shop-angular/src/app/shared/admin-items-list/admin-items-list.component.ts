@@ -1,4 +1,5 @@
 import { Component, OnInit, OnChanges, Input, SimpleChanges } from '@angular/core';
+import { first } from 'rxjs/operators';
 import { ItemsService, ItemAttributes } from 'src/app/services/items.service';
 import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
 
@@ -31,7 +32,7 @@ export class AdminItemsListComponent implements OnChanges{
     if (window.confirm('Are you sure you want to delete this item?')) {
       // If the user clicked "OK", delete the item
       // Call the deleteItem method of the ItemsService to delete the item from the backend API
-      this.itemsService.deleteItem(id).subscribe(
+      this.itemsService.deleteItem(id).pipe(first()).subscribe(
         (res) => {
           // Handle successful deletion
           // Remove the deleted item from the items array

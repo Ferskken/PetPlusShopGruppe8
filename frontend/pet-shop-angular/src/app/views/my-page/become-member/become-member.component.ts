@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { StepperOrientation } from '@angular/material/stepper';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { first, map } from 'rxjs/operators';
 import { UserAttributes, UsersService} from 'src/app/services/users.service';
 
 
@@ -52,7 +52,7 @@ export class BecomeMemberComponent {
     };
 
     
-     this.usersService.createUser(userData).subscribe((res) =>{
+     this.usersService.createUser(userData).pipe(first()).subscribe((res) =>{
      })
     
     }

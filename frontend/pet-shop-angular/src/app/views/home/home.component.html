@@ -3,38 +3,39 @@
    
 
 
-  <div class="grid-container">
-    <div class="grid-item">
+  <section class="grid-container">
+    <section class="grid-item">
       <br><br>
       <p>We have a vast collection of all the items your pet could possibly want, so you don't need to worry about us having it.</p>
       <p><br><h2>About us (this should call shared about us)</h2> <br> we have a vast collection of all sorts of items you could possibly want for your beloved pets, your only limit is your imagination, so what are you waiting for? spend some money to make your pets have a better life or be a terrible human being, the choice is yours, so don't make the a bad decision and try to save money you can make to give your pets the life they deserve</p>
-    </div>
+    </section>
     <section class="grid-item grid-item-slideshow">
       <div class="slideshow">
+        
         <div class="slideshow-card" *ngFor="let image of images2; let i = index;" [class.active]="image.active">
           <div class="card">
             <img class="card" [src]="image.image" [alt]="image.alt">
             <section class="card-details">
               <div class="card-name">{{image.name}}</div>
-              <div class="card-price">{{image.price}}</div>
-              <div class="card-price">{{image.id}}</div>
+              <div class="card-price">{{image.price}}    kr</div>
+        
             </section>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="grid-item grid-item2">
-      <section class="card-image card">
-        <img src="assets/somePictures/skildpadde-med-hatt.png" alt="epic">
+    <section class="grid-item grid-item2">
+      <div class="card-image card">
+        <img class = "card" src="assets/somePictures/skildpadde-med-hatt.png" alt="epic">
         <div class="card-details">
           <div class="card-name">epic hat</div>
           <div class="card-price">$10</div>
           <div class="card-price">123</div>
         </div>
-      </section>
-    </div>
-  </div>
+      </div>
+    </section>
+  </section>
 
     <div style="margin-top: 20px;">
       
@@ -42,5 +43,4 @@
         
            </h2>
     </div>
-
-   
+</body>
