@@ -36,7 +36,6 @@ onOpenLoginDialog(): void {
 }
 
 isAdmin(): boolean{
-  console.log(this.user);
   return this.user && this.user.role == Role.Admin;
 }
 logout() {

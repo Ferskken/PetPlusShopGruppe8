@@ -47,7 +47,6 @@ export class AddItemDialogComponent {
 
   loadImage(event:Event) {
     var input = event.target as HTMLInputElement;
-    console.log(input.files);
     if (input && input.files && input.files[0]) {
       var reader = new FileReader();
       reader.onload = function (e) {
@@ -61,14 +60,12 @@ export class AddItemDialogComponent {
   }
 
   onCancel(): void {
-    console.log("close")
     this.dialogRef.close();
   }
 
   onSave(): void {
     // Add your save logic here
     var img = document.getElementById('image-preview') as HTMLImageElement
-    console.log(img.src);
     this.form.patchValue({image : img.src});
     let trueCategories : string[]  = [];
     for (let key in this.catForm.value) {
@@ -85,7 +82,6 @@ export class AddItemDialogComponent {
 
   openButtonClick(event:Event):void{
     const el: HTMLElement = this.fileImport!.nativeElement;
-   // console.log(el);
     el.click();
   }
 }

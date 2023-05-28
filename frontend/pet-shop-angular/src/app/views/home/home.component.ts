@@ -4,6 +4,7 @@ import { AuthenticationService } from 'src/app/services/autentication.service';
 
 import { AboutUsComponent } from '../about-us/about-us.component';
 import { ItemAttributes, ItemsService } from 'src/app/services/items.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -61,7 +62,7 @@ export class HomeComponent implements OnInit {
   }
 
   fetchItems() {
-    this.itemsService.getItems("all").subscribe(
+    this.itemsService.getItems("all").pipe(first()).subscribe(
       (items: any) => {
         this.images2 = this.images2.concat(items);
       },

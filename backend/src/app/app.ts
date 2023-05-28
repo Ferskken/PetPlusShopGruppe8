@@ -5,9 +5,15 @@ import jwt from "koa-jwt";
 // Import the user and item controllers
 import userController from "./controllers/user.controller";
 import itemController from "./controllers/item.controller";
+import staticServer from "koa-static";
+import orderController from "./controllers/order.controller";
+
 
 // Create a new Koa application instance
 const app: Koa = new Koa();
+
+
+app.use(staticServer(process.cwd() + '/public'));
 
 // Add the Koa body parser middleware to the application
 app.use(bodyParser());
@@ -22,11 +28,15 @@ app.use(bodyParser());
  * @param {string[]} excludedPaths - An array or regex patterns of paths that should be excluded from JWT authentication.
  * @returns {void}
  */
-app.use(jwt({ secret: process.env.SECRET }).unless({ path: [/^\/petapi\/user\/authenticate/]}));
 
+if (process.env.SECRET){
+app.use(jwt({ secret: process.env.SECRET }).unless({ path: [/^\/petapi\/user\/authenticate/]}));
+}
 // Register the user and item controllers with the application, making their routes available
 app.use(userController.routes());
 app.use(itemController.routes());
+app.use(orderController.routes());
 
 // Export the created Koa application instance for use in other parts of the application
 export default app;
+

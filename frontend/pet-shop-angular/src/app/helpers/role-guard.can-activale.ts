@@ -16,8 +16,6 @@ export class RoleGuard implements CanActivate {
             // check if route is restricted by role
         
            let roles : string[] = route.data['roles'];
-           console.log(roles);
-           console.log(user.role);
            if (roles  && roles.indexOf(user.role) === -1) {
                 // role not authorised so redirect to home page
                 this.router.navigate(['/home']);

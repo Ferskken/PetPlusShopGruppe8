@@ -2,31 +2,47 @@ import { Context} from "koa";
 import Router from "koa-router";
 import {ItemModel, ItemAttributes} from "../models/item.model";
 import { Op } from "sequelize";
+import { validate } from "../middleware/joi-wrapper";
+import Joi from "joi";
 
 const router: Router = new Router({ prefix: '/petapi' });
 
 ItemModel.sync();
 
 // API routes for items
-
-//if the categoryparemeter is all it will call all items, if not it will use search for 
-//the items with the given category names.
-router.get("/items", async (ctx: Context) => {
+router.get("/items/search", validate({
+  query:{
+    text: Joi.string().required()
+  }
+}), async (ctx: Context) => {
   let items: ItemAttributes[] = [];
-  console.log("we are here"); 
   console.log(ctx.query.categories);
-  if (ctx.query.name) {
+  if (ctx.query.text) {
   // Handle requests with the name query parameter
-  let name = ctx.query.name as string;
-  console.log(name); 
+  let text = ctx.query.text as string;
   items = await ItemModel.findAll({
   where: {
   name: {
-  [Op.like]: `%${name}%`
+  [Op.like]: `%${text}%`
   }
   }
   });
-  } else if (ctx.query.categories === "all") {
+  } 
+  ctx.body = items;
+  ctx.status = 200;
+ });
+
+//if the categoryparemeter is all it will call all items, if not it will use search for 
+//the items with the given category names.
+router.get("/items", validate({
+  query:{
+    categories: Joi.string().required()
+  }
+}), async (ctx: Context) => {
+  let items: ItemAttributes[] = [];
+  console.log("we are here"); 
+  console.log(ctx.query.categories);
+  if (ctx.query.categories === "all") {
   items = await ItemModel.findAll();
   }
   else {

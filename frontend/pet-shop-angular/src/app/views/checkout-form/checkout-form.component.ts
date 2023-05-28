@@ -31,8 +31,6 @@ export class CheckoutFormComponent implements OnInit {
       cartItems:this.shoppingCartService.getCartItems().map((item)=>{return{id:item.id,quantity:item.quantity}}),
       checkoutForm:this.checkoutForm.value
     }
-    console.log(checkOutData);
-    
   }
 
   get shippingForm(): FormGroup {

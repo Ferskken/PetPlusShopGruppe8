@@ -20,7 +20,7 @@ export class ItemsService {
 
  private itemsSource = new BehaviorSubject<ItemAttributes[]>([]);
  items$ = this.itemsSource.asObservable();
- 
+
  constructor(private http: HttpClient) { }
 
  // Method to retrieve items from the backend API
@@ -29,8 +29,8 @@ export class ItemsService {
  return this.http.get(`/petapi/items?categories=${categories}`);
  }
 
- searchItems(name: string): Observable<ItemAttributes[]> {
- return this.http.get<ItemAttributes[]>(`/petapi/items?name=${name}`);
+ searchItems(text: string): Observable<ItemAttributes[]> {
+ return this.http.get<ItemAttributes[]>(`/petapi/items/search?text=${text}`);
  }
  
 
