@@ -40,13 +40,21 @@ router.put("/orders/:id", async (ctx: Context) => {
   console.log("Updating order...");
   const id = ctx.params.id;
   const order: OrderAttributes = ctx.request.body as OrderAttributes;
-  const affectedCount: number[] = await OrderModel.update(order, {
+
+  const [affectedCount] = await OrderModel.update(order, {
     where: { id },
   });
-  const updatedOrder: OrderAttributes | null = await OrderModel.findByPk(id);
-  console.log("Order updated:", updatedOrder);
-  ctx.status = 200;
-  ctx.body = updatedOrder;
+
+  if (affectedCount > 0) {
+    const updatedOrder: OrderAttributes | null = await OrderModel.findByPk(id);
+    console.log("Order updated:", updatedOrder);
+    ctx.status = 200;
+    ctx.body = updatedOrder ?? "Order found but could not be returned";
+  } else {
+    console.log("Order not found or not updated");
+    ctx.status = 404;
+    ctx.body = "Order not found or not updated";
+  }
 });
 
 
