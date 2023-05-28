@@ -43,18 +43,21 @@
   </div>
 
   <div class="right-column">
-    <!-- Display total price -->
-    <div class="total-price">
-      <div class="total-box">
-        <span class="total-label">Total:</span>
-        <span class="total-amount">{{ cartTotal | currency }}</span>
-        <span class="delivery-fee-label">+ Delivery Fee: </span>
-        <span class="delivery-fee-amount">{{ deliveryFee | currency }}</span>
-        <hr>
-        <span class="total-with-fee-label">Total with Delivery Fee:</span>
-        <span class="total-with-fee">{{ (cartTotal + deliveryFee) | currency }}</span>
-      </div>
-    </div>
+    
+  <!-- Display total price -->
+<div class="total-price">
+  <div class="total-box">
+    <span class="total-label">Total:</span>
+    <span class="total-amount">{{ cartTotal | currency }}</span>
+    <br>
+    <span class="delivery-fee-label">+</span>
+    <span class="delivery-fee-label">Delivery Fee:</span>
+    <span class="delivery-fee-amount">{{ deliveryFee | currency }}</span>
+    <hr>
+    <span class="total-with-fee-label">Total with Delivery Fee:</span>
+    <span class="total-with-fee">{{ (cartTotal + deliveryFee) | currency }}</span>
+  </div>
+</div>
 
   <!-- Button to proceed to checkout -->
   <div>
