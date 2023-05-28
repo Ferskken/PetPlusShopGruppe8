@@ -43,3 +43,8 @@ mat-card {
     font-size: 1.8em;
   }
 
+@media screen and  (max-width:767px) {
+  mat-card{
+    max-width: 40rem;
+  }
+}
