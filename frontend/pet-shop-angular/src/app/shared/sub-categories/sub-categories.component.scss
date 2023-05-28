@@ -1,23 +1,58 @@
-.sidebar {
-    //background-color: blue;
-    padding-left: 1rem;
-    border-color: blue;
+.navbar{
+    
+    //margin-left: -2.75rem;
+    //margin-bottom: auto;
+    height: 100vh;
+    //width: 10rem;
+   // background-color: green;
+    position: absolute;
+  }
+  
+  .navbar-ul{
+ //   background-color: #3f51b5;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: auto;
+  }
+  
+  
+  .navbar-header{
+    //color: white;
+    margin-left: 1rem;
+    font-size:160%; 
+  }
+  
+  .navbar-ul mat-checkbox{
+    display: flex;
+    align-items: center;
+    box-shadow: none;
     
   }
 
-  .sidebar h2 {
-    margin-top: 0;
-    background-color: blue;
-    text-align: center;
+/*   .navbar:hover{
+    width: 16rem;
+  } */
+
+/*  .navbar:hover .link-text{
+  display: block;
+ } */
+
+
+  /* .custom-checkbox{
+    background-color: yellow;
+    border-color: green;
   }
-
-  /* Add a class to the mat-button-toggle-group */
-mat-button-toggle-group.column {
-  /* Change the flex direction to column */
-  flex-direction: column;
-}
-
-/* Add some margin to the mat-button-toggle components */
-mat-button-toggle {
-  margin: 8px 0;
-}
+  .custom-checkbox .mat-checkbox-frame {
+    border-color: green !important;
+  }
+  
+  .custom-checkbox .mat-checkbox-background {
+    background-color: green !important;
+  }
+  .custom-checkbox ::ng-deep .mat-checkbox-checkmark-path {
+    stroke: green !important;
+  } */

@@ -1,4 +1,59 @@
 .cart-item {
   max-width: 500px;
   min-width: 200px;
+  
 }
+
+
+.amount-box {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  line-height: 44px;
+  border: 1px solid rgb(80, 80, 80);
+  //margin-top: 15%;
+  padding: 0
+  
+}
+
+.label-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.amount-label {
+  margin-bottom: 0.5rem;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+button.mat-icon-button {
+  border: none;
+  margin: 0;
+  padding: 0;
+} 
+
+ .mat-icon{
+  //Endre str på knappane så dem blir lik amount-box fucke med alignment, slite med å finne ut koffor. Ser på seinere.
+  /* width: 44px;
+  height: 44px; */
+  color: white;
+  font-size: 24px;
+}
+
+.remove-button{
+  background-color: rgb(50, 64, 143);
+}
+
+.add-button{
+  background-color: rgb(63, 81, 181);}
+  

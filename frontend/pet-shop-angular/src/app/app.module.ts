@@ -41,6 +41,9 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { AboutUsComponent } from './views/about-us/about-us.component';
 import { SearchBarComponent } from './shared/header/search-bar/search-bar.component';
 import { SearchPageComponent } from './views/search-page/search-page.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
+
 import {MatRippleModule} from '@angular/material/core';
 import { TestimonialsComponent } from './shared/testimonials/testimonials.component';
 import { AboutUsSharedComponent } from './shared/about-us-shared/about-us-shared.component'; 
@@ -92,6 +95,7 @@ import { AboutUsSharedComponent } from './shared/about-us-shared/about-us-shared
     MatIconModule,
     MatPaginatorModule,
     MatButtonToggleModule,
+    MatSidenavModule,
     MatRippleModule,
     
   ],

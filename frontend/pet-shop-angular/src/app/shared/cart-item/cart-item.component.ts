@@ -1,4 +1,3 @@
-
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CartItem } from 'src/app/services/shopping-cart.service';
 
@@ -6,7 +5,6 @@ import { CartItem } from 'src/app/services/shopping-cart.service';
   selector: 'app-cart-item',
   templateUrl: './cart-item.component.html',
   styleUrls: ['./cart-item.component.scss'],
-  
 })
 export class CartItemComponent implements OnInit {
   @Input() item: CartItem = {
@@ -16,7 +14,7 @@ export class CartItemComponent implements OnInit {
     price: 0,
     quantity: 0,
     image: ''
-  } //new CartItem();
+  }
   @Output() remove = new EventEmitter<number>();
   @Output() updateQuantity = new EventEmitter<number>();
 
@@ -29,10 +27,22 @@ export class CartItemComponent implements OnInit {
     this.remove.emit(this.item.id);
   }
 
+  onAddOne(): void {
+    // Add one to the current quantity of items
+    const newQuantity = this.item.quantity + 1;
+    this.updateQuantity.emit(newQuantity);
+  }
+
+  onRemoveOne(): void {
+    // Remove one from the current quantity of items (if there is more than one)
+    if (this.item.quantity > 1) {
+      const newQuantity = this.item.quantity - 1;
+      this.updateQuantity.emit(newQuantity);
+    }
+  }
   onQuantityChange(event: Event): void {
     const input = event.target as HTMLInputElement;
     const quantity = parseInt(input.value, 10);
     this.updateQuantity.emit(quantity);
   }
-  
 }

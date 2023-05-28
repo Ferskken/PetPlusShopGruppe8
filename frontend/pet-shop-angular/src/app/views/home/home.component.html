@@ -1,5 +1,5 @@
 <body class = "box">
-  
+    
    
 
 
@@ -37,40 +37,10 @@
   </div>
 
     <div style="margin-top: 20px;">
-      <h2 class = "about-us"><app-about-us></app-about-us></h2>
+      
+      <h2 class = "about-us"><app-testimonials></app-testimonials><hr><hr><app-about-us-shared></app-about-us-shared>
+        
+           </h2>
     </div>
 
-    <h1>Welcome to petshop + !!</h1>
-
-    <p>Vi har et stort utvalg av alt du noen gang kunne ha ønsket at kjæledyret ditt skal ha.</p>
-    <p>We have a vast collection of all the items your pet could possibly want, so you don't have to worry about us having it.</p>
-
-    <h2>About us (this should call shared about us)</h2>
-
-    <div class="slideshow">
-      <div class="slideshow-card" *ngFor="let image of images; let i = index;" [class.active]="i === activeIndex">
-        <div class="card" [style.background-image]="'url(' + image.src +  ')'" >
-          <div class="card-details">
-            <div class="card-name">{{ image.alt }}</div>
-            <div class="card-price">$ {{ image.price }}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="slideshow">
-      <div class="slideshow-card" *ngFor="let image of images2; let i = index;" [class.active]="image.active">
-        <div class="card">
-          
-          <img class="card" [src]="image.image" [alt]="image.alt">
-          <div class="card-details">
-            
-            <div class="card-name">{{image.name}}</div>
-
-            <div class="card-price">{{image.price}}</div>
-            <div class="card-price">{{image.id}}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+   

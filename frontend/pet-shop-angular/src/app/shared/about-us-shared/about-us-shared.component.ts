@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./about-us-shared.component.scss']
 })
 export class AboutUsSharedComponent {
+  showMore: boolean = false;
+
+  toggleShowMore() {
+    this.showMore = !this.showMore;
+  }
 
 }
