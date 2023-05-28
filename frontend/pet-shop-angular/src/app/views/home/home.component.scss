@@ -204,24 +204,14 @@ p {
 
 
 
-  .card-image.card {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    max-width: 300px; /* Adjust the max-width as needed */
-    border-radius: 5rem;
-    overflow: hidden;
-  }
-
-  .card-image.card img {
-    width: 100%;
-    height: auto;
-  }
-    
+ 
   .card {
     width: 100%;
     height: auto;
-  }
+
+    display: inline-block;
+    margin: 0 auto;
+
 
   .card-details {
     width: calc(30% - 40px); /* Adjust the width for smaller screens */
@@ -239,12 +229,7 @@ p {
     width: calc(50% - 2rem);
     height: calc( 25%);
   }
-  .card-image {
-    display: block; /* Show the card image */
-    max-width: 100%; /* Adjust the image width as needed */
-    height: auto; /* Adjust the image height as needed */
-    margin: 0 auto; /* Center the image horizontally */
-  }
+
 
   .card-name {
     font-size: 18px;
@@ -265,36 +250,6 @@ p {
     right: 10%;
     width: calc(50% - 2rem);
     height: calc( 25%);
-  }
-    
-  .card {
-    display: inline-block;
-    margin: 0 auto;
-
-  .card-name {
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-  .card-price {
-    font-size: 15px;
-  }
-  .card-image {
-    display: block; /* Show the card image */
-    max-width: 100%; /* Adjust the image width as needed */
-    height: auto; /* Adjust the image height as needed */
-    margin: 0 auto; /* Center the image horizontally */
-  }
-  .card-image.card img {
-    width: 100%;
-    height: auto;
-  }
-  .card-image.card {
-    display: inline-block;
-    width: 100%;
-    max-width: 300px; /* Adjust the max-width as needed */
-    border-radius: 5rem;
-    overflow: hidden;
   }
 }
 }

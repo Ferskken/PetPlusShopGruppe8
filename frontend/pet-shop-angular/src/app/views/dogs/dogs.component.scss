@@ -1,29 +1,17 @@
-.row{
-  margin: 2rem;
-}
-.row .col:last-child app-items-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.row .col:last-child app-items-list .item {
-  width: 25%; /* Adjust the width of each item based on your preference */
-  padding: 10px;
+.box{
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 500px;
+  grid-gap: 10px;
+  margin: 2rem; 
 }
 
-.row .col:last-child app-items-list .item img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
 
-.row .col:last-child app-items-list .item .item-description {
-  margin-top: 10px;
-  font-size: 14px;
-}
+
 @media screen and (max-width: 767px) {
-  .row {
-    flex-direction: column;
+  .box {
+    height: auto;
+    grid-template-columns: 1fr;
   }
 }
 
