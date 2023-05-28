@@ -1,4 +1,4 @@
-<div class="cart-item" class="m-2 w-100">
+<div class="cart-item m-2 w-100">
 <mat-card>  <!-- Angular material mat-card -->
   <mat-card-header>
     <mat-card-title-group>
@@ -6,7 +6,7 @@
       <mat-card-subtitle>{{item.price | currency}}</mat-card-subtitle>
      
      <mat-form-field class="m-2 w-25">
-      <mat-label>Length</mat-label>
+      <mat-label>Amount</mat-label>
       <input matInput placeholder="Length" type="number" [value]="item.quantity" (input)="onQuantityChange($event)">
     </mat-form-field>
     </mat-card-title-group>
