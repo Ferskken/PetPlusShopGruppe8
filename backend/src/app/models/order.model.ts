@@ -1,27 +1,27 @@
-import { DataTypes, Model, OrderItem} from "sequelize";
-import  sequelize  from  "../config/db.config";
-
+import { DataTypes, Model } from "sequelize";
+import sequelize from "../config/db.config";
 
 export interface OrderAttributes {
-    cartItems?: OrderItem;
-    id?: number;
-    quantity?: number;
-    firstName?: string;
-    lastName?: string;
-    address?: string;
-    address2?: string;
-    zipCode?: number;
-    city?: string;
-    phone?: number;
-  }
+  cartItems?: any[];
+  id?: number;
+  quantity?: number;
+  firstName?: string;
+  lastName?: string;
+  address?: string;
+  address2?: string;
+  zipCode?: number;
+  city?: string;
+  phone?: number;
+}
 
-  export interface OrderInstance extends Model<OrderAttributes>, OrderAttributes {}
+export interface OrderInstance extends Model<OrderAttributes>, OrderAttributes {}
 
-  export  const OrderModel = sequelize.define<OrderInstance, OrderAttributes>("Order", 
-   {
+const OrderModel = sequelize.define<OrderInstance, OrderAttributes>(
+  "Order",
+  {
     cartItems: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.JSON,
+      allowNull: false,
     },
     id: {
       type: DataTypes.INTEGER,
@@ -41,25 +41,26 @@ export interface OrderAttributes {
       allowNull: false,
     },
     address: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     address2: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-     zipCode: {
+    zipCode: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      },
-      city: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      phone: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-  });
+    },
+    city: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    phone: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+  }
+);
 
-
+export { OrderModel };

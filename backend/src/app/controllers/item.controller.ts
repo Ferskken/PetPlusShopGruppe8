@@ -6,6 +6,7 @@ import { Op } from "sequelize";
 const router: Router = new Router({ prefix: '/petapi' });
 
 ItemModel.sync();
+console.log("Item controller connected to the Orders database.");
 
 // API routes for items
 

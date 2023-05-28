@@ -9,6 +9,7 @@ import { validate } from "../middleware/joi-wrapper";
 import Joi from "joi";
 
 UserModel.sync().then(async(res)=>{
+  
  /* console.log("Creating Admin user");
   await UserModel.create(
     {
@@ -29,6 +30,7 @@ UserModel.sync().then(async(res)=>{
   });
 */
 });
+console.log("User controller connected to the Orders database.");
 
 const router: Router = new Router({ prefix: '/petapi' });
 

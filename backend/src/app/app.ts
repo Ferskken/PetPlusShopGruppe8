@@ -5,6 +5,8 @@ import jwt from "koa-jwt";
 // Import the user and item controllers
 import userController from "./controllers/user.controller";
 import itemController from "./controllers/item.controller";
+import orderController from './controllers/order.controller';
+
 
 // Create a new Koa application instance
 const app: Koa = new Koa();
@@ -27,6 +29,7 @@ app.use(bodyParser());
 // Register the user and item controllers with the application, making their routes available
 app.use(userController.routes());
 app.use(itemController.routes());
+app.use(orderController.routes());
 
 // Export the created Koa application instance for use in other parts of the application
 export default app;
