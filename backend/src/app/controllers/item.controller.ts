@@ -2,7 +2,6 @@ import { Context} from "koa";
 import Router from "koa-router";
 import {ItemModel, ItemAttributes} from "../models/item.model";
 import { Op } from "sequelize";
-import { Sequelize } from 'sequelize';
 
 const router: Router = new Router({ prefix: '/petapi' });
 
@@ -54,12 +53,26 @@ router.get("/items", async (ctx: Context) => {
   ctx.status = 200;
  });
  
-//routing to post an item into items (create items)
-router.post("/items", async (ctx: Context) => {
-  const item: ItemAttributes = ctx.request.body as ItemAttributes;
-  const result: ItemAttributes = await ItemModel.create(item);
-  ctx.body = result;
-});
+ router.post("/items", async (ctx: Context) => {
+  const itemData: ItemAttributes = ctx.request.body as ItemAttributes;
+  
+  const existingItem = await ItemModel.findOne({ where: { id: itemData.id } });
+  
+  if (existingItem) {
+  ctx.status = 400; // Bad Request
+  ctx.body = { message: "This ID is already in use" };
+  return;
+  }
+  
+  try {
+  const result = await ItemModel.create(itemData);
+  ctx.status = 201; // Created
+  ctx.body = { message: "Item created successfully", data: result };
+  } catch (error) {
+  throw error;
+  }
+  });
+
 //routing to change an already created item
 router.put("/items/:id", async (ctx: Context) => {
   const  id  = ctx.params.id;
