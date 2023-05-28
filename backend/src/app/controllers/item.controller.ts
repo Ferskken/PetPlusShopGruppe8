@@ -56,23 +56,49 @@ router.get("/items", async (ctx: Context) => {
  
  router.post("/items", async (ctx: Context) => {
   const itemData: ItemAttributes = ctx.request.body as ItemAttributes;
-  
-  const existingItem = await ItemModel.findOne({ where: { id: itemData.id } });
-  
-  if (existingItem) {
-  ctx.status = 400; // Bad Request
-  ctx.body = { message: "This ID is already in use" };
-  return;
+
+  let id;
+  const lastItem = await ItemModel.findOne({ order: [['id', 'DESC']] });
+
+  if (lastItem === null) {
+    id = 1;
+  } else {
+    id = lastItem.id + 1;
+  }
+
+  // Check if the id exists, if yes look for any gaps in the sequence of ids
+  if (itemData.hasOwnProperty("id")) {
+    // Check if this id already exists
+    const existingItem = await ItemModel.findOne({ where: { id: itemData.id } });
+    if (existingItem) {
+      ctx.status = 400; // Bad Request
+      ctx.body = { message: "This ID is already in use" };
+      return;
+    }
+    
+    id = itemData.id;
+  } else {
+    // Find any unused ids 
+    const result = await ItemModel.findAll();
+    const allIds = result.map((item: any) => item.id);
+    const maxId = Math.max(...allIds);
+    
+    for (let i = 1; i <= maxId; i++) {
+      if (!allIds.includes(i)) {
+        id = i
+        break;
+      }
+    }
   }
   
   try {
-  const result = await ItemModel.create(itemData);
-  ctx.status = 201; // Created
-  ctx.body = { message: "Item created successfully", data: result };
+    const result = await ItemModel.create({...itemData, id});
+    ctx.status = 201; // Created
+    ctx.body = { message: "Item created successfully", data: result };
   } catch (error) {
-  throw error;
+    throw error;
   }
-  });
+});
 
 //routing to change an already created item
 router.put("/items/:id", async (ctx: Context) => {
@@ -83,6 +109,7 @@ router.put("/items/:id", async (ctx: Context) => {
   });
    ctx.body = result;
 });
+
 //routing to delete an item
 router.delete("/items/:id", async (ctx: Context) => {
   const { id } = ctx.params;
