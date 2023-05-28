@@ -1,8 +1,8 @@
-<div class="sidebar">
+<!-- <div class="sidebar">
     <h2>Categories</h2>
-    <div [formGroup]="form">
+    <div [formGroup]="form"> -->
       <!-- Angular Material checkboxes with icons -->
-      <p>
+<!--       <p>
         <mat-checkbox color="primary" formControlName="winter">
           <mat-icon>ac_unit</mat-icon> Winter
         </mat-checkbox>
@@ -23,10 +23,27 @@
         </mat-checkbox>
       </p>
     </div>
-  </div>
-  
-<!--   <mat-sidenav>
-    <mat-sidenav-content>
-      <div class="content"> hello</div>
-    </mat-sidenav-content>
-  </mat-sidenav> -->
+  </div> -->
+  <nav class="navbar">
+    <ul class="navbar-ul">
+      <li class="nav-item">
+        <h2 class="navbar-header">Categories</h2>
+        <div [formGroup]="form">
+          <mat-checkbox color="secondary" formControlName="winter">
+           <mat-icon>ac_unit</mat-icon> Winter
+          </mat-checkbox>
+          <mat-checkbox color="secondary" formControlName="clothes">
+            <mat-icon>pets</mat-icon> Clothes
+            <!-- <i class="fa-solid fa-temperature-snow"></i> -->
+          </mat-checkbox>
+          <mat-checkbox color="secondary" formControlName="accessories">
+            <mat-icon>favorite</mat-icon> Accessories
+          </mat-checkbox>
+          <mat-checkbox color="secondary" formControlName="indoors">
+            <mat-icon>home</mat-icon> Indoors
+          </mat-checkbox>  
+          <!-- <mat-checkbox class="custom-checkbox">Custom Checkbox</mat-checkbox> -->
+        </div>
+      </li>
+    </ul>
+  </nav>

@@ -1,4 +1,4 @@
-body{
+/* body{
   display: flex;
   flex-direction:column;
   align-items: center;
@@ -16,4 +16,87 @@ h1{
 h2{
   text-align: center;
   font-size: 1.2em;
+} */
+
+.shopping-cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.header-container {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.header-1{
+  position:absolute;
+  margin-left: 45%;
+  margin-top: -2.5rem;
+  margin-bottom: 10px;
+}
+.header-2 {
+  position:absolute;
+  margin-left: 41%;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.left-column, .right-column {
+  flex-basis: calc(50% - 20px);
+  margin-top: 100px; /* add more or less margin as needed */
+}
+
+.total-price {
+  font-weight: bold;
+  text-align: right;
+}
+
+.checkout-button {
+  position: fixed;
+  display: block;
+  margin-top: 25%;
+  margin-left: 30%;
+  background-color: 3f51b5;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+
+}.shopping-cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.header-container {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.total-box {
+ // border: 2px solid black;
+ position: fixed;
+ margin-top: 19%;
+ margin-left: 28%;
+  padding: 10px;
+  width: 250px;
+  //margin: auto;
+}
+
+.delivery-fee-label {
+  margin-left: 10px;
+}
+
+.delivery-fee-amount {
+  font-weight: bold;
+}
+
+.total-with-fee-label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.total-with-fee {
+  font-weight: bold;
 }

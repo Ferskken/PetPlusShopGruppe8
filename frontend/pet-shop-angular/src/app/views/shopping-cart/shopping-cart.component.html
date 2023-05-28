@@ -1,19 +1,64 @@
 
-<h1>Shopping Cart</h1>
+<!-- <h1>Shopping Cart</h1>
 <h2>Did you find what you were looking for ?</h2>
 <section>
-<body>
+<body class="shoping-cart">
 <div *ngIf="cartItems.length === 0">
   Your cart is empty.
 </div>
 
 <div *ngFor="let item of cartItems">
   <app-cart-item class="cart-item" [item]="item" (remove)="removeItem(item.id)" (updateQuantity)="updateQuantity(item.id, $event)"></app-cart-item>
-</div>
+</div> -->
 
 <!-- <app-cart-summary [cartTotal]="cartTotal"></app-cart-summary> -->
-</body>
+
+<!-- </body>
 <div>
 <button class="Checkout" mat-raised-button color="primary" routerLink="/checkout" *ngIf="cartItems.length > 0">Proceed to Checkout</button>
+</div>
+</section -->
+
+<section class="shopping-cart">
+  <div class="header-container">
+  <h1 class="header-1">Shopping Cart</h1>
+  <h2 class="header-2">Did you find what you were looking for?</h2>
+ </div>
+
+  <div class="left-column">
+  <!-- Display message when cart is empty -->
+  <div *ngIf="cartItems.length === 0">
+    Your cart is empty.
+  </div>
+
+  <!-- Loop through cart items and display each one -->
+  <div *ngFor="let item of cartItems">
+    <app-cart-item
+      class="cart-item"
+      [item]="item"
+      (remove)="removeItem(item.id)"
+      (updateQuantity)="updateQuantity(item.id, $event)">
+    </app-cart-item>
+  </div>
+  </div>
+
+  <div class="right-column">
+    <!-- Display total price -->
+    <div class="total-price">
+      <div class="total-box">
+        <span class="total-label">Total:</span>
+        <span class="total-amount">{{ cartTotal | currency }}</span>
+        <span class="delivery-fee-label">+ Delivery Fee: </span>
+        <span class="delivery-fee-amount">{{ deliveryFee | currency }}</span>
+        <hr>
+        <span class="total-with-fee-label">Total with Delivery Fee:</span>
+        <span class="total-with-fee">{{ (cartTotal + deliveryFee) | currency }}</span>
+      </div>
+    </div>
+
+  <!-- Button to proceed to checkout -->
+  <div>
+    <button class="checkout-button" mat-raised-button color="primary" routerLink="/checkout" *ngIf="cartItems.length > 0">Proceed to Checkout</button>
+  </div>
 </div>
 </section>
