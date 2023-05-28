@@ -3,6 +3,7 @@ import { ShoppingCartService, CartItem } from 'src/app/services/shopping-cart.se
 
 
 @Component({
+  
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',
   styleUrls: ['./shopping-cart.component.scss']
@@ -10,12 +11,14 @@ import { ShoppingCartService, CartItem } from 'src/app/services/shopping-cart.se
 export class ShoppingCartComponent implements OnInit {
   cartItems: CartItem[] = [];
   cartTotal: number = 0;
+  deliveryFee: number = 49;
 
   constructor(private cartService: ShoppingCartService) { }
 
   ngOnInit(): void {
     this.cartItems = this.cartService.getCartItems();
     this.cartTotal = this.cartService.calculateCartTotal();
+    this.calculateCartTotal();
   }
 
   removeItem(id: number): void {
@@ -28,5 +31,11 @@ export class ShoppingCartComponent implements OnInit {
     this.cartService.updateItemQuantity(id, quantity);
     this.cartItems = this.cartService.getCartItems();
     this.cartTotal = this.cartService.calculateCartTotal();
+  }
+  calculateCartTotal() {
+    this.cartTotal = 0;
+    for (let item of this.cartItems) {
+      this.cartTotal += item.price * item.quantity;
+    }
   }
 }
