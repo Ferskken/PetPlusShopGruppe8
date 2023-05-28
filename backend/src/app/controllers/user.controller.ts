@@ -87,15 +87,24 @@ router.get("/user/by-name/:name", async (ctx: Context) => {
   }
 });
   
-  router.post("/user", async (ctx: Context) => {
-    const user: UserAttributes = ctx.request.body as UserAttributes;
-    
-    user.password = await bcrypt.hash(user.password, 10);
-    user.role = Role.User;
-    const result: UserAttributes = await UserModel.create(user);
-    ctx.body = result;
-    console.log("added user");
-  });
+router.post("/user", async (ctx: Context) => {
+  const user: UserAttributes = ctx.request.body as UserAttributes;
+  
+  const existingUser = await UserModel.findOne({ where: { id: user.id } });
+  if (existingUser) {
+    ctx.status = 400; // Bad Request
+    ctx.body = { message: "This ID is already in use" };
+    return;
+  }
+
+  user.password = await bcrypt.hash(user.password, 10);
+  user.role = Role.User;
+  
+  const result: UserAttributes = await UserModel.create(user);
+  ctx.body = result;
+  
+  console.log("added user");
+});
   
   router.put("/user/:id", async (ctx: Context) => {
     const { id } = ctx.params;
