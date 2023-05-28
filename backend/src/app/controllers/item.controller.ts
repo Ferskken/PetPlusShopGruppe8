@@ -2,6 +2,7 @@ import { Context} from "koa";
 import Router from "koa-router";
 import {ItemModel, ItemAttributes} from "../models/item.model";
 import { Op } from "sequelize";
+import { Sequelize } from 'sequelize';
 
 const router: Router = new Router({ prefix: '/petapi' });
 
@@ -74,7 +75,47 @@ router.delete("/items/:id", async (ctx: Context) => {
   const result: number = await ItemModel.destroy({
     where: { id },
   });
-  ctx.body = result;
+  if (result === 0) {
+    // If no rows were deleted, return a 404 error.
+    ctx.body = "Item not found";
+    ctx.status = 404;
+  } else {
+    // If rows were deleted, return a success message.
+    ctx.body = `Item ${id} has been deleted successfully`;
+    ctx.status = 200;
+  }
+});
+
+router.get("/items/:id", async (ctx: Context) => {
+  const { id } = ctx.params;
+  const item: ItemAttributes | null = await ItemModel.findByPk(id);
+  
+  if (!item) {
+    ctx.body = "Item not found";
+    ctx.status = 404;
+  } else {
+    ctx.body = item;
+    ctx.status = 200;
+  }
+});
+
+router.get("/items/by-name/:name", async (ctx: Context) => {
+  const { name } = ctx.params;
+  const items: ItemAttributes[] = await ItemModel.findAll({
+    where: {
+      name: {
+        [Op.like]: `%${name}%`,
+      },
+    },
+  });
+
+  if (!items.length) {
+    ctx.body = "Item not found";
+    ctx.status = 404;
+  } else {
+    ctx.body = items;
+    ctx.status = 200;
+  }
 });
 
 export default router;
