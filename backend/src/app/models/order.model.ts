@@ -30,7 +30,7 @@ const OrderModel = sequelize.define<OrderInstance, OrderAttributes>(
     },
     quantity: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     firstName: {
       type: DataTypes.STRING,
@@ -46,7 +46,7 @@ const OrderModel = sequelize.define<OrderInstance, OrderAttributes>(
     },
     address2: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     zipCode: {
       type: DataTypes.INTEGER,

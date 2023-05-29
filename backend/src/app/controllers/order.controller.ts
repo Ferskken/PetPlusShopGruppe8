@@ -29,6 +29,7 @@ router.get("/orders", async (ctx: Context) => {
 // Create an order
 router.post("/orders", async (ctx: Context) => {
   console.log("Creating order...");
+  console.log(ctx.Context);
   const order: OrderAttributes = ctx.request.body as OrderAttributes;
   const result: OrderAttributes = await OrderModel.create(order);
   console.log("Order created:", result);
