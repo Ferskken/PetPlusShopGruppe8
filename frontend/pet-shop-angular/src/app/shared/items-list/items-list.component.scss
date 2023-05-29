@@ -62,7 +62,7 @@ mat-card {
   background-color:white;
   display: grid;
   grid-template-columns: repeat(3,1fr) ;
-  padding: 2rem;
+  padding: 0rem; /*dette gjøres i de andre klassene*/
   grid-gap: 4rem;  
   
 }

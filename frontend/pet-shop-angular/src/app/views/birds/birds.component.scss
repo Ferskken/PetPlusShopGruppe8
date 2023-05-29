@@ -2,8 +2,9 @@
   display: grid;
   grid-template-columns: 1fr 5fr;
   grid-template-rows: 15rem;
-  grid-gap: 10px;
-  margin: 2rem; 
+  grid-gap: 5rem;
+  margin: 0rem; 
+  padding: 4rem;
 }
 
 
@@ -12,6 +13,7 @@
   .box {
     height: auto;
     grid-template-columns: 1fr;
+    padding: 2rem;
   }
 }
 
