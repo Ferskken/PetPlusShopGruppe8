@@ -1,7 +1,3 @@
-<ng-container [ngSwitch]="stepperOrientation | async">
-  <div *ngSwitchCase="'horizontal'">Make your screen smaller to see a vertical stepper</div>
-  <div *ngSwitchCase="'vertical'">Make your screen larger to see a horizontal stepper</div>
-</ng-container>
 
 <mat-stepper
   class="example-stepper"
@@ -45,7 +41,7 @@
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
+    <p>Press submit and and now you are done!</p>
     <div>
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button (click)="saveData()">Submit</button>
