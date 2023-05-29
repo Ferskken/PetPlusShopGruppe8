@@ -50,9 +50,7 @@ router.post("/orders", async (ctx: Context) => {
   }
   
   const result: OrderAttributes = await OrderModel.create(order);
-  
-  console.log("Order created:", result);
-  
+
   ctx.body = result;
 });
 
