@@ -1,10 +1,10 @@
-<div class="box">
+<div class="box" >
   <div class="box2" *ngFor="let item of items">
     <mat-card class="w-100 h-100">
       <div class="image-container">
-        <img mat-card-lg-image src="{{item.image}}" alt="fant ikke bilde">
+        <img mat-card-lg-image src="{{item.image}}" alt="fant ikke bilde" (click)="viewItem(item)">
       </div>
-      <mat-card-header>
+      <mat-card-header >
         <mat-card-title-group>
           <mat-card-title><!--{{item.id}} -->{{item.name}}</mat-card-title>
           <mat-card-subtitle>{{item.price}},-

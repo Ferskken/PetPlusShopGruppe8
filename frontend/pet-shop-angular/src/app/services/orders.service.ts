@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 export interface CartItem {
   id: number;
@@ -27,6 +28,9 @@ export interface OrderAttributes {
   providedIn: 'root'
 })
 export class OrdersService {
+
+  apiUrl = '/petapi';
+
   constructor(private http: HttpClient) {}
 
   // Method to retrieve all orders from the backend API
@@ -42,10 +46,11 @@ export class OrdersService {
   }
 
   // Method to create an order in the backend API
-  createOrder(order: OrderAttributes) {
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post<OrderAttributes>('/petapi/orders', order, { headers });
+  createOrder(orderData: string, requestOptions: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/orders`, orderData, requestOptions);
   }
+  
+  
 
   // Method to update an order in the backend API
   updateOrder(id: number, order: OrderAttributes) {
