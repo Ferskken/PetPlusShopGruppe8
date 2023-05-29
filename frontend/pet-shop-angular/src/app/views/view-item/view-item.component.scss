@@ -1,0 +1,48 @@
+
+body{
+    padding:4rem;
+}
+h1 {
+    color: blue; 
+    font-size: 24px; 
+  }
+  
+  p {
+    font-family: Arial, sans-serif; /* S*/
+    line-height: 1.5; /**/
+  }
+
+
+
+.item-details {
+    
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 1fr for text, auto for image */
+    
+    gap: 20px; /* Adjust the gap value as needed */
+    align-items: start;
+    justify-content: center;
+  }
+
+.item-info {
+    padding-top: 8rem;
+    grid-column: 1; /* Place item-info in the first column */
+}
+
+.item-image {
+    padding:2rem;
+    max-height: 50rem;
+    height: auto;
+    max-width: 100%;
+    
+    grid-column: 2; 
+    /* Align item-image to the end (right) of the column */
+    justify-self: center;
+}
+
+
+@media screen and ( max-width:767px) {
+    .item-details{
+        grid-template-columns: 1fr;
+    }
+}
