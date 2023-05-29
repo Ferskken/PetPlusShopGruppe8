@@ -9,18 +9,19 @@
     <div class="col col-6"> 
       <app-search-bar></app-search-bar>
     </div>
-    <div class="col">
+    <section class="col">
+      <button mat-button ="nav-categories">categories</button>
       <button mat-button [matMenuTriggerFor]="menu">My page</button> <!-- Button to trigger the user menu -->
-      <mat-menu #menu="matMenu"> <!-- User menu with options -->
-        <button mat-menu-item (click)="onOpenLoginDialog()">Login</button>
-        <button mat-menu-item routerLink="/becomeMember" >Become member</button>
-        <button mat-menu-item >My orders</button>
-        <button mat-menu-item (click)="logout()">Logout</button>
-        
-      </mat-menu>
+        <mat-menu #menu="matMenu"> <!-- User menu with options -->
+          <button mat-menu-item (click)="onOpenLoginDialog()">Login</button>
+          <button mat-menu-item routerLink="/becomeMember" >Become member</button>
+          <button mat-menu-item >My orders</button>
+          <button mat-menu-item (click)="logout()">Logout</button>
+          
+        </mat-menu>
       <mat-icon matRipple routerLink="/aboutUs">help</mat-icon>
       <mat-icon matRipple routerLink="/shoppingCart">shopping_cart</mat-icon>
-    </div>
+    </section>
   </div>
   </div>
     <nav>
