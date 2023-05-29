@@ -44,6 +44,7 @@ mat-card {
     width: 100%;
     padding: auto;
   }
+  
 
   mat-card-subtitle {
     font-size: 1.8em;
@@ -70,4 +71,24 @@ mat-card {
   .box{
     grid-template-columns: repeat(1,1fr);
   }
+}
+
+.viewItem{
+  font-weight: 500;
+  display: flex;  
+  justify-content: space-between;
+  list-style: none;
+  align-items: center;
+  color: white;
+  background-color: #3F51B5;
+  border-radius: 5px;
+  padding: 5px 10px;
+
+  cursor: pointer;
+  align-items: center;
+  min-height: 2.3rem;
+  max-height: 2.5rem;
+  min-width: 3rem;
+  margin: 1rem;
+  //#32408f
 }

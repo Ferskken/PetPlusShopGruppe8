@@ -12,6 +12,7 @@
     <section class="col">
       <button mat-button ="nav-categories">categories</button>
       <button mat-button [matMenuTriggerFor]="menu">My page</button> <!-- Button to trigger the user menu -->
+<<<<<<< HEAD
         <mat-menu #menu="matMenu"> <!-- User menu with options -->
           <button mat-menu-item (click)="onOpenLoginDialog()">Login</button>
           <button mat-menu-item routerLink="/becomeMember" >Become member</button>
@@ -19,6 +20,15 @@
           <button mat-menu-item (click)="logout()">Logout</button>
           
         </mat-menu>
+=======
+      <mat-menu #menu="matMenu"> <!-- User menu with options -->
+        <button mat-menu-item (click)="onOpenLoginDialog()">Login</button>
+        <button mat-menu-item routerLink="/becomeMember" >Become member</button>
+        <button mat-menu-item routerLink="myOrders">My orders</button>
+        <button mat-menu-item (click)="logout()">Logout</button>
+        
+      </mat-menu>
+>>>>>>> d2a77b23464583af75812e9cb0a9c638d0297ea0
       <mat-icon matRipple routerLink="/aboutUs">help</mat-icon>
       <mat-icon matRipple routerLink="/shoppingCart">shopping_cart</mat-icon>
     </section>

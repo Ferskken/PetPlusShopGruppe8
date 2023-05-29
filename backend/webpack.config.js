@@ -42,6 +42,8 @@ module.exports = {
             to: 'public'
           },{
             from: path.resolve(__dirname, "database.sqlite"),
+          },{
+            from: path.resolve(__dirname, "package.json"),
           }
         ],
       }), 
