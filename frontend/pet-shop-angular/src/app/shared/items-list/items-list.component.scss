@@ -8,6 +8,12 @@ mat-card {
     max-width: 25rem;
     max-height: 40rem;
     overflow: hidden;
+    transition: transform 0.35s ease;
+    
+    
+  }
+  mat-card:hover {
+    transform: scale(0.95);
   }
   
   //item name and price
@@ -46,5 +52,22 @@ mat-card {
 @media screen and  (max-width:767px) {
   mat-card{
     max-width: 40rem;
+  }
+}
+
+.box{
+  
+
+  background-color:white;
+  display: grid;
+  grid-template-columns: repeat(3,1fr) ;
+  padding: 2rem;
+  grid-gap: 4rem;  
+  
+}
+
+@media screen and (max-width:767px){
+  .box{
+    grid-template-columns: repeat(1,1fr);
   }
 }
