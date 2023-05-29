@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
     },
     {
       image: 'assets/somePictures/dog-collar.png',
-      name: 'Image gay',
+      name: 'epic dog',
       active: false,
       price: 15
     }
