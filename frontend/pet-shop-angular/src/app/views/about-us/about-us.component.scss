@@ -81,4 +81,26 @@ body {
     overflow: hidden;
   }
   
+.box {
+  margin: 0rem;
   
+  padding-right: 8rem;
+  padding-left: 8rem;
+  padding-top: 4rem;
+
+  width: 100%; /* Adjust the width of the box to make it wider */
+  height: 100%; /* Adjust the height of the box to make it taller */
+  border-radius: 1rem; /* Adjust the border-radius to make the box inside the card rounder */
+  background-color: lightgray;
+  background-color: white;
+  /* Add any other styles for the box */
+}
+@media screen and (max-width:787px) {
+  .box{
+    margin-bottom:4rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 8rem;
+  }
+}
