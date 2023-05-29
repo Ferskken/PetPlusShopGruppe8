@@ -29,11 +29,33 @@ router.get("/orders", async (ctx: Context) => {
 // Create an order
 router.post("/orders", async (ctx: Context) => {
   console.log("Creating order...");
+
   const order: OrderAttributes = ctx.request.body as OrderAttributes;
+  
+  // Find the lowest available id if no id is given
+  if (!order.id) {
+    const orders: OrderAttributes[] = await OrderModel.findAll({
+      attributes: ['id'],
+      order: [['id', 'ASC']]
+    });
+    
+    let lowestAvailableId: number = 1;
+    for (let i = 0; i < orders.length; i++) {
+      const currentId: number = orders[i].id;
+      if (currentId !== lowestAvailableId) break;
+      lowestAvailableId++;
+    }
+
+    order.id = lowestAvailableId;
+  }
+  
   const result: OrderAttributes = await OrderModel.create(order);
+  
   console.log("Order created:", result);
+  
   ctx.body = result;
 });
+
 
 // Routing to change an already created order
 router.put("/orders/:id", async (ctx: Context) => {

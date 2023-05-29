@@ -1,9 +1,10 @@
 .env
 *.sqlite
-*.sqlite
+
 
 public
 
 #distribution
 dist
 backend/database.sqlite
+*.sqlite
