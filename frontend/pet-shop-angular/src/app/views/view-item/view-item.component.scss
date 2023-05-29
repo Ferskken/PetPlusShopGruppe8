@@ -3,15 +3,19 @@ body{
     padding:4rem;
 }
 h1 {
-    color: blue; 
-    font-size: 24px; 
+    color: #3f51b5;
+    font-size: 3rem;
+    font-weight: bold;
   }
-  
+
   p {
     font-family: Arial, sans-serif; /* S*/
     line-height: 1.5; /**/
-  }
+}
 
+.price{
+    font-weight: bolder;
+}
 
 
 .item-details {
@@ -29,15 +33,24 @@ h1 {
     grid-column: 1; /* Place item-info in the first column */
 }
 
+
 .item-image {
     padding:2rem;
     max-height: 50rem;
     height: auto;
     max-width: 100%;
-    
+    border-radius: 5rem;
     grid-column: 2; 
     /* Align item-image to the end (right) of the column */
     justify-self: center;
+    align-self: center;
+    box-shadow: 0.4rem 0.7rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4); /* Adjust shadow properties as needed */
+
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around; /* Adjust as needed */
 }
 
 

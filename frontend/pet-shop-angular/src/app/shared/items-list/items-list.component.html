@@ -9,9 +9,11 @@
           <mat-card-title><!--{{item.id}} -->{{item.name}}</mat-card-title>
           <mat-card-subtitle>{{item.price}},-
           </mat-card-subtitle>
-          <button mat-raised-button color="primary" (click)="viewItem(item)">View</button>
-         <!--   1<div class="viewItem" matRipple routerLink="/viewItem"><a>View</a></div>-->
-          <button mat-raised-button color="primary" (click)="addToShoppingCart(item)">Add</button>
+          <div class="button-flex"> 
+            <button mat-raised-button color="primary" (click)="viewItem(item)">View</button>
+              <!--   1<div class="viewItem" matRipple routerLink="/viewItem"><a>View</a></div>-->
+            <button mat-raised-button color="primary" (click)="addToShoppingCart(item)">Add</button>
+          </div>
         </mat-card-title-group>
       </mat-card-header>
       

@@ -48,7 +48,8 @@ import {MatRippleModule} from '@angular/material/core';
 import { TestimonialsComponent } from './shared/testimonials/testimonials.component';
 import { AboutUsSharedComponent } from './shared/about-us-shared/about-us-shared.component';
 import { MyOrdersComponent } from './views/my-page/my-orders/my-orders.component';
-import { ViewItemComponent } from './views/view-item/view-item.component'; 
+import { ViewItemComponent } from './views/view-item/view-item.component';
+import { FooterComponent } from './shared/footer/footer.component'; 
 
 @NgModule({
   declarations: [ 
@@ -79,6 +80,7 @@ import { ViewItemComponent } from './views/view-item/view-item.component';
     AboutUsSharedComponent,
     MyOrdersComponent,
     ViewItemComponent,
+    FooterComponent,
   ],
   imports: [ 
     BrowserModule,
