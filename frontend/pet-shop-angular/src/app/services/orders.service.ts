@@ -46,9 +46,10 @@ export class OrdersService {
   }
 
   // Method to create an order in the backend API
-  createOrder(orderData: string, requestOptions: any): Observable<any> {
+  createOrder(orderData: string, requestOptions?: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/orders`, orderData, requestOptions);
   }
+  
   
   
 
