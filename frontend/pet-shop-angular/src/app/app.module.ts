@@ -46,7 +46,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
 import {MatRippleModule} from '@angular/material/core';
 import { TestimonialsComponent } from './shared/testimonials/testimonials.component';
-import { AboutUsSharedComponent } from './shared/about-us-shared/about-us-shared.component'; 
+import { AboutUsSharedComponent } from './shared/about-us-shared/about-us-shared.component';
+import { MyOrdersComponent } from './views/my-page/my-orders/my-orders.component';
+import { ViewItemComponent } from './views/view-item/view-item.component'; 
 
 @NgModule({
   declarations: [ 
@@ -75,6 +77,8 @@ import { AboutUsSharedComponent } from './shared/about-us-shared/about-us-shared
     SearchPageComponent,
     TestimonialsComponent,
     AboutUsSharedComponent,
+    MyOrdersComponent,
+    ViewItemComponent,
   ],
   imports: [ 
     BrowserModule,

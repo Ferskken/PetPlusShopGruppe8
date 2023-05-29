@@ -13,7 +13,8 @@ import { HomeComponent } from "./views/home/home.component";
 import {AboutUsComponent } from "./views/about-us/about-us.component";
 import { RoleGuard } from '../app/helpers/role-guard.can-activale';
 import { SearchPageComponent } from "./views/search-page/search-page.component";
-
+import { MyOrdersComponent } from "./views/my-page/my-orders/my-orders.component";
+import { ViewItemComponent } from "./views/view-item/view-item.component";
 
 const routes: Routes = [
   // Defining the routes and mapping them to their corresponding components
@@ -33,6 +34,8 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutFormComponent },
   { path: 'aboutUs', component: AboutUsComponent },
   { path: 'searchPage', component: SearchPageComponent },
+  { path: 'myOrders', component: MyOrdersComponent },
+  { path: 'viewItem', component: ViewItemComponent },
 ];
 
 @NgModule({

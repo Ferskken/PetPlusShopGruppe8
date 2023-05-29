@@ -2,7 +2,7 @@ import { Component, OnInit, OnChanges, Input, SimpleChanges } from '@angular/cor
 import { first } from 'rxjs/operators';
 import { ItemsService, ItemAttributes } from 'src/app/services/items.service';
 import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
-
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-items-list',
@@ -14,7 +14,11 @@ export class ItemsListComponent implements OnChanges {
   @Input() categories: string = "";
   items: ItemAttributes[] = [];
 
-  constructor(private itemsService: ItemsService, private shoppingCartService: ShoppingCartService) { }
+  constructor(
+    private itemsService: ItemsService,
+    private shoppingCartService: ShoppingCartService,
+    private router: Router) 
+    {}
 
   ngOnChanges(changes: SimpleChanges) {
 
@@ -38,4 +42,12 @@ export class ItemsListComponent implements OnChanges {
     }
     this.shoppingCartService.addItemToCart(cartItem)
 }
+viewItem(item: ItemAttributes) {
+  let navigationExtras: NavigationExtras = {
+  state: {
+  item: item
+  }
+  };
+  this.router.navigate(['/viewItem'], navigationExtras);
+ }
 }
