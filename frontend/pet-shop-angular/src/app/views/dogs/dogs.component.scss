@@ -1,19 +1,22 @@
-.box{
+.box {
+  height: auto;
   display: grid;
   grid-template-columns: 1fr 5fr;
-  grid-template-rows: 15rem;
+  grid-template-rows: auto minmax(0, 1fr); /* Updated grid template rows */
   grid-gap: 5rem;
   margin: 0rem; 
   padding: 4rem;
 }
 
-
-
 @media screen and (max-width: 767px) {
   .box {
+
     height: auto;
     grid-template-columns: 1fr;
+   
     padding: 2rem;
   }
+  .col3{
+    margin-top: 12rem;
+  }
 }
-
