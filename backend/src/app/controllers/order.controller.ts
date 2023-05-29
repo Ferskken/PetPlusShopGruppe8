@@ -29,12 +29,22 @@ router.get("/orders", async (ctx: Context) => {
 // Create an order
 router.post("/orders", async (ctx: Context) => {
   console.log("Creating order...");
-  console.log(ctx.Context);
+  
+  // Log the request body
+  console.log("Request Body:", ctx.request.body);
+  
   const order: OrderAttributes = ctx.request.body as OrderAttributes;
-  const result: OrderAttributes = await OrderModel.create(order);
-  console.log("Order created:", result);
-  ctx.body = result;
+  
+  try {
+    const result: OrderAttributes = await OrderModel.create(order);
+    console.log("Order created:", result);
+    ctx.body = result;
+  } catch (error) {
+    console.error("Error creating order:", error);
+    ctx.throw(500, "Failed to create order");
+  }
 });
+
 
 // Routing to change an already created order
 router.put("/orders/:id", async (ctx: Context) => {

@@ -48,7 +48,6 @@ export class ShoppingCartService {
   
   getCartItems():CartItem[] {
     return JSON.parse(localStorage.getItem('cartItems') || '[]');
-
   }
   
   calculateCartTotal() {
