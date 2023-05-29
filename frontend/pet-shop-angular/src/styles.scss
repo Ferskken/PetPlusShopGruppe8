@@ -25,3 +25,20 @@ body {
 }
 
 .mat-checkbox-ripple { display: none; }
+html, body {
+    height: 100%;
+  }
+  
+  .box {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the box takes up at least the full viewport height */
+  }
+  
+  .col {
+    flex: 1; /* Distribute remaining vertical space equally among columns */
+  }
+  
+  app-footer {
+    margin-top: auto; /* Push the footer to the bottom */
+  }

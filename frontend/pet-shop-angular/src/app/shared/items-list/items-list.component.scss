@@ -33,6 +33,7 @@ mat-card {
     width: 100%;
     height: auto;
     align-items: flex-start;
+    border-radius: 0rem;
   }
   
   button {
@@ -44,8 +45,14 @@ mat-card {
     width: 100%;
     padding: auto;
   }
-  
-
+  .button-flex{
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+    align-items: center; /* Adjust as needed */
+  }
+  .button-flex{
+    margin-right:1rem;
+  }
   mat-card-subtitle {
     font-size: 1.8em;
   }
@@ -62,7 +69,7 @@ mat-card {
   background-color:white;
   display: grid;
   grid-template-columns: repeat(3,1fr) ;
-  padding: 2rem;
+  padding: 0rem; /*dette gjøres i de andre klassene*/
   grid-gap: 4rem;  
   
 }

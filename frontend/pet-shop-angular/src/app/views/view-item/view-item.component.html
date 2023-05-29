@@ -1,7 +1,16 @@
-<p>view-item works!</p>
+<body>
+    <section class="item-details">
+        <div class="item-info">
+            <h1 class = "title">{{ item.name }}</h1>
+            <p class = "price">Price: {{ item.price }}</p>
+            <p>{{ item.description }}</p>
 
-<h1>{{ item.name }}</h1>
-<p>{{ item.description }}</p>
-<p>Price: {{ item.price }}</p>
-<img [src]="item.image" alt="Item image">
-
+            <div class="button-container">
+                <button class="btn1" mat-raised-button color="primary" (click)="addToShoppingCart(item)">Add</button>
+                <button class="btn2" mat-raised-button color="primary" (click)="goToShoppingCart()">Go to Shopping Cart</button>
+            </div>
+        </div>
+        <img [src]="item.image" alt="Item image" class="item-image">
+    </section>
+    
+</body>

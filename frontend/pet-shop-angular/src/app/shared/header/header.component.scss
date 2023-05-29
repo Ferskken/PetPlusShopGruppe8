@@ -100,6 +100,7 @@ header { //styling the header
     }
   }
 }
+
   
 
 
@@ -122,6 +123,34 @@ header nav ul {
     padding-left: 0;
     margin-top: 20px;
     color: #32408f;
+   
+  }
+}
+
+
+
+app-search-bar {
+  width: 100%;
+  font-size: 20px;
+  padding: 10px;
+  transition: width 0.3s ease; /* Transition effect */
+}
+
+app-search-bar:focus {
+  width: 100vw; /* Expand the width to the full viewport width */
+}
+
+
+
+@media screen and (max-width:767px){
+  .catogories-list{
+    display: none;
+  }
+}
+@media screen and (min-width: 767px) {
+  .categoriesMenu {
+    display: none;
+    
   }
 }
 
