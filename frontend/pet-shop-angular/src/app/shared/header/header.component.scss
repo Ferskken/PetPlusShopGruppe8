@@ -48,66 +48,80 @@ header { //styling the header
   mat-icon:hover{
     background-color: #32408f;
   }
-    nav { //styling for the nav-topbar using flexbox
-      ul {  
-        display: flex;  
-        justify-content: space-between;
-        list-style: none;
-        li {
-          margin-left: 20px;
-          border: none;
-          cursor: pointer;
-          transition: background-color 0.3s ease; /* Transition effect */
-          border-radius: 5px;
-          margin-right: 38px;
-          @media screen and (max-width: 767px) {
-            header nav ul li a {
-              color: #32408f; /* Color for smaller screens */
+  nav { //styling for the nav-topbar using flexbox
+    ul {  
+      display: flex;  
+      justify-content: space-between;
+      list-style: none;
+      li {
+        margin-left: 20px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Transition effect */
+        border-radius: 5px;
+        margin-right: 38px;
+        @media screen and (max-width: 767px) {
+          header nav ul li a {
+            color: #32408f; /* Color for smaller screens */
+          }
+
+        }
+        @media screen and (max-width: 767px){
+          ul {
+            justify-content: left;
+            li{
+              margin: 0;
+
+
             }
           }
-          
+        }
 
-          a { //styling for the navbar underpart of the navbar S
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: white;
-            padding: 10px 20px;
-          }
-  
-          &:first-child {
-            margin-left: 0;
+        a { //styling for the navbar underpart of the navbar S
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+          color: white;
+          padding: 10px 20px;
+        
+          img {//if there was a picture here it styled ass this
+            height: 20px;
+            margin-right: 5px;
           }
         }
-        li:hover{
-          background-color: #32408f; /* Color to change to on hover */
+
+        &:first-child {
+          margin-left: 0;
         }
+      }
+      li:hover{
+        background-color: #32408f; /* Color to change to on hover */
       }
     }
   }
+}
   
 
 
-  header .col-3.logo {
-    @media screen and (max-width: 767px) {
-      width: 50%;
-      margin-bottom: 10px;
-    }
+header .col-3.logo {
+  @media screen and (max-width: 767px) {
+    width: 50%;
+    margin-bottom: 10px;
   }
+}
 
-  header nav ul {
-    /* Existing styles for the navigation menu */
-  
-    /* Media query for screens smaller than 767px */
-    @media screen and (max-width: 767px) {
-      
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      padding-left: 0;
-      margin-top: 20px;
-      color: #32408f;
-    }
+header nav ul {
+  /* Existing styles for the navigation menu */
+
+  /* Media query for screens smaller than 767px */
+  @media screen and (max-width: 767px) {
+    
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-left: 0;
+    margin-top: 20px;
+    color: #32408f;
   }
+}
 
-  

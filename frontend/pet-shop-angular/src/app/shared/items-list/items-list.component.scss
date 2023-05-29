@@ -8,6 +8,12 @@ mat-card {
     max-width: 25rem;
     max-height: 40rem;
     overflow: hidden;
+    transition: transform 0.35s ease;
+    
+    
+  }
+  mat-card:hover {
+    transform: scale(0.95);
   }
   
   //item name and price
@@ -44,23 +50,45 @@ mat-card {
     font-size: 1.8em;
   }
 
-  .viewItem{
-    font-weight: 500;
-    display: flex;  
-    justify-content: space-between;
-    list-style: none;
-    align-items: center;
-    color: white;
-    background-color: #3F51B5;
-    border-radius: 5px;
-    padding: 5px 10px;
-
-    cursor: pointer;
-    align-items: center;
-    min-height: 2.3rem;
-    max-height: 2.5rem;
-    min-width: 3rem;
-    margin: 1rem;
-    //#32408f
+@media screen and  (max-width:767px) {
+  mat-card{
+    max-width: 40rem;
   }
+}
 
+.box{
+  
+
+  background-color:white;
+  display: grid;
+  grid-template-columns: repeat(3,1fr) ;
+  padding: 2rem;
+  grid-gap: 4rem;  
+  
+}
+
+@media screen and (max-width:767px){
+  .box{
+    grid-template-columns: repeat(1,1fr);
+  }
+}
+
+.viewItem{
+  font-weight: 500;
+  display: flex;  
+  justify-content: space-between;
+  list-style: none;
+  align-items: center;
+  color: white;
+  background-color: #3F51B5;
+  border-radius: 5px;
+  padding: 5px 10px;
+
+  cursor: pointer;
+  align-items: center;
+  min-height: 2.3rem;
+  max-height: 2.5rem;
+  min-width: 3rem;
+  margin: 1rem;
+  //#32408f
+}

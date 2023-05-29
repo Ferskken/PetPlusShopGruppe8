@@ -44,19 +44,23 @@ export class BecomeMemberComponent {
   }
 
   saveData() {
+    let form = true;
+    if (this.form.valid) {
+      let userData:UserAttributes = {
+        name: this.form.value.name,
+        email:this.form.value.email,
+      password: this.form.value.password,
+      };
 
-    let userData:UserAttributes = {
-      name: this.form.value.name,
-      email:this.form.value.email,
-     password: this.form.value.password,
-    };
-
-    
-     this.usersService.createUser(userData).pipe(first()).subscribe((res) =>{
-     })
-    
+      
+      this.usersService.createUser(userData).subscribe((res) =>{
+        console.log(res)
+      })
+      
     }
  
-
+  }
+  sendEmail() {}
+  
   stepperOrientation: Observable<StepperOrientation>;
 }

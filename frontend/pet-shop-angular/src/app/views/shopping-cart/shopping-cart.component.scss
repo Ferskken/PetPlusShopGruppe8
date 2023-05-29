@@ -61,12 +61,12 @@ h2{
 
 /*components for the checkout thingy.  right column
 this dos't work for some reason, the styling is not aplied so it has to be removed before its finished*/
-@media ( max-width:10000){
+.right-column{
   
   .total-box {
     // position: static;
-     padding: 10px;
-     width: 250px;
+     padding: rem;
+     width: 80%;
    
    }
    
@@ -108,7 +108,7 @@ this dos't work for some reason, the styling is not aplied so it has to be remov
 
 
 /*cart items left collumn */
-@media (max-width:10000){
+.left-column{
   .cart-items {
     width: 70%;
     position: relative;
@@ -120,7 +120,7 @@ this dos't work for some reason, the styling is not aplied so it has to be remov
 
 
 /*legit ingen anelse, mye som ikke en gang eksisterer i html filen */
-@media (max-width:10000){
+@media (max-width:10000px){
   
 
   body {
