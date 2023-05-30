@@ -98,7 +98,7 @@ footer {
 
 
 
-
+/* the styles the slideshow to a fixed size, and hides the cards that shuld't be displayed*/ 
 
 .slideshow {
   position: relative;
@@ -120,10 +120,9 @@ footer {
 
 .slideshow-card {
   width: 100%;
-  width: 1fr;
+  opacity: 0;
   height: 100%;
   position: absolute;
-  opacity: 0;
   transition: opacity 0.3s ease-in-out;
   border-radius: 25%;
 }
@@ -149,7 +148,6 @@ footer {
     margin: 0;
   }
 }
-
 
 
 /*styling for the slideshow on small screens*/

@@ -9,14 +9,6 @@ p {
   margin: 5rem;
 }
 
-@media screen and (max-width: 767px) {
-  .container {
-    grid-template-columns: repeat(2, 1fr); 
-    margin:0.25rem;
-    padding: 0.25rem;
-    }
-    
-}
 .flex-box{
   display: flex;
   flex-direction: row; 
@@ -39,5 +31,12 @@ p {
   color: #3F51B5;
 }
 
-
+@media screen and (max-width: 767px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr); 
+    margin:0.25rem;
+    padding: 0.25rem;
+    }
+    
+}
 

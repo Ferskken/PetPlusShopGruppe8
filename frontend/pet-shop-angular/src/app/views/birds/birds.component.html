@@ -1,12 +1,12 @@
-<div class="box">
+<section class="box">
     <!-- Sub-categories component column -->
-    <div class="col col-2">
+    <article    class="col col-2">
         <!-- The app-sub-categories component will emit the subCategories event when a sub-category is selected, calling the onsubCategories method on this component -->
         <app-sub-categories (subCategories)="onsubCategories($event)"></app-sub-categories>
-    </div>
+    </article>
     <!-- Items list component column -->
-    <div class="col col3">
-        <!-- The app-items-list component will receive the categories array as an input and display the corresponding items -->
+    <article class="col col3">
+      
         <app-items-list [categories]="categories"></app-items-list>
-    </div>
-</div>
+    </article>
+</section>
