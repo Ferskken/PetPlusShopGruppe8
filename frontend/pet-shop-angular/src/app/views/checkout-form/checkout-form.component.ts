@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { StepperOrientation } from '@angular/material/stepper';
 import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout-form',
@@ -30,6 +31,7 @@ export class CheckoutFormComponent {
     private fb: FormBuilder,
     private http: HttpClient,
     private shoppingCartService: ShoppingCartService,
+    private router: Router,
   ) { 
     this.checkoutForm = this.fb.group({
       firstName: ['', Validators.required],
@@ -71,19 +73,13 @@ export class CheckoutFormComponent {
       };
 
       console.log(orderData);
+      if (window.confirm('Press ok to finalise your order?')) {
       this.orderService.createOrder(JSON.stringify(orderData), requestOptions).subscribe((res) => {
+        this.shoppingCartService.clearCart();
+        this.router.navigate(['/home']);
         console.log(res);
       });
     }
   }
-
-  PlaceOrder(order: any) {
-    // Implement the logic for placing the order
-  }  
-
-  sendEmail() {
-    // Implement the logic for sending an email
-  }
-
-  stepperOrientation: Observable<StepperOrientation> | undefined;
+}
 }
