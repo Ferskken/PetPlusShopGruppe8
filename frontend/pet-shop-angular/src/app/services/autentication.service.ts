@@ -55,7 +55,6 @@ export class AuthenticationService {
   
     // Switch to the home route
     this.router.navigate(['/home']).then(() => {
-      location.reload();
       });
   }
   

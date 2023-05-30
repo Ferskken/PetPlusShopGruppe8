@@ -8,30 +8,6 @@ import { UserModel, UserAttributes, Role} from "../models/user.model";
 import { validate } from "../middleware/joi-wrapper";
 import Joi from "joi";
 
-UserModel.sync().then(async(res)=>{
-  
- console.log("Creating Admin user");
- /*
-  await UserModel.create(
-    {
-    id: 0,
-    name: "Administrator",
-    email: "admin@petshop.com",
-    password:  await bcrypt.hash("admin123", 10),
-    role: Role.Admin
-  }); 
-  console.log("Creating Guest user");
-  await UserModel.create(
-    {
-    id: 1,
-    name: "Guest",
-    email: "guest@petshop.com",
-    password: await bcrypt.hash("", 10),
-    role: Role.Guest
-  });
-*/
-});
-
 const router: Router = new Router({ prefix: '/petapi' });
 
 // API routes for users

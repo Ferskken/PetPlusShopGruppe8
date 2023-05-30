@@ -32,10 +32,14 @@ export class ShoppingCartComponent implements OnInit {
     this.cartItems = this.cartService.getCartItems();
     this.cartTotal = this.cartService.calculateCartTotal();
   }
+  getDeliveryFee(): number {
+  return this.cartTotal >= 750 ? 0 : 50;
+}
   calculateCartTotal() {
     this.cartTotal = 0;
     for (let item of this.cartItems) {
       this.cartTotal += item.price * item.quantity;
     }
+    this.deliveryFee = this.getDeliveryFee();
   }
 }
