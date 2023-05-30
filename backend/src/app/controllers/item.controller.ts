@@ -9,7 +9,7 @@ const router: Router = new Router({ prefix: '/petapi' });
 
 ItemModel.sync();
 
-// API routes for items
+ /** API routes for items */ 
 router.get("/items/search", validate({
   query:{
     text: Joi.string().required()
@@ -32,16 +32,14 @@ router.get("/items/search", validate({
   ctx.status = 200;
  });
 
-//if the categoryparemeter is all it will call all items, if not it will use search for 
-//the items with the given category names.
+ /** Get all items if the parameter is "all". 
+     Get items by category */ 
 router.get("/items", validate({
   query:{
     categories: Joi.string().required()
   }
 }), async (ctx: Context) => {
   let items: ItemAttributes[] = [];
-  console.log("we are here"); 
-  console.log(ctx.query.categories);
   if (ctx.query.categories === "all") {
   items = await ItemModel.findAll();
   }
@@ -59,17 +57,13 @@ router.get("/items", validate({
   { [Op.like]: `%${categories[0]}%` },
   {
   [Op.or]: orOperator
-  }
-  ]
-  }
-  } 
-  });
+  }]}}});
   }
   ctx.body = items;
   ctx.status = 200;
  });
  
-//routing to post an item into items (create items)
+ /** Post an item into items (create items) */ 
 router.post("/items", async (ctx: Context) => {
   const itemData: ItemAttributes = ctx.request.body as ItemAttributes;
 
@@ -81,7 +75,6 @@ router.post("/items", async (ctx: Context) => {
   } else {
     id = lastItem.id + 1;
   }
-
   // Check if the id exists, if yes look for any gaps in the sequence of ids
   if (itemData.hasOwnProperty("id")) {
     // Check if this id already exists
@@ -91,7 +84,6 @@ router.post("/items", async (ctx: Context) => {
       ctx.body = { message: "This ID is already in use" };
       return;
     }
-
     id = itemData.id;
   } else {
     // Find any unused ids 
@@ -106,7 +98,6 @@ router.post("/items", async (ctx: Context) => {
       }
     }
   }
-
   try {
     const result = await ItemModel.create({...itemData, id});
     ctx.status = 201; // Created
@@ -116,7 +107,7 @@ router.post("/items", async (ctx: Context) => {
   }
 });
 
-//routing to change an already created item
+ /** Change an already created item */ 
 router.put("/items/:id", async (ctx: Context) => {
   const  id  = ctx.params.id;
   const item: ItemAttributes = ctx.request.body as ItemAttributes;
@@ -125,7 +116,8 @@ router.put("/items/:id", async (ctx: Context) => {
   });
    ctx.body = result;
 });
-//routing to delete an item
+
+ /** Delete an item */ 
 router.delete("/items/:id", async (ctx: Context) => {
   const { id } = ctx.params;
   const result: number = await ItemModel.destroy({
@@ -142,6 +134,7 @@ router.delete("/items/:id", async (ctx: Context) => {
   }
 });
 
+ /** Get an item by id */ 
 router.get("/items/:id", async (ctx: Context) => {
   const { id } = ctx.params;
   const item: ItemAttributes | null = await ItemModel.findByPk(id);
@@ -155,6 +148,7 @@ router.get("/items/:id", async (ctx: Context) => {
   }
 });
 
+ /** Get an item by name */ 
 router.get("/items/by-name/:name", async (ctx: Context) => {
   const { name } = ctx.params;
   const items: ItemAttributes[] = await ItemModel.findAll({
@@ -173,5 +167,5 @@ router.get("/items/by-name/:name", async (ctx: Context) => {
     ctx.status = 200;
   }
 });
-
+  
 export default router;

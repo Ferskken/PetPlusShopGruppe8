@@ -13,7 +13,7 @@ export interface ItemAttributes {
 
 export interface ItemInstance extends Model<ItemAttributes>, ItemAttributes {}
 
-//defining the databasemodel
+/** Defining the databasemodel for items */ 
 export  const ItemModel = sequelize.define<ItemInstance, ItemAttributes>("Item", {
       id: {
         type: DataTypes.INTEGER,

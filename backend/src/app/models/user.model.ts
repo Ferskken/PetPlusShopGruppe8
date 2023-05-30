@@ -18,7 +18,7 @@ export interface UserInstance extends Model<UserAttributes>, UserAttributes {
   validPassword(password: string): boolean;
 }
 
-
+/** Defining the databasemodel for user */
 export const UserModel = sequelize.define<UserInstance, UserAttributes>("User", {
   id: {
     type: DataTypes.INTEGER,

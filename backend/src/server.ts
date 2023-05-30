@@ -6,7 +6,7 @@ const http = require('http');
 const https = require('https');
 const fs = require('fs');
 
-// Start the server on PORT 8080
+/** Start the server on PORT 8080 */
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
