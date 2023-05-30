@@ -1,10 +1,12 @@
-<div class="container">
+<section class="container">
   <div *ngFor="let user of users" class="user-container">
-    <div class="user-id">ID: {{ user.id }}</div>
     <div class="user-name"> {{ user.name }}</div>
+    <section class = "flex-box">
+      <div class="user-role"> {{ user.role}} - </div>
+      <div class="user-id">ID: {{ user.id }}</div>
+    </section>
     <div class="user-email"> {{ user.email }}</div>
-    <!--div class="user-role"> {{ user.role}}</div-->
   </div>
-</div>
+</section>
 
 
