@@ -4,7 +4,6 @@
         <!-- The app-sub-categories component will emit the subCategories event when a sub-category is selected, calling the onsubCategories method on this component -->
         <app-sub-categories (subCategories)="onsubCategories($event)"></app-sub-categories>
     </article>
-    <!-- Items list component column -->
     <article class="col col3">
       
         <app-items-list [categories]="categories"></app-items-list>

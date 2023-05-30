@@ -24,11 +24,12 @@
       </p>
     </div>
   </div> -->
+
   <nav class="navbar">
     <ul class="navbar-ul">
       <li class="nav-item">
         <h2 class="navbar-header">Categories</h2>
-        <div [formGroup]="form">
+        <section [formGroup]="form">
           <mat-checkbox color="primary" formControlName="winter">
            <mat-icon>ac_unit</mat-icon> Winter
           </mat-checkbox>
@@ -43,7 +44,7 @@
             <mat-icon>home</mat-icon> Indoors
           </mat-checkbox>  
           <!-- <mat-checkbox class="custom-checkbox">Custom Checkbox</mat-checkbox> -->
-        </div>
+        </section>
       </li>
     </ul>
   </nav>

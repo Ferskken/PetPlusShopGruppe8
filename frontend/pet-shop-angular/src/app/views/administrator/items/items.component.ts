@@ -35,10 +35,10 @@ ngOnChanges(changes: SimpleChanges) {
 }
 onOpenAddItemDialog(): void {
   const dialogConfig = new MatDialogConfig<ItemAttributes>();
-  dialogConfig.width = '450px';
+  dialogConfig.width = '28rem';
   
   const dialogRef = this.dialog.open(AddItemDialogComponent, {
-      width: '450px',
+      width: '28rem',
       data: { name: 'name' } 
     });
 
