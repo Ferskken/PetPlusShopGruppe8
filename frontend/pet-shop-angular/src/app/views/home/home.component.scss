@@ -13,11 +13,11 @@ h1 {
 h2{
   font-size: 1.5rem;
 }
-/*
-.box {
-  overflow-y: hidden;
+h3{
+  font-style: sans-serif;
+  font-size: large;
 }
-*/
+
 p {
   font-family: 'Comic Sans MS', cursive;
 }
@@ -270,7 +270,11 @@ footer {
 }
 }
 
-
+@media screen and (min-width: 1300px){
+  .box{
+    min-height: 50rem;
+  }
+}
 
 @media screen and (max-width: 767px) {
   .grid-item.grid-item-slideshow {
