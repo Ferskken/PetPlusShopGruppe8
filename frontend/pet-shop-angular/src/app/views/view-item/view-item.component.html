@@ -1,16 +1,24 @@
 <body>
-    <section class="item-details">
-        <div class="item-info">
-            <h1 class = "title">{{ item.name }}</h1>
-            <p class = "price">Price: {{ item.price }}</p>
-            <p>{{ item.description }}</p>
+    <main>
+        <div class=" container"> 
+            <section class="item-details">
+                <div class="item-info">
+                    <h1 class = "title">{{ item.name }}</h1>
+                    <p class = "price">Price: {{ item.price }}</p>
+                    <div class="button-container">
+                        <button class="btn1" mat-raised-button color="primary" (click)="addToShoppingCart(item)">Add</button>
+                        <button class="btn2" mat-raised-button color="primary" (click)="goToShoppingCart()">Go to Shopping Cart</button>
+                    </div>
 
-            <div class="button-container">
-                <button class="btn1" mat-raised-button color="primary" (click)="addToShoppingCart(item)">Add</button>
-                <button class="btn2" mat-raised-button color="primary" (click)="goToShoppingCart()">Go to Shopping Cart</button>
-            </div>
+                    <p class = "item-description"><br><br>{{ item.description }}</p>
+
+                    
+                </div>
+                <div class =" item-picture" >
+                    <img [src]="item.image" alt="Item image" class="item-image">
+                </div>
+                
+            </section>
         </div>
-        <img [src]="item.image" alt="Item image" class="item-image">
-    </section>
-    
+    </main>
 </body>
