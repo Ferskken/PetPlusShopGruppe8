@@ -1,7 +1,7 @@
 <h1>Orders</h1>
 
 <div *ngIf="isLoading">Loading...</div>
-
+<div class="container">
 <div *ngIf="!isLoading">
   <div *ngIf="orders.length === 0">No orders found.</div>
   <div *ngFor="let order of orders">
@@ -22,4 +22,5 @@
     </div>
     <hr>
   </div>
+</div>
 </div>
