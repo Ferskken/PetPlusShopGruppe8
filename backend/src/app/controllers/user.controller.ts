@@ -137,8 +137,8 @@ router.post("/user", async (ctx: Context) => {
   user.role = Role.User;
 
   const result: UserAttributes = await UserModel.create(user);
-  ctx.body = { message: "User created" };
-  ctx.body = result;
+
+  ctx.body = { message: "User created", user: result };
 });
 
 
@@ -176,6 +176,7 @@ router.post("/user", async (ctx: Context) => {
       ctx.body = `User ${deletedUserName} successfully deleted`;
     }
   });
+
   router.post("/user/authenticate", async (ctx: Context) => {
     const { username, password } = ctx.request.body as { username:string, password:string };
     console.log(username);
