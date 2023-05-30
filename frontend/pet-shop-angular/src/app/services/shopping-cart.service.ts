@@ -60,5 +60,7 @@ export class ShoppingCartService {
   
     return total;
   }
-  
+  clearCart() {
+    localStorage.removeItem('cartItems');
+  }
 }
