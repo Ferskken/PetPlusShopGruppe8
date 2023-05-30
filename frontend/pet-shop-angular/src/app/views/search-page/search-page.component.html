@@ -6,14 +6,14 @@
     <div class="col-sm-3 mb-5" *ngFor="let item of items">
       <mat-card class="w-100 h-100">
         <div class="image-container">
-          <img mat-card-lg-image src="{{item.image}}" alt="fant ikke bilde">
+          <img mat-card-lg-image src="{{item.image}}" alt="fant ikke bilde" (click)="viewItem(item)">
         </div>
         <mat-card-header>
           <mat-card-title-group>
             <mat-card-title><!--{{item.id}} -->{{item.name}}</mat-card-title>
             <mat-card-subtitle>{{item.price}},-</mat-card-subtitle>
-            <button mat-button (click)="addToShoppingCart(item)">Add to Cart</button>
-            <button mat-button (click)="viewItem(item)">View</button>
+            <button mat-raised-button color="primary" (click)="addToShoppingCart(item)">Add</button>
+            <button mat-raised-button color="primary" (click)="viewItem(item)">View</button>
           </mat-card-title-group>
         </mat-card-header>
         <mat-card-content>
