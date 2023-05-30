@@ -176,7 +176,34 @@ router.post("/user", async (ctx: Context) => {
       ctx.body = `User ${deletedUserName} successfully deleted`;
     }
   });
+  router.post("/user/authenticate", async (ctx: Context) => {
+    const { username, password } = ctx.request.body as { username:string, password:string };
+    console.log(username);
+    console.log(password);
+    
+    const user = await UserModel.findOne({
+      raw: true,
+      where: { email:username }, 
+    });
+    console.log(user);
+    console.log(user.password);
+    console.log(password);
+    const res = await bcrypt.compare(password, user.password);
+    if(res){
+      ctx.body = {
+        token:jwt.sign({ name:user.name, role:user.role }, process.env.SECRET),
+        status:'authorized'
+      }
+      ctx.code = 200;
+    }
+    else{
+      ctx.code = 401;
+      ctx.body = "Unauthorized";
+    }
+    
+  });
   
+  /*
   router.post("/user/authenticate", async (ctx: Context) => {
     const { username, email, password, id } = ctx.request.body as {
       username: string;
@@ -237,5 +264,5 @@ router.post("/user", async (ctx: Context) => {
       ctx.body = "Unauthorized";
     }
   });
-
+*/
   export default router;
