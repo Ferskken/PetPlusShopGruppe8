@@ -1,22 +1,21 @@
 <div class="box" >
   <div class="box2" *ngFor="let item of items">
-    <mat-card class="w-100 h-100">
+    <mat-card class="w-100">
       <div class="image-container">
         <img mat-card-lg-image src="{{item.image}}" alt="fant ikke bilde" (click)="viewItem(item)">
       </div>
       <mat-card-header >
         <mat-card-title-group>
           <mat-card-title><!--{{item.id}} -->{{item.name}}</mat-card-title>
-          <mat-card-subtitle>{{item.price}},-
+          <mat-card-subtitle>{{item.price}},
           </mat-card-subtitle>
-          <div class="button-flex"> 
-            <button mat-raised-button color="primary" (click)="viewItem(item)">View</button>
-              <!--   1<div class="viewItem" matRipple routerLink="/viewItem"><a>View</a></div>-->
-            <button mat-raised-button color="primary" (click)="addToShoppingCart(item)">Add</button>
-          </div>
+          
         </mat-card-title-group>
       </mat-card-header>
-      
+      <div class="button-flex"> 
+        <button mat-raised-button color="primary" (click)="viewItem(item)">View</button>
+        <button mat-raised-button color="primary" (click)="addToShoppingCart(item)">Add</button>
+      </div>
     </mat-card>
   </div>
 </div>

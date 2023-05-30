@@ -9,8 +9,6 @@ mat-card {
     max-height: 40rem;
     overflow: hidden;
     transition: transform 0.35s ease;
-    
-    
   }
   mat-card:hover {
     transform: scale(0.95);
@@ -26,32 +24,24 @@ mat-card {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    
+    width: 100%;
+    height: auto;
   }
   
   .image-container img {
     width: 100%;
-    height: auto;
-    align-items: flex-start;
-    border-radius: 0rem;
+    height: 15rem;
   }
-  
-  button {
-    margin-top: 1rem;
-  }
-  
   //item description
   mat-card-content {
     width: 100%;
-    padding: auto;
   }
   .button-flex{
-    display: flex;
-    justify-content: space-between; /* Adjust as needed */
-    align-items: center; /* Adjust as needed */
+    margin-bottom:1rem;
+    margin-right: 1rem;
   }
-  .button-flex{
-    margin-right:1rem;
+  button{
+    margin: 0.5rem;
   }
   mat-card-subtitle {
     font-size: 1.8em;

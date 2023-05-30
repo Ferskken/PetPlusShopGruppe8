@@ -10,7 +10,7 @@ import Joi from "joi";
 
 UserModel.sync().then(async(res)=>{
   
- /* console.log("Creating Admin user");
+ console.log("Creating Admin user");
   await UserModel.create(
     {
     id: 0,
@@ -28,7 +28,7 @@ UserModel.sync().then(async(res)=>{
     password: await bcrypt.hash("", 10),
     role: Role.Guest
   });
-*/
+
 });
 console.log("User controller connected to the Orders database.");
 
