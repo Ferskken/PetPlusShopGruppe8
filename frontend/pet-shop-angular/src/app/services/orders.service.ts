@@ -50,6 +50,10 @@ export class OrdersService {
     return this.http.post<any>(`${this.apiUrl}/orders`, orderData, requestOptions);
   }
   
+  getOrdersByEmail(email: string) {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.get<OrderAttributes[]>(`/petapi/orders?email=${email}`, { headers });
+  }
   
   
 
