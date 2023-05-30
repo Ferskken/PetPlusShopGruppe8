@@ -11,7 +11,7 @@ import orderController from "./controllers/order.controller";
 
 // Create a new Koa application instance
 const app: Koa = new Koa();
-
+const compress = require('koa-compress');
 
 app.use(staticServer(process.cwd() + '/public'));
 
@@ -19,6 +19,9 @@ app.use(staticServer(process.cwd() + '/public'));
 app.use(bodyParser());
 // Middleware below this line is only reached if JWT token is valid
 // unless the URL starts with '/public'
+
+//Compression middleweare
+app.use(compress());
 
 /**
  * Registers the JWT authentication middleware with the specified secret key and exclusion paths.
