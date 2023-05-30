@@ -56,6 +56,8 @@ router.post("/orders", async (ctx: Context) => {
 
 /** Change an already created order */
 router.put("/orders/:id", async (ctx: Context) => {
+
+  /*
   const id = ctx.params.id;
   const order: OrderAttributes = ctx.request.body as OrderAttributes;
 
@@ -70,7 +72,7 @@ router.put("/orders/:id", async (ctx: Context) => {
   } else {
     ctx.status = 404;
     ctx.body = "Order not found or not updated";
-  }
+  }*/
 });
 
 
