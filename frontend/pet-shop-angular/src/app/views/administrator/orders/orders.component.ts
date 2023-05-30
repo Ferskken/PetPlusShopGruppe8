@@ -39,7 +39,7 @@ export class OrdersComponent {
     if (!cartItems) {
       return '';
     }
-    return cartItems.map(item => item.name ? `${item.name} (x${item.quantity})` : `(Item-ID: ${item.id} - (Quantity x${item.quantity}))`).join(', ');
+    return cartItems.map(item => item.name ? `${item.name} (x${item.quantity})` : `(Item.ID: ${item.id} (Quantity x${item.quantity}))`).join(', ');
   }
   
 }
