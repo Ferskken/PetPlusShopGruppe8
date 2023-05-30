@@ -24,9 +24,14 @@
   </div>
 
   <div>
-    <label for="address2">Address 2:</label>
-    <input type="text" id="address2" formControlName="address2">
+    <label for="email">Email:</label>
+    <input type="email" id="email" formControlName="email" required>
+    <div *ngIf="checkoutForm.get('email')?.invalid && (checkoutForm.get('email')?.dirty || checkoutForm.get('email')?.touched)">
+      <div *ngIf="checkoutForm.get('email')?.hasError('required')">Email is required.</div>
+      <div *ngIf="checkoutForm.get('email')?.hasError('email')">Please enter a valid email address.</div>
+    </div>
   </div>
+  
 
   <div>
     <label for="zipCode">Zip Code:</label>
