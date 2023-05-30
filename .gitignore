@@ -8,5 +8,4 @@ public
 dist
 backend/database.sqlite
 *.sqlite
-*.sqlite
-*.sqlite
+
