@@ -52,6 +52,7 @@ export class BecomeMemberComponent {
         name: this.form.value.name,
         email:this.form.value.email,
         password: this.form.value.password,
+        role: this.form.value.role
       };
           this.usersService.createUser(userData).subscribe((res) =>{
           console.log(res)
