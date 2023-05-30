@@ -43,7 +43,10 @@ export class CheckoutFormComponent {
       phone: ['', [Validators.required, Validators.pattern(/^(4\d|5\d|9\d)\s?\d{2}\s?\d{3}$/)]]
     });
   }
-
+  getDeliveryFee(): number {
+    const total = this.checkoutForm.value.total;
+    return total > 750 ? 0 : 10;
+  }
   onSubmit(): void {
     console.log("yeet");
     if (this.checkoutForm.valid) {
