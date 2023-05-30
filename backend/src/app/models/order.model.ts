@@ -8,7 +8,7 @@ export interface OrderAttributes {
   firstName?: string;
   lastName?: string;
   address?: string;
-  address2?: string;
+  email?: string;
   zipCode?: number;
   city?: string;
   phone?: number;
@@ -44,7 +44,7 @@ const OrderModel = sequelize.define<OrderInstance, OrderAttributes>(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    address2: {
+    email: {
       type: DataTypes.STRING,
       allowNull: true,
     },

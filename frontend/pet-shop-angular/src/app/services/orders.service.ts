@@ -18,7 +18,7 @@ export interface OrderAttributes {
   firstName?: string;
   lastName?: string;
   address?: string;
-  address2?: string;
+  email?: string;
   zipCode?: number;
   city?: string;
   phone?: number;
