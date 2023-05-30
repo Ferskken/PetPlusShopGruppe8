@@ -1,2 +1,25 @@
-<p class="orders-message">Orders works!</p>
-<div> there are no orders in the database</div>
+<h1>Orders</h1>
+
+<div *ngIf="isLoading">Loading...</div>
+
+<div *ngIf="!isLoading">
+  <div *ngIf="orders.length === 0">No orders found.</div>
+  <div *ngFor="let order of orders">
+    <div>
+      <strong>ID:</strong> {{ order.id }}
+    </div>
+    <div>
+      <strong>First Name:</strong> {{ order.firstName }}
+    </div>
+    <div>
+      <strong>Last Name:</strong> {{ order.lastName }}
+    </div>
+    <div>
+      <strong>Address:</strong> {{ order.address }}
+    </div>
+    <div>
+      <strong>Cart Items:</strong> {{ getCartItemsAsString(order.cartItems) }}
+    </div>
+    <hr>
+  </div>
+</div>

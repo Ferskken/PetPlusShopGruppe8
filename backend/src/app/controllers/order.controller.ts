@@ -29,9 +29,15 @@ router.get("/orders", async (ctx: Context) => {
 // Create an order
 router.post("/orders", async (ctx: Context) => {
   console.log("Creating order...");
+  
+  // Log the request body
+  console.log("Request Body:", ctx.request.body);
+  
 
   const order: OrderAttributes = ctx.request.body as OrderAttributes;
   
+  try {
+    
   // Find the lowest available id if no id is given
   if (!order.id) {
     const orders: OrderAttributes[] = await OrderModel.findAll({
@@ -50,8 +56,12 @@ router.post("/orders", async (ctx: Context) => {
   }
   
   const result: OrderAttributes = await OrderModel.create(order);
-
+    
   ctx.body = result;
+  } catch (error) {
+    console.error("Error creating order:", error);
+    ctx.throw(500, "Failed to create order");
+  }
 });
 
 

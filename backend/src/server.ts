@@ -10,9 +10,7 @@ const fs = require('fs');
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
-
   const secretKey = process.env.SECRET;
-
 });
 //reading keys created by example given by chatgpt
 //question: How to generate self signed ssl certified using openssl?
@@ -22,7 +20,6 @@ const options = {
 };
 
 const httpsServer = https.createServer(options, app.callback());
-
 const HTTPS_PORT = process.env.HTTPS_PORT || 8443;
 
 httpsServer.listen(HTTPS_PORT, () => {
