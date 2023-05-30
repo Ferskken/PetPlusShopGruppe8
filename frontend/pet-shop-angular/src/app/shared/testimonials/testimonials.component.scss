@@ -6,55 +6,81 @@ h2{
   
 }
 .testimonial {
-    margin-bottom: 15px;
-    
-    padding: 20px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-  }
+  margin-bottom: 15px;
   
-  .testimonial .name {
-    font-weight: bold;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+body{
+  height:auto;
+}
+
+
+.testimonial .name {
+  font-weight: bold;
+}
+
+.testimonial .age {
+  font-style: italic;
+  color: #888;
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 20px; /* Adjust the gap between grid items as needed */
+  box-shadow: 0.4rem 0.7rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+  border-radius: 4rem;
+  margin-bottom: 5rem;
+  padding-bottom: 0;
+  height: auto;
+  padding-left: 1rem ;
+  padding-right: 1rem;
+
+  grid-template-columns: 1fr 1fr; /* Default two columns */
+
+  /* Media query for single column layout */
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr; /* Switch to single column */
   }
-  
-  .testimonial .age {
-    font-style: italic;
-    color: #888;
-  }
-  
-  .grid-container {
-    display: grid;
-    grid-gap: 20px; /* Adjust the gap between grid items as needed */
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
-    border-radius: 4rem;
-    margin-bottom: 5rem;
-    padding-bottom: 0;
-    
- 
-    grid-template-columns: 1fr 1fr; /* Default two columns */
-  
-    /* Media query for single column layout */
-    @media (max-width: 767px) {
-      grid-template-columns: 1fr; /* Switch to single column */
-    }
-  }
-  
-  .testimonial-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-right: 20px;
-  }
-  
-  .testimonial-content {
-    flex-grow: 1;
-  }
-  
-  .testimonial p {
-    margin: 0;
-    line-height: 1.5;
-    max-height: 100px; /* Adjust the maximum height as needed */
-    overflow: hidden;
-    font-size: medium;
-  }
+}
+.grid-container::-webkit-scrollbar {
+  width: 2rem;
+  display: none;
+}
+/* Hide the scrollbar specifically for webkit browsers */
+.body::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-y: hidden;
+}
+
+.testimonial-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.testimonial-content {
+  flex-grow: 1;
+}
+
+.testimonial p {
+  margin: 0;
+  line-height: 1.5;
+  max-height: 100px; /* Adjust the maximum height as needed */
+  overflow: hidden;
+  font-size: medium;
+}
+
+
+.add-testemonial{
+  display: none;
+}
