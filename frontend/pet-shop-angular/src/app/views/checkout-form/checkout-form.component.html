@@ -1,68 +1,62 @@
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="checkout-form">
-  <div>
+  <article>
     <label for="firstName">First Name:</label>
     <input type="text" id="firstName" formControlName="firstName" required>
     <div *ngIf="checkoutForm.get('firstName')?.invalid && (checkoutForm.get('firstName')?.dirty || checkoutForm.get('firstName')?.touched)">
       <div *ngIf="checkoutForm.get('firstName')?.hasError('required')">First Name is required.</div>
     </div>
-  </div>
+  </article>
 
-  <div>
+  <article>
     <label for="lastName">Last Name:</label>
     <input type="text" id="lastName" formControlName="lastName" required>
     <div *ngIf="checkoutForm.get('lastName')?.invalid && (checkoutForm.get('lastName')?.dirty || checkoutForm.get('lastName')?.touched)">
       <div *ngIf="checkoutForm.get('lastName')?.hasError('required')">Last Name is required.</div>
     </div>
-  </div>
+  </article>
 
-  <div>
+  <article>
     <label for="address">Address:</label>
     <input type="text" id="address" formControlName="address" required>
     <div *ngIf="checkoutForm.get('address')?.invalid && (checkoutForm.get('address')?.dirty || checkoutForm.get('address')?.touched)">
       <div *ngIf="checkoutForm.get('address')?.hasError('required')">Address is required.</div>
     </div>
-  </div>
+  </article>
 
-  <div>
+  <article>
     <label for="email">Email:</label>
     <input type="email" id="email" formControlName="email" required>
     <div *ngIf="checkoutForm.get('email')?.invalid && (checkoutForm.get('email')?.dirty || checkoutForm.get('email')?.touched)">
       <div *ngIf="checkoutForm.get('email')?.hasError('required')">Email is required.</div>
       <div *ngIf="checkoutForm.get('email')?.hasError('email')">Please enter a valid email address.</div>
     </div>
-  </div>
+  </article>
   
 
-  <div>
+  <article>
     <label for="zipCode">Zip Code:</label>
     <input type="text" id="zipCode" formControlName="zipCode">
     <div *ngIf="checkoutForm.get('zipCode')?.invalid && (checkoutForm.get('zipCode')?.dirty || checkoutForm.get('zipCode')?.touched)">
       <div *ngIf="checkoutForm.get('zipCode')?.hasError('required')">Zip Code is required.</div>
       <div *ngIf="checkoutForm.get('zipCode')?.hasError('pattern')">Zip Code must be a 4-digit number.</div>
     </div>
-  </div>
+  </article>
 
-  <div>
+  <article>
     <label for="city">City:</label>
     <input type="text" id="city" formControlName="city" required>
     <div *ngIf="checkoutForm.get('city')?.invalid && (checkoutForm.get('city')?.dirty || checkoutForm.get('city')?.touched)">
       <div *ngIf="checkoutForm.get('city')?.hasError('required')">City is required.</div>
     </div>
-  </div>
+  </article>
 
-  <div>
+  <article>
     <label for="phone">Phone:</label>
     <input type="text" id="phone" formControlName="phone" required>
     <div *ngIf="checkoutForm.get('phone')?.invalid && (checkoutForm.get('phone')?.dirty || checkoutForm.get('phone')?.touched)">
       <div *ngIf="checkoutForm.get('phone')?.hasError('required')">Phone is required.</div>
     </div>
-  </div>
-
-
-  
-  
-
-  
+  </article>
 
   <button mat-raised-button color="primary" type="submit" [disabled]="checkoutForm.invalid">Submit</button>
 </form>
