@@ -91,7 +91,7 @@ router.put("/orders/:id", async (ctx: Context) => {
 router.delete("/orders/:id", async (ctx: Context) => {
   const orderId = ctx.params.id;
 
-  // Look up the order by ID
+  // Look up the order by ID ( Primary key)
   const order: OrderAttributes | null = await OrderModel.findByPk(orderId);
 
   if (!order) { // Order not found

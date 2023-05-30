@@ -1,3 +1,19 @@
+body{
+  height:auto;
+}
+/* Hide the scrollbar specifically for webkit browsers */
+.body::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-y: hidden;
+}
+
+
 h2{
     font-size: larger;
     font-style: italic;
@@ -5,28 +21,6 @@ h2{
     font-size: 1.5rem;
   
 }
-.testimonial {
-  margin-bottom: 15px;
-  
-  padding: 20px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-}
-body{
-  height:auto;
-}
-
-
-.testimonial .name {
-  font-weight: bold;
-}
-
-.testimonial .age {
-  font-style: italic;
-  color: #888;
-}
-
 .grid-container {
   display: grid;
   grid-gap: 20px; /* Adjust the gap between grid items as needed */
@@ -49,16 +43,30 @@ body{
   width: 2rem;
   display: none;
 }
-/* Hide the scrollbar specifically for webkit browsers */
-.body::-webkit-scrollbar {
-  width: 0;
-  display: none;
+
+.testimonial {
+  margin-bottom: 15px;
+  
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
 }
-body {
+.testimonial p {
   margin: 0;
-  padding: 1rem;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  overflow-y: hidden;
+  line-height: 1.5;
+  max-height: 100px; /* Adjust the maximum height as needed */
+  overflow: hidden;
+  font-size: medium;
+}
+
+.testimonial .name {
+  font-weight: bold;
+}
+
+.testimonial .age {
+  font-style: italic;
+  color: #888;
 }
 
 .testimonial-image {
@@ -72,15 +80,7 @@ body {
   flex-grow: 1;
 }
 
-.testimonial p {
-  margin: 0;
-  line-height: 1.5;
-  max-height: 100px; /* Adjust the maximum height as needed */
-  overflow: hidden;
-  font-size: medium;
-}
-
-
+/* button with no functunallety*/
 .add-testemonial{
   display: none;
 }

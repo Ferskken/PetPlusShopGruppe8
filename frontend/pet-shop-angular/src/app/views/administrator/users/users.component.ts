@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { UserAttributes, UsersService } from '../../../services/users.service';
 import { first } from 'rxjs/operators';
 
-
-
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
