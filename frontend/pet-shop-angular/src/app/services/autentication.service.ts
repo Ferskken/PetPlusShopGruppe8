@@ -43,15 +43,20 @@ export class AuthenticationService {
               }
               localStorage.setItem('user',JSON.stringify(user));
              this.userSubject.next(user);
+             location.reload();
              return user;
           }));
   }
 
   logout() {
-      // remove user from local storage to log user out
-      localStorage.removeItem('user');
-      this.userSubject.next({} as User);
-      window.location.href = '/home';
+    // remove user from local storage to log user out
+    localStorage.removeItem('user');
+    this.userSubject.next({} as User);
+  
+    // Switch to the home route
+    this.router.navigate(['/home']).then(() => {
       location.reload();
+      });
   }
+  
 }   
