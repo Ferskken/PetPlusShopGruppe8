@@ -30,12 +30,12 @@ UserModel.sync().then(async(res)=>{
   });
 
 });
-console.log("User controller connected to the Orders database.");
 
 const router: Router = new Router({ prefix: '/petapi' });
 
 // API routes for users
 
+/** Get all items */
 router.get("/user/all", validate({
   user:{
     role: Joi.string().valid('Admin').required(),
@@ -52,6 +52,7 @@ router.get("/user/all", validate({
   }
 });
 
+/** Get user by id */
 router.get("/user/:id", validate({
   user:{
     role: Joi.string().valid('Admin').required(),
@@ -70,6 +71,7 @@ router.get("/user/:id", validate({
   }
 });
 
+/** Get user ny username */
 router.get("/user/by-name/:name", async (ctx: Context) => {
   const { name } = ctx.params;
   const users: UserAttributes[] = await UserModel.findAll({
@@ -88,18 +90,20 @@ router.get("/user/by-name/:name", async (ctx: Context) => {
     ctx.status = 200;
   }
 });
-  
+
+/** Creates a new user */
 router.post("/user", async (ctx: Context) => {
   const user: UserAttributes = ctx.request.body as UserAttributes;
 
   const existingUser = await UserModel.findOne({ where: { email: user.email } });
+  //Checks if the email is already in use
   if (existingUser) {
     ctx.status = 400;
     ctx.body = { message: "This email is already in use" };
     return;
   }
-
-  let id = user.id; // default to the ID provided in the request body
+  // default to the ID provided in the request body
+  let id = user.id; 
   if (!id) {
     const allUsers = await UserModel.findAll({
       order: [['id', 'ASC']]
@@ -124,6 +128,7 @@ router.post("/user", async (ctx: Context) => {
       }
     }
   } else {
+    //Checks if the id is already in use
     const existingUser = await UserModel.findOne({ where: { id } });
     if (existingUser) {
       ctx.status = 400;
@@ -141,9 +146,7 @@ router.post("/user", async (ctx: Context) => {
   ctx.body = { message: "User created", user: result };
 });
 
-
-
-
+  /** Change a user by id */
   router.put("/user/:id", async (ctx: Context) => {
     const { id } = ctx.params;
     const user: UserAttributes = ctx.request.body as UserAttributes;
@@ -155,16 +158,17 @@ router.post("/user", async (ctx: Context) => {
       ctx.body = "User not found"; // Set the response body to an error message
     } else {
       const result = await UserModel.update(user, { where: { id } });
-      console.log(result);
       ctx.body = result;
     }
   });
   
+  /** Delete a user by id */
   router.delete("/user/:id", async (ctx: Context) => {
     const { id } = ctx.params;
   
     const existingUser: UserAttributes | null = await UserModel.findByPk(id);
   
+    //Checks if user exists
     if (!existingUser) {
       ctx.status = 404;
       ctx.body = "User not found";
@@ -177,11 +181,10 @@ router.post("/user", async (ctx: Context) => {
     }
   });
 
+   /** Logs in user. USes json web token to decrypt password with bcrypt. */
   router.post("/user/authenticate", async (ctx: Context) => {
     const { username, password } = ctx.request.body as { username:string, password:string };
-    console.log(username);
-    console.log(password);
-    
+
     const user = await UserModel.findOne({
       raw: true,
       where: { email:username }, 
@@ -204,66 +207,4 @@ router.post("/user", async (ctx: Context) => {
     
   });
   
-  /*
-  router.post("/user/authenticate", async (ctx: Context) => {
-    const { username, email, password, id } = ctx.request.body as {
-      username: string;
-      email: string;
-      password: string;
-      id?: number;
-    };
-  
-    // Check if user with same name or email already exists
-    const existingUser = await UserModel.findOne({
-      where: {
-        [Op.or]: [{ name: username }, { email: email }],
-        id: { [Op.ne]: id }, // exclude current user when updating
-      },
-    });
-  
-    if (existingUser) {
-      if (existingUser.name === username) {
-        ctx.throw(400, "Username is already in use.");
-      } else {
-        ctx.throw(400, "Email is already in use.");
-      }
-    }
-  
-    let user: any;
-  
-    // If an ID is given, find the user with that ID
-    if (id !== undefined) {
-      user = await UserModel.findOne({
-        raw: true,
-        where: { id },
-      });
-    } else {
-      // If no ID is given, find the user with the lowest available ID
-      user = await UserModel.findOne({
-        order: [['id', 'ASC']],
-        raw: true,
-      });
-    }
-  
-    // If no user was found, set status to unauthorized and return
-    if (!user) {
-      ctx.code = 401;
-      ctx.body = "Unauthorized";
-      return;
-    }
-  
-    const res = await bcrypt.compare(password, user.password);
-  
-    if (res) {
-      ctx.body = {
-        token: jwt.sign({ name: user.name, role: user.role }, process.env.SECRET),
-        status: "authorized",
-      };
-      ctx.code = 200;
-    } else {
-      ctx.code = 401;
-      ctx.body = "Unauthorized";
-    }
-  });
-*/
   export default router;

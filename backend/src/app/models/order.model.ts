@@ -16,6 +16,7 @@ export interface OrderAttributes {
 
 export interface OrderInstance extends Model<OrderAttributes>, OrderAttributes {}
 
+/** Defining the databasemodel for orders */
 const OrderModel = sequelize.define<OrderInstance, OrderAttributes>(
   "Order",
   {
