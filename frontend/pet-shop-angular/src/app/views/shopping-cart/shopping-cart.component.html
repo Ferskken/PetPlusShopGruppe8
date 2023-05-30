@@ -1,30 +1,12 @@
-<!--```  <h1>Shopping Cart</h1> 
-<h2>Did you find what you were looking for ?</h2>
-<section>
-<body class="shoping-cart">
-<div *ngIf="cartItems.length === 0">
-  Your cart is empty.
-</div>
-
-<div *ngFor="let item of cartItems">
-  <app-cart-item class="cart-item" [item]="item" (remove)="removeItem(item.id)" (updateQuantity)="updateQuantity(item.id, $event)"></app-cart-item>
-</div> -->
-
-<!-- <app-cart-summary [cartTotal]="cartTotal"></app-cart-summary> -->
-
-<!-- </body>
-<div>
-<button class="Checkout" mat-raised-button color="primary" routerLink="/checkout" *ngIf="cartItems.length > 0">Proceed to Checkout</button>
-</div>
-</section -->
 
 <section class="shopping-cart">
   <div class="header-container">
     <h1 class="header-1">Shopping Cart</h1>
     <h2 class="header-2">Did you find what you were looking for?</h2>
   </div>
-  <section class ="content-container"> 
-    <article class="left-column content-container-item" >
+
+  <section class="content-container">
+    <article class="left-column content-container-item">
 
       <!-- Display message when cart is empty -->
       <div *ngIf="cartItems.length === 0">
@@ -37,6 +19,7 @@
           (updateQuantity)="updateQuantity(item.id, $event)">
         </app-cart-item>
       </div>
+
     </article>
 
     <article class="right-column content-container-item">
@@ -56,6 +39,7 @@
         </div>
       </div>
       <app-checkout-form></app-checkout-form>
+      
     </article>
   </section>
 </section>
