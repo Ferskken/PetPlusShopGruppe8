@@ -173,7 +173,7 @@ router.post("/user", async (ctx: Context) => {
         token:jwt.sign({ name:user.name, role:user.role }, process.env.SECRET),
         status:'authorized'
       }
-      ctx.code = 200;
+      ctx.code = 201;
     }
     else{
       ctx.code = 401;
