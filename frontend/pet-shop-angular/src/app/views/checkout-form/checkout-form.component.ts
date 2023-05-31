@@ -45,8 +45,13 @@ export class CheckoutFormComponent {
   }
   getDeliveryFee(): number {
     const total = this.checkoutForm.value.total;
-    return total > 750 ? 0 : 10;
+    if (total > 750) {
+      return 0;
+    } else {
+      return 10;
+    }
   }
+  
   onSubmit(): void {
     console.log("yeet");
     if (this.checkoutForm.valid) {

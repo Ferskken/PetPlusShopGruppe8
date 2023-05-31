@@ -24,7 +24,6 @@ export class SearchBarComponent implements OnInit{
  ){}
  
  ngOnInit(): void{
- this.fetchData();
  }
 
  fetchData(): void {
