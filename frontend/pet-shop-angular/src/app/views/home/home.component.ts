@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
     this.activeIndex2 = 0; // Set the initial active index to 0
     this.intervalId2 = setInterval(() => {
       this.switchToNextImage2();
-    }, 6000);
+    }, 3000);
   }
 
   stopImageSwitching2() {

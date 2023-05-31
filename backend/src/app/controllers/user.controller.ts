@@ -166,9 +166,7 @@ router.post("/user", async (ctx: Context) => {
       raw: true,
       where: { email:username }, 
     });
-    console.log(user);
-    console.log(user.password);
-    console.log(password);
+ 
     const res = await bcrypt.compare(password, user.password);
     if(res){
       ctx.body = {

@@ -54,7 +54,7 @@
     <label for="phone">Phone:</label>
     <input type="text" id="phone" formControlName="phone" required>
     <div *ngIf="checkoutForm.get('phone')?.invalid && (checkoutForm.get('phone')?.dirty || checkoutForm.get('phone')?.touched)">
-      <div *ngIf="checkoutForm.get('phone')?.hasError('required')">Phone is required.</div>
+      <div *ngIf="checkoutForm.get('phone')?.hasError('required')">Norwegian number please.</div>
     </div>
   </article>
 
